@@ -6,9 +6,7 @@ const templateWhitelist = ["pro", "default"];
 
 interface Props {
   routePattern: string;
-  template: string;
-  title: string;
-  description: string;
+  pageData?: any;
 }
 const getDynamicComponent = (path: string) => dynamic(() => import("" + path));
 

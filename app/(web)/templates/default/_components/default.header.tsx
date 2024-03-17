@@ -1,11 +1,6 @@
 import React from "react";
+import { navigation } from "../template.index";
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-];
 
 export default function TopNavigation() {
   return (

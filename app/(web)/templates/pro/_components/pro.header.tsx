@@ -1,10 +1,5 @@
 import React from "react";
-
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Company", href: "#" },
-];
+import { navigation } from "../../default/template.index";
 
 export default function Header() {
   return (

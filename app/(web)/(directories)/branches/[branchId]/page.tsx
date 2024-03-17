@@ -4,18 +4,10 @@ const getData = () => {
   return {
     title: "Branch",
     description: "Branch page",
-    template: "default",
   };
 };
 export default function BranchPage() {
-  const { title, description, template } = getData();
+  const { title, description } = getData();
 
-  return (
-    <TemplateLoader
-      routePattern="branches/[branchId]"
-      template={template}
-      title={title}
-      description={description}
-    />
-  );
+  return <TemplateLoader routePattern="branches/[branchId]" pageData={null} />;
 }
