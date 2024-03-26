@@ -2,7 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { headers } from "next/headers";
 
-const templateWhitelist = ["pro", "default"];
+const templateWhitelist = ["a-template", "b-template"];
 
 interface Props {
   routePattern: string;
@@ -18,10 +18,10 @@ export default function TemplateLoader(props: Readonly<Props>) {
 
   // check valid template
   if (!templateWhitelist.includes(template)) {
-    template = "default";
+    template = "a-template";
   }
 
-  const DynamicComponent = getDynamicComponent(`./${template}/${routePattern}`);
+  const DynamicComponent = getDynamicComponent(`./${template}/default/${routePattern}`);
 
   return <DynamicComponent />;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { navigation } from "../../default/template.index";
+import { navigation } from "../../a-template/template.index";
 
 export default function Header() {
   return (

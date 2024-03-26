@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../_components/pro.header";
+import Header from "../../_components/header";
 
 export default function HomePage() {
   return (
