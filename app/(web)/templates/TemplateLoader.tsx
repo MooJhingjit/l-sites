@@ -16,8 +16,8 @@ const getDynamicComponent = (template: string, routePattern: string) => {
     return module.default;
   } catch (e) {
     // If the import fails (e.g., the module is not found), fall back to a default template
-    const pathArr = template.split("/");
     try {
+      const pathArr = template.split("/");
       // Attempt to import the default template
       const defaultModule = await import(`./${pathArr[0]}/default/${routePattern}`);
       return defaultModule.default;
@@ -36,6 +36,10 @@ export default function TemplateLoader(props: Readonly<Props>) {
   const urlString = headers().get("x-url");
   const url = new URL(urlString ?? "");
   let template = url.searchParams.get("t") as string;
+
+  if (!template) {
+    template = "a-template";
+  }
 
   const DynamicComponent = getDynamicComponent(template, routePattern);
   return <DynamicComponent />;

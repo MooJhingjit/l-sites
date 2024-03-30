@@ -1,5 +1,6 @@
 import React from "react";
-import { navigation } from "../template.index";
+import { navigation } from "../config";
+import Link from "next/link";
 
 
 export default function TopNavigation() {
@@ -22,13 +23,13 @@ export default function TopNavigation() {
 
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-white"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
