@@ -41,8 +41,6 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
       console.error(error);
       return () => <InvalidDomain />;
     }
-
-
   });
 };
 
@@ -50,6 +48,7 @@ export default function PageController(props: Readonly<Props>) {
 
   const { routePattern } = props;
   const referer = headers().get('referer')
+  console.log(headers().get('x-url'));
   if (!referer) {
     return <InvalidDomain />;
   }
