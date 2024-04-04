@@ -1,4 +1,4 @@
-import TemplateLoader from "@/app/(web)/templates/TemplateLoader";
+import TemplateLoader from "@/app/(web)/sites/TemplateLoader";
 
 const getData = () => {
   return {

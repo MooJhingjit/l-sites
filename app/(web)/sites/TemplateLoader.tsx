@@ -25,7 +25,7 @@ const getDynamicComponent = (template: string, routePattern: string) => {
       // Handle any errors that occur while trying to import the default template
       console.error('Error loading default module:', innerError);
       // You could return null or an alternative module/component here as a further fallback
-      return import("./404");
+      return import("./_components/404");
     }
   }
 })
