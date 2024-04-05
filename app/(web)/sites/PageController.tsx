@@ -1,15 +1,10 @@
 import React from 'react'
-import { headers } from "next/headers";
 import dynamic from "next/dynamic";
 import InvalidDomain from './_components/exception/InvalidDomain';
+import { getDomain } from '@/app/(web)/sites/site.helpers';
 
 type Props = {
   routePattern: string;
-}
-
-function extractHostname(urlString: string) {
-  const url = new URL(urlString);
-  return url.hostname; // This returns the domain along with any subdomains
 }
 
 const loadDynamicPage = (domain: string, routePattern: string) => {
@@ -47,15 +42,10 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
 export default function PageController(props: Readonly<Props>) {
 
   const { routePattern } = props;
-  const referer = headers().get('referer')
-  // console.log(headers().get('x-url'));
-  if (!referer) {
+  const domain = getDomain();
+  if (!domain) {
     return <InvalidDomain />;
   }
-
-  const hostname = extractHostname(referer); // test.gps.com:
-  const domain = hostname.replace("test.", ""); // gps.com
-
   const DynamicPage = loadDynamicPage(domain, routePattern);
   return <DynamicPage />;
 

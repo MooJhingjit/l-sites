@@ -1,27 +1,13 @@
-// import TemplateLoader from "@/app/(web)/templates/TemplateLoader";
 import PageController from "@/app/(web)/sites/PageController";
-import { Metadata } from "next";
-import { headers } from "next/headers";
+import { getMetaData } from "@/app/(web)/sites/site.helpers";
 
-export const metadata: Metadata = (() => {
-  const referer = headers().get("x-url");
-  console.log("referer", referer);
-
-  // return new Promise((resolve, reject) => {
-  //   if (!referer) {
-  //     reject(new Error("Invalid domain"));
-  //   }
-  //   resolve({
-  //     title: "Home",
-  //     description: "Home page",
-  //   });
-  // });
-
+export async function generateMetadata() {
+  const { title, description } = getMetaData('home');
   return {
-    title: "Home",
-    description: "Home page",
+    title: title,
+    description: description,
   }
-})();
+}
 
 export default async function Home() {
   return <PageController routePattern="home" />;

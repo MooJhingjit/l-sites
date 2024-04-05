@@ -2,11 +2,8 @@ import React from 'react'
 import Hero from './_components/Hero'
 import Features from './_components/Features'
 import { Metadata } from 'next';
+import { headers } from 'next/headers';
 
-// export const metadata: Metadata = {
-//   title: 'Sorasak Law Firm',
-//   description: 'Sorasak Law Firm',
-// };
 
 export default function SorasakHomePage() {
   return (
