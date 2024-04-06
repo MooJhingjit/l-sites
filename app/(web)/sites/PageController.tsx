@@ -43,6 +43,7 @@ export default function PageController(props: Readonly<Props>) {
 
   const { routePattern } = props;
   const domain = getDomain();
+  console.log("domain", domain)
   if (!domain) {
     return <InvalidDomain />;
   }

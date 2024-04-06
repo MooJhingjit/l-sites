@@ -1,5 +1,5 @@
 
-export type SiteKeys = 'sorasak.com' | 'gps.com' | 'invalid';
+export type SiteKeys = 'sorasak.com' | 'gps.com' | 'begis-law.com' | 'invalid';
 
 type SiteMetaData = {
   title: string;
@@ -25,6 +25,14 @@ export const sites: SitesObject = {
         title: 'Sorarak Blog',
         description: 'Sorarak Blog'
       }
+    },
+  },
+  'begis-law.com': {
+    metaData: {
+      home: {
+        title: "BEGI'S LAW OFFICES & CHAMBERS",
+        description: "Begi’s Law Offices & Chambers (BLOC) is a law practice that is aimed at personalizing the practice of law in satisfying the needs of the client"
+      },
     },
   },
   'gps.com': {
