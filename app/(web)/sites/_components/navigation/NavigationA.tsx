@@ -33,7 +33,7 @@ export default function NavigationA(props: Props) {
                     className="font-heading mr-9 text-white hover:text-gray-200 text-lg"
                   >
                     <Link
-                      className={`link ${pathname === item.href ? "bg-white text-gray-600 px-2 py-2.5 " : "p-2"}`}
+                      className={`link ${pathname === item.href ? "border-b-2" : ""}`}
                       href={item.href}
                     >
                       {item.name}
