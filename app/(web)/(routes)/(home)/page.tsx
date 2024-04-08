@@ -1,5 +1,5 @@
 import PageController from "@/app/(web)/sites/PageController";
-import { getMetaData } from "@/app/(web)/sites/site.helpers";
+import { getMetaData } from "@/app/(web)/sites/utils/site.helpers";
 
 export async function generateMetadata() {
   const { title, description } = getMetaData('home');
@@ -10,5 +10,7 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  return <PageController routePattern="home" />;
+  return (
+      <PageController routePattern="home" />
+  );
 }

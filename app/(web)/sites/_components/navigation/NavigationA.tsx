@@ -1,11 +1,16 @@
-import Link from 'next/link';
-import React from 'react'
+"use client";
+
+import Link from "next/link";
+import React from "react";
+import { usePathname } from "next/navigation";
 
 type Props = {
   menuItems: { name: string; href: string }[];
 };
 
 export default function NavigationA(props: Props) {
+  const pathname = usePathname();
+
   return (
     <section>
       <div className="flex items-center justify-between px-8 py-5">
@@ -22,26 +27,47 @@ export default function NavigationA(props: Props) {
           <div className="flex flex-wrap items-center">
             <div className="w-auto hidden lg:block">
               <ul className="flex items-center mr-10">
-                {
-                  props.menuItems.map((item, index) => (
-                    <li key={item.href} className="font-heading mr-9 text-white hover:text-gray-200 text-lg">
-                      <Link href={item.href}>{item.name}</Link>
-                    </li>
-                  ))
-                }
+                {props.menuItems.map((item, index) => (
+                  <li
+                    key={item.href}
+                    className="font-heading mr-9 text-white hover:text-gray-200 text-lg"
+                  >
+                    <Link
+                      className={`link ${pathname === item.href ? "bg-white text-gray-600 px-2 py-2.5 " : "p-2"}`}
+                      href={item.href}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="w-auto hidden lg:block">
               <button className="group relative font-heading block py-2 px-5 text text-white border-2 border-white overflow-hidden rounded-10">
                 <div className="absolute top-0 left-0 transform -translate-y-full group-hover:-translate-y-0 h-full w-full bg-white transition ease-in-out duration-500" />
-                <p className="relative z-10 group-hover:text-gray-800">Contact Us</p>
+                <p className="relative z-10 group-hover:text-gray-800">
+                  Contact Us
+                </p>
               </button>
             </div>
             <div className="w-auto lg:hidden">
               <a href="#">
-                <svg className="navbar-burger text-gray-800" width={51} height={51} viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="navbar-burger text-gray-800"
+                  width={51}
+                  height={51}
+                  viewBox="0 0 56 56"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <rect width={56} height={56} rx={28} fill="currentColor" />
-                  <path d="M37 32H19M37 24H19" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M37 32H19M37 24H19"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </a>
             </div>
@@ -56,13 +82,28 @@ export default function NavigationA(props: Props) {
               <div className="flex items-center justify-between -m-2">
                 <div className="w-auto p-2">
                   <a className="inline-block" href="#">
-                    <img src="gradia-assets/logos/gradia-name-black.svg" alt="" />
+                    <img
+                      src="gradia-assets/logos/gradia-name-black.svg"
+                      alt=""
+                    />
                   </a>
                 </div>
                 <div className="w-auto p-2">
                   <a className="navbar-burger" href="#">
-                    <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6 18L18 6M6 6L18 18" stroke="#111827" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                    <svg
+                      width={24}
+                      height={24}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 18L18 6M6 6L18 18"
+                        stroke="#111827"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -70,10 +111,38 @@ export default function NavigationA(props: Props) {
             </div>
             <div className="flex flex-col justify-center py-8 w-full">
               <ul>
-                <li className="mb-12"><a className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700" href="#">Features</a></li>
-                <li className="mb-12"><a className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700" href="#">Solutions</a></li>
-                <li className="mb-12"><a className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700" href="#">Resources</a></li>
-                <li><a className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700" href="#">Pricing</a></li>
+                <li className="mb-12">
+                  <a
+                    className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
+                    href="#"
+                  >
+                    Features
+                  </a>
+                </li>
+                <li className="mb-12">
+                  <a
+                    className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
+                    href="#"
+                  >
+                    Solutions
+                  </a>
+                </li>
+                <li className="mb-12">
+                  <a
+                    className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
+                    href="#"
+                  >
+                    Resources
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
+                    href="#"
+                  >
+                    Pricing
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="flex flex-col justify-end w-full">
@@ -99,5 +168,5 @@ export default function NavigationA(props: Props) {
         </nav>
       </div>
     </section>
-  )
+  );
 }

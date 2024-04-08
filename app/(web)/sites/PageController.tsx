@@ -1,7 +1,7 @@
 import React from 'react'
 import dynamic from "next/dynamic";
 import InvalidDomain from './_components/exception/InvalidDomain';
-import { getDomain } from '@/app/(web)/sites/site.helpers';
+import { getDomain } from '@/app/(web)/sites/utils/site.helpers';
 
 type Props = {
   routePattern: string;
@@ -43,7 +43,7 @@ export default function PageController(props: Readonly<Props>) {
 
   const { routePattern } = props;
   const domain = getDomain();
-  console.log("domain", domain)
+  
   if (!domain) {
     return <InvalidDomain />;
   }
