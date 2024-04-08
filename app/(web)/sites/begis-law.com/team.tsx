@@ -1,16 +1,14 @@
 import React from "react";
-import SectionWrapper from "./_components/SectionWrapper";
+import Section from "./_components/Section";
 
 export default function Team() {
   return (
-    <SectionWrapper classNames="relative  px-4 overflow-hidden sm:pt-20">
-      <h2 className="mb-5 max-w-2xl mx-auto font-heading font-semibold text-center text-4xl  text-gray-900">
-        Our Partners and Associates
-      </h2>
-      <p className="mb-10 text-base max-w-md mx-auto text-center text-gray-600">
+    <Section classNames="relative  px-4 overflow-hidden sm:pt-20">
+      <Section.Title>Our Partners and Associates</Section.Title>
+      <Section.Description>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit.
-      </p>
+      </Section.Description>
 
       <div className="flex md:justify-center justify-between  ">
         <div className="w-auto p-0 md:p-6">
@@ -116,6 +114,6 @@ export default function Team() {
           <p className="text-sm text-gray-500">Partner</p>
         </div>
       </div>
-    </SectionWrapper>
+    </Section>
   );
 }

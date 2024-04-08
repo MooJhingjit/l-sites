@@ -1,5 +1,5 @@
 import React from "react";
-import SectionWrapper from "./_components/SectionWrapper";
+import Section from "./_components/Section";
 
 const items = [
   {
@@ -76,15 +76,12 @@ const items = [
 
 export default function services() {
   return (
-    <SectionWrapper classNames="sm:pt-20">
-
-      <h2 className="mb-5 max-w-2xl mx-auto font-heading font-semibold text-center text-4xl  text-gray-900">
-      Practice areas
-      </h2>
-      <p className="mb-20 text-base max-w-md mx-auto text-center text-gray-600">
+    <Section classNames="sm:pt-20">
+      <Section.Title>Practice areas</Section.Title>
+      <Section.Description>
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
         sint. Velit officia consequat duis enim velit mollit.
-      </p>
+      </Section.Description>
 
       <div className=" flex-wrap -m-8  mx-auto grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 divide-x  divide-y divide-gray-100">
         {items.map((item) => (
@@ -122,6 +119,6 @@ export default function services() {
           </div>
         ))}
       </div>
-    </SectionWrapper>
+    </Section>
   );
 }

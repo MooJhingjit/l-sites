@@ -1,5 +1,5 @@
 import React from "react";
-import SectionWrapper from "../../_components/SectionWrapper";
+import Section from "../../_components/Section";
 const stats = [
   { label: "Business was founded", value: "2012" },
   { label: "People on the team", value: "50+" },
@@ -8,16 +8,16 @@ const stats = [
 ];
 export default function AboutUs() {
   return (
-    <SectionWrapper classNames="sm:pt-20">
+    <Section classNames="sm:pt-20 ">
       <div className="px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight">
+          <Section.Title >
             ABOUT US
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-800">
+          </Section.Title>
+          <Section.Description>
             innovative legal services for all, spanning personal to corporate
             law with skilled staff.
-          </p>
+          </Section.Description>
         </div>
       </div>
       <div className="mx-auto mt-20 max-w-7xl px-6 lg:px-8">
@@ -74,6 +74,6 @@ export default function AboutUs() {
           </dl>
         </div>
       </div>
-    </SectionWrapper>
+    </Section>
   );
 }

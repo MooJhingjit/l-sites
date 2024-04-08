@@ -1,9 +1,9 @@
 import React from "react";
-import SectionWrapper from "../../_components/SectionWrapper";
+import Section from "../../_components/Section";
 
 export default function Team() {
   return (
-    <SectionWrapper classNames="relative  px-4 overflow-hidden">
+    <Section classNames="relative  px-4 overflow-hidden">
       <h2 className="mb-5 max-w-2xl mx-auto font-heading font-semibold text-center text-4xl sm:text-5xl text-gray-900">
         Our Partners and Associates
       </h2>
@@ -79,6 +79,6 @@ export default function Team() {
           <p className="text-sm text-gray-500">Partner</p>
         </div>
       </div>
-    </SectionWrapper>
+    </Section>
   );
 }

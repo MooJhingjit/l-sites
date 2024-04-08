@@ -3,12 +3,13 @@
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { Mail, Phone } from "lucide-react";
 
 type Props = {
   menuItems: { name: string; href: string }[];
 };
 
-export default function NavigationA(props: Props) {
+export default function Navigation(props: Props) {
   const pathname = usePathname();
 
   return (
@@ -18,7 +19,10 @@ export default function NavigationA(props: Props) {
           <div className="flex flex-wrap items-center">
             <div className="w-auto mr-14">
               <Link href="/">
-                <img src="gradia-assets/logos/gradia-name-white.svg" alt="" />
+                <img
+                  src="../gradia-assets/logos/gradia-name-white.svg"
+                  alt=""
+                />
               </Link>
             </div>
           </div>
@@ -33,7 +37,9 @@ export default function NavigationA(props: Props) {
                     className="font-heading mr-9 text-white hover:text-gray-200 text-lg"
                   >
                     <Link
-                      className={`link ${pathname === item.href ? "border-b-2" : ""}`}
+                      className={`link ${
+                        pathname === item.href ? "border-b-2" : ""
+                      }`}
                       href={item.href}
                     >
                       {item.name}
@@ -43,11 +49,18 @@ export default function NavigationA(props: Props) {
               </ul>
             </div>
             <div className="w-auto hidden lg:block">
-              <button className="group relative font-heading block py-2 px-5 text text-white border-2 border-white overflow-hidden rounded-10">
+              <button className="group relative font-heading block py-2 px-5 text text-white border border-white overflow-hidden rounded-10">
                 <div className="absolute top-0 left-0 transform -translate-y-full group-hover:-translate-y-0 h-full w-full bg-white transition ease-in-out duration-500" />
-                <p className="relative z-10 group-hover:text-gray-800">
-                  Contact Us
-                </p>
+                <div className="flex items-center space-x-4">
+                  <p className="relative z-10 group-hover:text-gray-800 hover:underline flex space-x-1 items-center text-sm">
+                    <Mail size={18} />
+                    <span>support@begis.com</span>
+                  </p>
+                  <p className="relative z-10 group-hover:text-gray-800 hover:underline flex space-x-1 items-center text-sm">
+                    <Phone size={16} />
+                    <span> +66 9388 93884</span>
+                  </p>
+                </div>
               </button>
             </div>
             <div className="w-auto lg:hidden">

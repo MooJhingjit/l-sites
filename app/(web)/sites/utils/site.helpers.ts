@@ -17,6 +17,9 @@ export const getMetaData = (
   }
 ) => {
   const domain = getDomain();
+
+  console.log('domain', domain);
+  
   const { metaData } = sites[domain];
-  return metaData[route];
+  return metaData['home']; // route
 };

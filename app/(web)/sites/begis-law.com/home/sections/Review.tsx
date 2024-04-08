@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 import { classNames } from "../../../utils/component.helpers";
-import SectionWrapper from "../../_components/SectionWrapper";
+import Section from "../../_components/Section";
 
 const reviews = {
   average: 5,
@@ -63,7 +63,7 @@ const reviews = {
 
 export default function Review() {
   return (
-    <SectionWrapper classNames="lg:grid lg:grid-cols-12 lg:gap-x-8">
+    <Section classNames="lg:grid lg:grid-cols-12 lg:gap-x-8">
       <div className="lg:col-span-4">
         <h2 className="text-4xl font-bold tracking-tight text-gray-900">
           Customer Reviews
@@ -171,7 +171,7 @@ export default function Review() {
                     <h4 className="text-sm font-bold text-gray-900">
                       {review.author}
                     </h4>
-                    <div className="mt-1 flex items-center">
+                    <div className="mt-1 flex items-center space-x-1">
                       {[0, 1, 2, 3, 4].map((rating) => (
                         <Star
                           key={rating}
@@ -197,7 +197,7 @@ export default function Review() {
             ))}
 
             <div className="flex flex-col justify-center items-center bg-gray-50 h-[130px]">
-              <div className="flex space-x-2">
+              <div className="flex space-x-1">
                 {[0, 1, 2, 3, 4].map((rating) => (
                   <Star
                     className={classNames(
@@ -209,14 +209,14 @@ export default function Review() {
               </div>
               <button
                 type="button"
-                className="rounded-md bg-white mt-2 px-3.5 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                className="rounded-md bg-white mt-2 px-3.5 py-1 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
               >
-                100+ reviews{" "}
+                More 100+ Reviews{" "}
               </button>
             </div>
           </div>
         </div>
       </div>
-    </SectionWrapper>
+    </Section>
   );
 }

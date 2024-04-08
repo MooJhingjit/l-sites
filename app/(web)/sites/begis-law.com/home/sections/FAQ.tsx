@@ -2,7 +2,7 @@
 import { Disclosure } from "@headlessui/react";
 // import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 import { Minus, Plus } from "lucide-react";
-import SectionWrapper from "../../_components/SectionWrapper";
+import Section from "../../_components/Section";
 
 const faqs = [
   {
@@ -35,7 +35,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <SectionWrapper>
+    <Section>
       <div className=" divide-y divide-gray-900/10">
         <h2 className="text-4xl font-bold leading-10 tracking-tight text-gray-900">
           Frequently asked questions
@@ -70,6 +70,6 @@ export default function FAQ() {
           ))}
         </dl>
       </div>
-    </SectionWrapper>
+    </Section>
   );
 }

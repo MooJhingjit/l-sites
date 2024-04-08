@@ -1,11 +1,11 @@
 import React from "react";
-import NavigationA from "../_components/navigation/NavigationA";
+import Navigation from "@/app/(web)/sites/begis-law.com/_components/Navigation";
 import Link from "next/link";
 
 const navigation = [
   { name: "Practice areas", href: "/services" },
   { name: "Offices", href: "/offices" },
-  { name: "Case results", href: "#" },
+  { name: "Case results", href: "/testimonials" },
   { name: "Team", href: "/team" },
 ];
 
@@ -14,15 +14,16 @@ type Props = {
 };
 
 export default function BegisPageLayout(props: Props) {
+
   return (
     <>
       <main
         style={{
-          background: "url(gradia-assets/images/hero/bg.png) no-repeat",
+          background: "url(../gradia-assets/images/hero/bg.png) no-repeat",
           backgroundSize: "cover",
         }}
       >
-        <NavigationA menuItems={navigation} />
+        <Navigation menuItems={navigation} />
         {props.children}
       </main>
       <Footer />
