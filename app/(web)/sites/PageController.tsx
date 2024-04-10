@@ -16,6 +16,9 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
 
   return dynamic(async () => {
     let pagePath = `./${domain}/${routePattern}`;
+    
+    // replace , with / to support nested routes
+    pagePath = pagePath.replace(/,/g, "/");
 
     try {
       // Try importing the specified page, If import fails, switch to the 404 page

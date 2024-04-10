@@ -83,7 +83,7 @@ export default function services() {
         sint. Velit officia consequat duis enim velit mollit.
       </Section.Description>
 
-      <div className=" flex-wrap -m-8  mx-auto grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 divide-x  divide-y divide-gray-100">
+      <div className=" flex-wrap -m-8  mx-auto grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 divide-x  divide-y divide-gray-100">
         {items.map((item) => (
           <div className="w-full  h-full p-2  group hover:bg-gray-50 ">
             <a className="group" href="#"></a>
