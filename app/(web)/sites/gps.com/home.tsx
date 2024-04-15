@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "./_components/Hero";
 import Features from "./_components/Features";
 
-export default function SorasakHomePage() {
+export default function GPSHomePage() {
   return (
     <div className="">
       <Hero />
