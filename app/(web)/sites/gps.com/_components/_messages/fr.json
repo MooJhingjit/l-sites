@@ -1,6 +1,8 @@
 {
-  "hero": {
-    "title": "Des données pour enrichir votre entreprise en ligne  (GPS)",
-    "description": "Ceci est la description FR des données pour enrichir votre entreprise en ligne  (GPS)"
+  "home": {
+    "hero": {
+      "title": "Des données pour enrichir votre entreprise en ligne  (GPS)",
+      "description": "Ceci est la description FR des données pour enrichir votre entreprise en ligne  (GPS)"
+    }
   }
 }

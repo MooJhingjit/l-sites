@@ -9,19 +9,11 @@ type Props = {
 };
 
 const loadDynamicPage = (domain: string, routePattern: string) => {
-  // in the client (domain) folder must have layout.tsx
-
-  console.log('domain', domain);
-  console.log('routePattern', routePattern);
-
   const layoutPath = `./${domain}/layout`;
 
   return dynamic(async () => {
     let pagePath = `./${domain}/${routePattern}`;
-    
-    // replace , with / to support nested routes
     pagePath = pagePath.replace(/,/g, "/");
-
     try {
       // Try importing the specified page, If import fails, switch to the 404 page
       console.log("load component", pagePath);
