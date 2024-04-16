@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 type Props = {
@@ -6,8 +7,10 @@ type Props = {
   description: string;
 };
 
-export default function HeroA(props: Props) {
+export default function HeroABC(props: Readonly<Props>) {
   const { imageBackground, title, description } = props;
+  const t = useTranslations("global.hero");
+
   return (
     <div className="relative isolate overflow-hidden pt-14">
       <img
@@ -38,7 +41,7 @@ export default function HeroA(props: Props) {
               href="#"
               className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
             >
-              Get started
+              {t("actionButton")}
             </a>
             <a href="#" className="text-sm font-semibold leading-6 text-white">
               Learn more <span aria-hidden="true">→</span>

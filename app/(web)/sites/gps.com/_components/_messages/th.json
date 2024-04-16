@@ -1,14 +1,6 @@
 {
-  "en": {
-    "title": "Data to enrich your online business (GPS)",
-    "description": "this is EN description for the data to enrich your online business  (GPS)"
-  },
-  "th": {
+  "hero": {
     "title": "ข้อมูลเพื่อเสริมสร้างธุรกิจออนไลน์ของคุณ  (GPS)",
     "description": "นี่คือคำอธิบายภาษาไทยสำหรับข้อมูลเพื่อเสริมสร้างธุรกิจออนไลน์ของคุณ  (GPS)"
-  },
-  "fr": {
-    "title": "Des données pour enrichir votre entreprise en ligne  (GPS)",
-    "description": "Ceci est la description FR des données pour enrichir votre entreprise en ligne  (GPS)"
   }
 }

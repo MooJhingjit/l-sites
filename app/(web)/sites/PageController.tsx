@@ -12,6 +12,8 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
   // in the client (domain) folder must have layout.tsx
 
   console.log('domain', domain);
+  console.log('routePattern', routePattern);
+
   const layoutPath = `./${domain}/layout`;
 
   return dynamic(async () => {

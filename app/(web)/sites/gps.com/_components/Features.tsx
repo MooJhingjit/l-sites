@@ -1,4 +1,5 @@
 // import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+"use client";
 import { Check } from "lucide-react"
 
 const features = [
