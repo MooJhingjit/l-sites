@@ -20,6 +20,5 @@ export default getRequestConfig(async ({ locale }) => {
   ]);
 
   const messages = { ...siteMessages.default, ...globalMessages.default };
-//   console.log(messages);
   return { messages };
 });
