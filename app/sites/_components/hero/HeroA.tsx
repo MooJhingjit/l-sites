@@ -7,7 +7,7 @@ type Props = {
   description: string;
 };
 
-export default function HeroABC(props: Readonly<Props>) {
+export default function HeroA(props: Readonly<Props>) {
   const { imageBackground, title, description } = props;
   const t = useTranslations("global.hero");
 

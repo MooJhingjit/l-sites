@@ -30,7 +30,7 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
       ]);
       return ({ ...params }) => {
         return (
-          <Layout>
+          <Layout routeName={routePattern}>
             <Page {...params} />
           </Layout>
         );

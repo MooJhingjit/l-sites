@@ -27,3 +27,5 @@ export async function middleware(req: NextRequest) {
 export const config = {
   matcher: ["/", "/(th|en|fr|de)/:path*"],
 };
+
+// https://next-intl-docs.vercel.app/docs/routing/middleware#locale-prefix

@@ -1,5 +1,5 @@
 
-export type SiteKeys = 'sorasak.com' | 'gps.com' | 'begis-law.com' | 'invalid';
+export type SiteKeys = 'sorasak.com' | 'gps.com' | 'begis-law.com' | 'invalid' | 'propertyspace.co.th';
 
 type SiteMetaData = {
   title: string;
@@ -41,6 +41,14 @@ export const sites: SitesObject = {
         title: 'GPS',
         description: 'GPS',
       }
+    },
+  },
+  'propertyspace.co.th': {
+    metaData: {
+      home: {
+        title: 'propertyspace',
+        description: 'propertyspace',
+      },
     },
   },
   'invalid': {

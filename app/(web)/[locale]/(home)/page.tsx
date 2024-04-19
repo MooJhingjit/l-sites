@@ -11,6 +11,7 @@ export async function generateMetadata() {
 
 export default async function Home() {
   return (
-      <PageController routePattern="home" />
+    <p>homedd</p>
+      // <PageController routePattern="home" />
   );
 }
