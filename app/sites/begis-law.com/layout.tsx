@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "@/app/(web)/sites/begis-law.com/_components/Navigation";
+import Navigation from "@/app/sites/begis-law.com/_components/Navigation";
 import Link from "next/link";
 
 const navigation = [

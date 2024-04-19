@@ -1,4 +1,4 @@
-import PageController from "../../sites/PageController";
+import PageController from "@/app/sites/PageController";
 
 export default async function OfficesPage() {
   return (

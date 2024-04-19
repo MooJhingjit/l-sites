@@ -12,7 +12,7 @@ export async function middleware(req: NextRequest) {
   }
 
   // all available languages will be configured in the site config
-  const config = await import(`./app/(web)/sites/${domain}/config.ts`);
+  const config = await import(`./app/sites/${domain}/config.ts`);
   const { default: siteConfig } = config;
   
   const intlMiddleware = createMiddleware({

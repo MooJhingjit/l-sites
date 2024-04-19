@@ -1,5 +1,5 @@
-import PageController from "@/app/(web)/sites/PageController";
-import { getMetaData } from "@/app/(web)/sites/utils/site.helpers";
+import PageController from "@/app/sites/PageController";
+import { getMetaData } from "@/app/sites/utils/site.helpers";
 
 
 export async function generateMetadata() {

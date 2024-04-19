@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import InvalidDomain from "./_components/exception/InvalidDomain";
-import { getDomain } from "@/app/(web)/sites/utils/site.helpers";
+import { getDomain } from "@/app/sites/utils/site.helpers";
 
 type Props = {
   routePattern: string;
