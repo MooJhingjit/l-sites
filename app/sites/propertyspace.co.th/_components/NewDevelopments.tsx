@@ -1,6 +1,7 @@
 import React from 'react'
 import Section from '@/app/sites/_components/Section'
 import PropertyCard from '@/components/PropertyCard'
+import { Button } from '@/components/ui/button'
 
 export default function NewDevelopments() {
   return (
@@ -9,6 +10,9 @@ export default function NewDevelopments() {
         New Developments
       </Section.Title>
       <DevelopmentCards />
+      <div className="mt-8 flex items-center justify-center">
+        <Button variant={'secondary'}>View All</Button>
+      </div>
     </Section>
   )
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import { useTranslations } from "next-intl";
-import Navigation from "../_components/Navigation";
+
 
 export default function Hero() {
   const t = useTranslations("home.hero");
   return (
-    <section className={`h-screen bg-cover bg-[url('https://www.home-designing.com/wp-content/uploads/2015/03/small-private-pool.jpg')]`} >
+    <section className={`relative h-screen bg-cover bg-[url('https://www.home-designing.com/wp-content/uploads/2015/03/small-private-pool.jpg')]`} >
+      <div className=" bottom-0 h-[100px] w-full absolute bg-gradient-to-b from-transparent to-black"></div>
       <div className="h-full container px-0 mx-auto">
         {/* <Navigation /> */}
         <div className="h-full mx-auto flex pt-32">

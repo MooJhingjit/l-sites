@@ -1,9 +1,10 @@
 import React from 'react'
 import PropertyCard from '@/components/PropertyCard'
+import { Button } from '@/components/ui/button'
 
 export default function NewListing() {
   return (
-    <div className="-mt-[140px] container mx-auto px-4 sm:px-6  lg:px-8">
+    <div className="-mt-[140px] container mx-auto px-4 sm:px-6  lg:px-8 relative z-10">
       <h2
         className="capitalize font-heading font-semibold text-3xl  text-white  pb-5"
       >
@@ -11,6 +12,9 @@ export default function NewListing() {
       </h2>
 
       <PropertyCards />
+      <div className="mt-8 flex items-center justify-center">
+        <Button variant={'secondary'}>View All</Button>
+      </div>
     </div>
   )
 }
