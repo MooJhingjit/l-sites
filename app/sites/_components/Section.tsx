@@ -1,18 +1,18 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-export default function Section({
-  children,
-  classNames,
-}: {
+interface Props {
   children: React.ReactNode;
   classNames?: string;
-}) {
+}
+export default function Section(props: Readonly<Props>) {
+
+  const { children, classNames } = props;
   return (
-    <div className=" bg-white overflow-hidden ">
+    <div className=" bg-white overflow-hidden py-10">
       <div
         className={twMerge(
-          "container mx-auto px-4 pt-16 sm:px-6 sm:pt-40 lg:px-8",
+          "container mx-auto px-4 pt-8 sm:px-6 lg:px-8",
           classNames
         )}
       >
@@ -60,6 +60,5 @@ const Description = ({
   );
 };
 
-// Assign Title and Description as properties of Section
 Section.Title = Title;
 Section.Description = Description;

@@ -1,14 +1,16 @@
 import React from "react";
 import Hero from "./Hero";
-import NewListing from "../_components/NewListing";
-import NewDevelopment from "../_components/NewDevelopment";
+import NewListings from "../_components/NewListings";
+import NewDevelopments from "../_components/NewDevelopments";
+import Teams from "./Teams";
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <Hero />
-      <NewListing/>
-      <NewDevelopment/>
-    </div>
+      <NewListings/>
+      <NewDevelopments/>
+      <Teams/>
+    </>
   );
 }

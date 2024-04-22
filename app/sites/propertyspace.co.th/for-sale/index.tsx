@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div>Property For Sale</div>
+    <div>
+      <p className='h-[400px]'>test</p>
+    </div>
   )
 }

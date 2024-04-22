@@ -1,37 +1,9 @@
+"use client";
 import React from 'react'
-import Section from '../../_components/Section'
 import { twMerge } from 'tailwind-merge'
-import Image from 'next/image'
+import { Button } from './ui/button';
 
-export default function NewListing() {
-  return (
-    <div className={"container px-4 -mt-[140px]"}>
-      <h2
-        className={twMerge(
-          "capitalize font-heading font-semibold text-3xl  text-white",
-        )}
-      >
-        Explore Our Latest New Listings Today
-      </h2>
-
-      <ListingCards />
-    </div>
-  )
-}
-
-const ListingCards = () => {
-  return (
-    <div className="grid grid-cols-4 gap-6 mt-8">
-      <ListingCard image="property-1.webp" />
-      <ListingCard image="property-2.webp" />
-      <ListingCard image="property-3.webp" />
-      <ListingCard image="property-4.webp" />
-    </div>
-  )
-}
-
-export const ListingCard = ({ image }: { image: string }) => {
-
+export default function PropertyCard({ image }: { image: string }) {
   return (
     <div
       className={twMerge(
@@ -67,7 +39,7 @@ export const ListingCard = ({ image }: { image: string }) => {
         <div
           className={twMerge(
             "flex items-center justify-between",
-            "mt-4",
+            "my-4",
           )}
         >
           <div
@@ -84,17 +56,12 @@ export const ListingCard = ({ image }: { image: string }) => {
               $250,000
             </span>
           </div>
-          <button
-            className={twMerge(
-              "text-sm font-semibold",
-              "text-white",
-              "bg-blue-500",
-              "px-4 py-2",
-              "rounded-lg",
-            )}
+          <Button
+            variant={'secondary'}
+            size={'default'}
           >
             View
-          </button>
+          </Button>
         </div>
       </div>
     </div>
