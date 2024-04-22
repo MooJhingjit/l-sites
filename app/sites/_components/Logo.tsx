@@ -18,7 +18,6 @@ export default function Logo(props: Readonly<Props>) {
     '.png'
   ]
   const path = pathArr.join('')
-  console.log("path", path)
   return (
     <Image
       width={width}

@@ -16,7 +16,7 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
     pagePath = pagePath.replace(/,/g, "/");
     try {
       // Try importing the specified page, If import fails, switch to the 404 page
-      console.log("load component", pagePath);
+      // console.log("load component", pagePath);
       await import("" + pagePath);
     } catch (e) {
       pagePath = "./_components/404";
@@ -44,6 +44,7 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
 
 export default async function PageController(props: Readonly<Props>) {
   const { routePattern, params } = props;
+  // console.log("params", params)
   const domain = getDomain();
 
   if (!domain) {

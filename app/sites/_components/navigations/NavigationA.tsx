@@ -76,6 +76,11 @@ const solutions = [
 ]
 
 const Profile = () => {
+
+  return (
+    <Button variant={'secondary'}>Sign In</Button>
+  )
+
   return (
     <Popover>
       <PopoverTrigger asChild>

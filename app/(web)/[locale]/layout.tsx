@@ -18,6 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale}>
+      <head>
+        <meta charSet="utf-8" />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+        {/* <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href={inter.href} /> */}
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );

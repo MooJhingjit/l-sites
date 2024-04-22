@@ -1,10 +1,10 @@
 import React from 'react'
 import PropertySearchPage from '../_components/PropertySearchPage'
 
-export default function PropertyForSale() {
+export default function PropertyForRent() {
   return (
     <PropertySearchPage
-      tenure='sale'
+      tenure='rent'
     />
   )
 }
