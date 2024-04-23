@@ -7,5 +7,5 @@ export default async function OfficePage({
     slug: string;
   };
 }) {
-  return <PageController routePattern={`offices/[slug]`} params={params} />;
+  return <PageController routePattern={['offices/[slug]']} params={params} />;
 }

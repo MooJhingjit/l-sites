@@ -10,7 +10,7 @@ export async function generateMetadata() {
   }
 }
 
-export default async function CustomRoute({ params }: Readonly<{ params: { customRoute: string } }>) {
+export default async function CustomRoute({ params }: Readonly<{ params: { customRoute: string[] } }>) {
   return (
     <PageController
       params={params}

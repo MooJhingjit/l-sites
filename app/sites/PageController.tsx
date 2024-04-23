@@ -4,15 +4,15 @@ import InvalidDomain from "./_components/exception/InvalidDomain";
 import { getDomain } from "@/app/sites/utils/site.helpers";
 
 type Props = {
-  routePattern: string;
+  routePattern: string[];
   params?: any;
 };
 
-const loadDynamicPage = (domain: string, routePattern: string) => {
+const loadDynamicPage = (domain: string, routePattern: string[]) => {
   const layoutPath = `./${domain}/layout`;
 
   return dynamic(async () => {
-    let pagePath = `./${domain}/${routePattern}`;
+    let pagePath = `./${domain}/${routePattern[0]}`;
     pagePath = pagePath.replace(/,/g, "/");
     try {
       // Try importing the specified page, If import fails, switch to the 404 page
@@ -30,7 +30,7 @@ const loadDynamicPage = (domain: string, routePattern: string) => {
       ]);
       return ({ ...params }) => {
         return (
-          <Layout routeName={routePattern}>
+          <Layout routeName={routePattern[0]}>
             <Page {...params} />
           </Layout>
         );
