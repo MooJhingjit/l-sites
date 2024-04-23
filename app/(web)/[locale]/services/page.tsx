@@ -1,9 +1,18 @@
 import PageController from "@/app/sites/PageController";
+import { Params, SearchParams } from "@/lib/definitions";
 
-export default async function ServicePage() {
+
+type Props = {
+  params: Params
+  searchParams: SearchParams
+}
+
+export default async function ServicePage({ params, searchParams }: Readonly<Props>) {
+
   return (
     <PageController
-      routePattern={['services']}
+      params={params}
+      searchParams={searchParams}
     />
-  )
+  );
 }

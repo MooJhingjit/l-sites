@@ -1,14 +1,27 @@
 import PageController from "@/app/sites/PageController";
-import { getMetaData } from "@/app/sites/utils/site.helpers";
+import { Meta, Params, SearchParams } from "@/lib/definitions";
+import { getMessages } from "next-intl/server";
+
+type Props = {
+  params: Params
+  searchParams: SearchParams
+}
 
 export async function generateMetadata() {
-  const { title, description } = getMetaData("home");
+  const message = await getMessages();
+  const { meta } = message.home as { meta: Meta }
+
   return {
-    title: title,
-    description: description,
+    title: meta.title,
+    description: meta.description,
   };
 }
 
-export default async function Home() {
-  return <PageController routePattern={['home']} />;
+export default function Home({ params, searchParams }: Readonly<Props>) {
+
+  return <PageController
+    params={{ ...params, routes: ['home'] }}
+    searchParams={searchParams} />;
 }
+
+

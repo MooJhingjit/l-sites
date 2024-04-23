@@ -8,11 +8,5 @@
       "title": "Discover Your Perfect Space in Pattaya Real Estate",
       "description": "Discover Your Perfect Space in Pattaya Real Estate"
     }
-  },
-  "for-sale": {
-    "meta": {
-      "title": "{bed} beds {propertyType} for sale in {country} | PropertySpace",
-      "description": "PropertySpace"
-    }
   }
 }

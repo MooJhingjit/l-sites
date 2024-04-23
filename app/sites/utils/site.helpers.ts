@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
-import { SiteKeys, sites } from "./site.config";
+
+type SiteKeys = 'sorasak.com' | 'gps.com' | 'begis-law.com' | 'invalid' | 'propertyspace.co.th';
 
 export const getDomain = () => {
   let host = headers().get("host") ?? "invalid";
@@ -7,15 +8,3 @@ export const getDomain = () => {
   return hostname as SiteKeys;
 };
 
-export const getMetaData = (
-  route: string,
-  options?: {
-    isDynamic: boolean;
-  }
-) => {
-  const domain = getDomain();
-
-  
-  const { metaData } = sites[domain];
-  return metaData['home']; // route
-};

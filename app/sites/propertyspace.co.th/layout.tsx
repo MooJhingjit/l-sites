@@ -4,7 +4,7 @@ import FooterWrapper from "./_components/FooterWrapper";
 import Navigation from "../_components/navigations/NavigationA";
 
 type Props = {
-  routeName?: string;
+  routes: string[];
   children: React.ReactNode;
 };
 const navigation = [
@@ -17,7 +17,7 @@ const navigation = [
 
 
 export default function Layout(props: Readonly<Props>) {
-  const routeName = props.routeName
+  const routeName = props.routes[0]
   const routeWithBackground = ['home']
   const stickOnTop = routeWithBackground.includes(routeName ?? "home")
   const hideFooter = ['for-sale', 'for-rent'].includes(routeName ?? "home")

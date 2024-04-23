@@ -12,5 +12,7 @@ export default getRequestConfig(async ({ locale }) => {
 
   const domain = getDomain();
   const messages = await loadMessages(domain, locale)
+  // console.log("messages", messages)
   return { messages };
 });
+
