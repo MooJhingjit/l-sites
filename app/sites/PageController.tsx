@@ -9,6 +9,7 @@ const loadDynamicPage = (domain: string, params: Params, searchParams: SearchPar
 
   return dynamic(async () => {
     let pagePath = `./${domain}/${params.routes[0]}`;
+    // let pagePath = `./${domain}/home`;
     pagePath = pagePath.replace(/,/g, "/");
     try {
       // Try importing the specified page, If import fails, switch to the 404 page
@@ -46,7 +47,8 @@ type Props = {
 
 export default async function PageController(props: Readonly<Props>) {
   const { searchParams, params } = props;
-  // console.log("params", params)
+  console.log("searchParams", searchParams)
+  console.log("params", params)
   const domain = getDomain();
 
   if (!domain) {

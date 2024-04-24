@@ -12,7 +12,7 @@ export async function generateMetadata(
   { params, searchParams }: Props
 ) {
   // const message = await getMessages();
-  const routeName = params.routes[0]
+  const routeName =  "hone"// params.routes[0]
   const t = await getTranslations(`${routeName}.meta`);
   console.log('t = ', t("title", { propertyType: "Condo" }))
 
