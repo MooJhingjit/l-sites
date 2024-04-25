@@ -8,9 +8,8 @@ type Props = {
   children: React.ReactNode;
 };
 const navigation = [
-  { name: "Buy", href: "/for-sale" },
-  { name: "Rent", href: "/for-rent" },
-  { name: "New Developments", href: "/new-developments" },
+  { name: "Buy", href: "/for-sale/properties" },
+  { name: "Rent", href: "/for-rent/properties" },
   { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "/contact-us" },
 ];

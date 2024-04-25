@@ -8,9 +8,10 @@ type Props = {
 
 export default async function ContactUsPage({ params, searchParams }: Readonly<Props>) {
 
+  
   return (
     <PageController
-      params={params}
+      params={{ ...params, routes: ['contact-us'] }}
       searchParams={searchParams}
     />
   );

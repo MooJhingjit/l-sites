@@ -2,38 +2,92 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
 
+const exceptRouteParams = {
+  en: {
+    propertyTypes: ["properties", "condos", "apartments", "houses", "land"],
+    placeTypes: ["mrt", "bts"],
+    tenure: ["for-sale", "for-rent"],
+  },
+  th: {
+    propertyTypes: [ "อสังหาริมทรัพย์", "คอนโด", "อพาร์ทเม้นท์", "บ้าน", "ที่ดิน",],
+    placeTypes: ["เอ็มอาร์ที", "บีทีเอส"],
+    tenure: ["ขาย", "เช่า"],
+  },
+};
+
 const propertyTypes = [
-  "properties",
-  "condos",
-  "apartments",
-  "houses",
-  "land",
+  ...exceptRouteParams.en.propertyTypes,
+  ...exceptRouteParams.th.propertyTypes.map(encodeURIComponent),
 ].join("|");
 
-const tenure = ["for-sale", "for-rent"].join("|");
+const placeTypes = [
+  ...exceptRouteParams.en.placeTypes,
+  ...exceptRouteParams.th.placeTypes.map(encodeURIComponent),
+].join("|");
+
+const tenure = [
+  ...exceptRouteParams.en.tenure,
+  ...exceptRouteParams.th.tenure.map(encodeURIComponent),
+].join("|");
+
+const bedUnit = `-beds|${encodeURIComponent("ห้องนอน")}`
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Define rewrites
   async rewrites() {
     return [
+      // tenure and type is required
       {
         source: `/:locale/:tenure(${tenure})/:type(${propertyTypes})`,
-        destination: "/:locale/search?type=:type&tenure=for-sale",
+        destination: "/:locale/property-search?type=:type&tenure=:tenure",
       },
       {
-        source: `/:locale/:tenure(${tenure})/:type(${propertyTypes})/:beds(\\d+-beds)`,
-        destination: "/:locale/search?type=:type&tenure=for-sale&beds=:beds",
-      },
-      {
-        source: `/:locale/:tenure(${tenure})/:type(${propertyTypes})/:location1`,
+        source: `/:locale/:tenure(${tenure})/:type(${propertyTypes})/:bedrooms(\\d)(${bedUnit})`,
         destination:
-          "/:locale/search?type=:type&tenure=for-sale&location1=:location1",
+          "/:locale/property-search?type=:type&tenure=:tenure&bedrooms=:bedrooms",
+      },
+      // place, beds
+      {
+        source: `/:locale/:tenure(${tenure})/:placeType(${placeTypes})/:place/:type(${propertyTypes})`,
+        destination:
+          "/:locale/property-search?type=:type&tenure=:tenure&placeType=:placeType&place=:place",
       },
       {
-        source: `/:locale/:tenure(${tenure})/:type(${propertyTypes})/:location1/:location2`,
+        source: `/:locale/:tenure(${tenure})/:placeType(${placeTypes})/:place/:type(${propertyTypes})/:bedrooms(\\d)(${bedUnit})`,
         destination:
-          "/:locale/search?type=:type&tenure=for-sale&location1=:location1&location2=:location2",
+          "/:locale/property-search?type=:type&tenure=:tenure&bedrooms=:bedrooms&placeType=:placeType&place=:place",
+      },
+
+      // location, beds
+      {
+        source: `/:locale/:tenure(${tenure})/:location_1/:type(${propertyTypes})`,
+        destination:
+          "/:locale/property-search?type=:type&tenure=:tenure&location_1=:location_1",
+      },
+      {
+        source: `/:locale/:tenure(${tenure})/:location_1/:type(${propertyTypes})/:bedrooms(\\d)(${bedUnit})`,
+        destination:
+          "/:locale/property-search?type=:type&tenure=:tenure&location_1=:location_1&bedrooms=:bedrooms",
+      },
+      {
+        source: `/:locale/:tenure(${tenure})/:location_1/:location_2/:type(${propertyTypes})`,
+        destination:
+          "/:locale/property-search?type=:type&tenure=:tenure&location_1=:location_1&location_2=:location_2",
+      },
+      {
+        source: `/:locale/:tenure(${tenure})/:location_1/:location_2/:type(${propertyTypes})/:bedrooms(\\d)(${bedUnit})`,
+        destination:
+          "/:locale/property-search?type=:type&tenure=:tenure&location_1=:location_1&location_2=:location_2&bedrooms=:bedrooms",
+      },
+      {
+        source: `/:locale/:tenure(${tenure})/:location_1/:location_2/:location_3/:type(${propertyTypes})`,
+        destination:
+          "/:locale/property-search?type=:type&tenure=:tenure&location_1=:location_1&location_2=:location_2&location_3=:location_3",
+      },
+      {
+        source: `/:locale/:tenure(${tenure})/:location_1/:location_2/:location_3/:type(${propertyTypes})/:bedrooms(\\d)(${bedUnit})`,
+        destination:
+          "/:locale/property-search?type=:type&tenure=:tenure&location_1=:location_1&location_2=:location_2&location_3=:location_3&bedrooms=:bedrooms",
       },
     ];
   },

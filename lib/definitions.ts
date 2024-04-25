@@ -1,5 +1,5 @@
 
-export type SearchParams = { [key: string]: string | string[] | undefined };
+export type SearchParams = { [key: string]: string };
 
 export type Params = {
   locale: string;

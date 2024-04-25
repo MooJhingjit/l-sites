@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import InvalidDomain from "./_components/exception/InvalidDomain";
-import { getDomain } from "@/app/sites/utils/site.helpers";
+import { getDomain, decodeSearchParams } from "@/app/sites/utils/site.helpers";
 import { Params, SearchParams } from "@/lib/definitions";
 
 const loadDynamicPage = (domain: string, params: Params, searchParams: SearchParams) => {
@@ -27,6 +27,9 @@ const loadDynamicPage = (domain: string, params: Params, searchParams: SearchPar
       ]);
       return () => {
         // { searchParams }: { searchParams: SearchParams }
+
+        console.log('params', params)
+        console.log('searchParams', searchParams)
         return (
           <Layout routes={params.routes}>
             <Page searchParams={searchParams} params={params} />
@@ -47,15 +50,14 @@ type Props = {
 
 export default async function PageController(props: Readonly<Props>) {
   const { searchParams, params } = props;
-  console.log("searchParams", searchParams)
-  console.log("params", params)
+  // console.log("original parameters", params, searchParams)
   const domain = getDomain();
 
   if (!domain) {
     return <InvalidDomain />;
   }
-  const DynamicPage = await loadDynamicPage(domain, params, searchParams);
-  return <DynamicPage
-  // searchParams={searchParams}
-  />;
+
+  // to support url localization the searchParams should be decoded (encoded in the url by default)
+  const DynamicPage = await loadDynamicPage(domain, params, decodeSearchParams(searchParams));
+  return <DynamicPage />;
 }

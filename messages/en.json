@@ -1,5 +1,7 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "propertyTypes": {
+    "condo": "Condo",
+    "house": "House",
+    "townhouse": "Townhouse"
   }
 }

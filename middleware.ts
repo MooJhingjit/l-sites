@@ -4,12 +4,9 @@ import createMiddleware from "next-intl/middleware";
 
 // Custom middleware to log or use the hostname
 export async function middleware(req: NextRequest) {
-  const host = req.headers.get("host");
-  const domain = host?.replace("test.", "").split(":")[0];
 
-  if (!domain) {
-    return NextResponse.next();
-  }
+  const host = req.headers.get("host");
+  const domain = host?.replace("test.", "").split(":")[0]; // Remove the test subdomain and port
 
   // all available languages will be configured in the site config
   const config = await import(`./app/sites/${domain}/config.ts`);
@@ -21,8 +18,6 @@ export async function middleware(req: NextRequest) {
     localePrefix: "as-needed",
   });
 
-
-  
 
   // Continue with the intl middleware
   return intlMiddleware(req);
