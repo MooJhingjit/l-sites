@@ -9,7 +9,7 @@ export default function Section(props: Readonly<Props>) {
 
   const { children, classNames } = props;
   return (
-    <div className=" bg-white overflow-hidden py-10">
+    <div className=" bg-white pt-10">
       <div
         className={twMerge(
           "container mx-auto px-4 pt-8 sm:px-6 lg:px-8",

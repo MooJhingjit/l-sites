@@ -8,7 +8,7 @@ const loadDynamicPage = (domain: string, params: Params, searchParams: SearchPar
   const layoutPath = `./${domain}/layout`;
 
   return dynamic(async () => {
-    let pagePath = `./${domain}/${params.routes[0]}`;
+    let pagePath = `./${domain}/${params.routes.join("/")}`;
     // let pagePath = `./${domain}/home`;
     pagePath = pagePath.replace(/,/g, "/");
     try {
