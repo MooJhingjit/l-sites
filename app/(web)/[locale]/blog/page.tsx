@@ -26,7 +26,7 @@ type Props = {
 //   };
 // }
 
-export default function CustomRoute({ params, searchParams }: Readonly<Props>) {
+export default function BlogPage({ params, searchParams }: Readonly<Props>) {
 
   return (
     <PageController

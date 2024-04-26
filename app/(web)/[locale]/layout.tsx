@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "../../globals.css";
+import { getDomain } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,17 +17,21 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
+
+  const domain = getDomain();
   return (
     <html lang={locale}>
       <head>
         <meta charSet="utf-8" />
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-
-        {/* <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href={`/styles/${domain}.css`} ></link>
+        <link rel="icon" href="/favicon.ico" />
+        
+        {/* 
         <link rel="stylesheet" href={inter.href} /> */}
       </head>
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -40,7 +40,7 @@ export default function AboutUs() {
             </div>
             <div>
               <p>
-                At Begi's Law Offices & Chambers we believe that law and justice
+                At Begis Law Offices & Chambers we believe that law and justice
                 should be accessible to everyone, regardless of race, religion,
                 social status or even wealth. To this end we pride ourselves in
                 the development of programs that enhance access to justice for

@@ -1,0 +1,26 @@
+/* @tailwind base; */
+
+/* @layer base { */
+  :root {
+    --background: rgb(255, 255, 255);
+    --foreground: rgb(11, 9, 8);
+    --card: rgb(255, 255, 255);
+    --card-foreground: rgb(11, 9, 8);
+    --popover: rgb(255, 255, 255);
+    --popover-foreground: rgb(11, 9, 8);
+    --primary: rgb(27, 25, 23);
+    --primary-foreground: rgb(249, 249, 248);
+    --secondary: rgb(245, 245, 244);
+    --secondary-foreground: rgb(27, 25, 23);
+    --muted: rgb(245, 245, 244);
+    --muted-foreground: rgb(120, 112, 107);
+    --accent: rgb(245, 245, 244);
+    --accent-foreground: rgb(27, 25, 23);
+    --destructive: rgb(238, 68, 68);
+    --destructive-foreground: rgb(249, 249, 248);
+    --border: rgb(231, 228, 227);
+    --input: rgb(231, 228, 227);
+    --ring: rgb(11, 9, 8);
+    --radius: 0.5rem;
+  }
+/* } */

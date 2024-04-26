@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { classNames } from "../../../utils/component.helpers";
+import { classNames } from "@/lib/client-utils";
 import Section from "../../_components/Section";
 
 const reviews = {
@@ -198,8 +198,9 @@ export default function Review() {
 
             <div className="flex flex-col justify-center items-center bg-gray-50 h-[130px]">
               <div className="flex space-x-1">
-                {[0, 1, 2, 3, 4].map((rating) => (
+                {[0, 1, 2, 3, 4].map((rating, index) => (
                   <Star
+                    key={index}
                     className={classNames(
                       " text-yellow-400 h-5 w-5 flex-shrink-0"
                     )}

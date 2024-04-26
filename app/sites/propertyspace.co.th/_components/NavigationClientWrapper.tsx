@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react'
 import useScroll from '@/lib/hooks/useScroll';
-import { classNames } from '../../utils/component.helpers';
+import { classNames } from "@/lib/client-utils";
 
 export default function NavigationClientWrapper(props: Readonly<{ stickOnTop: boolean, children: React.ReactNode }>) {
   const [opacity, setOpacity] = useState(1);

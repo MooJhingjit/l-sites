@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "@/app/sites/begis-law.com/_components/Navigation";
 import Link from "next/link";
-
+// import "@/app/styles/begis-law.com.css"
 const navigation = [
   { name: "Practice areas", href: "/services" },
   { name: "Offices", href: "/offices" },
@@ -18,6 +18,7 @@ export default function BegisPageLayout(props: Props) {
   return (
     <>
       <main
+      className="site-b"
         style={{
           background: "url(../gradia-assets/images/hero/bg.png) no-repeat",
           backgroundSize: "cover",
@@ -42,7 +43,7 @@ const Footer = () => {
         />
         <ul className="flex flex-wrap justify-center -m-5 pb-8">
           {navigation.map((item, index) => (
-            <li className="p-5">
+            <li className="p-5" key={index}>
               <Link
                 className="font-heading text-base text-gray-900 hover:text-gray-700"
                 href="#"
@@ -54,7 +55,7 @@ const Footer = () => {
         </ul>
         <div className="border-b border-gray-100"></div>
         <p className="text-gray-600 text-center py-8 text-sm">
-          © Copyright 2022. All Rights Reserved by BEGI'S LAW.
+          © Copyright 2022. All Rights Reserved by BEGIS LAW.
         </p>
       </div>
     </section>

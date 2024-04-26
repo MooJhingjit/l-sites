@@ -9,7 +9,13 @@ const exceptRouteParams = {
     tenure: ["for-sale", "for-rent"],
   },
   th: {
-    propertyTypes: [ "อสังหาริมทรัพย์", "คอนโด", "อพาร์ทเม้นท์", "บ้าน", "ที่ดิน",],
+    propertyTypes: [
+      "อสังหาริมทรัพย์",
+      "คอนโด",
+      "อพาร์ทเม้นท์",
+      "บ้าน",
+      "ที่ดิน",
+    ],
     placeTypes: ["เอ็มอาร์ที", "บีทีเอส"],
     tenure: ["ขาย", "เช่า"],
   },
@@ -30,7 +36,7 @@ const tenure = [
   ...exceptRouteParams.th.tenure.map(encodeURIComponent),
 ].join("|");
 
-const bedUnit = `-beds|${encodeURIComponent("ห้องนอน")}`
+const bedUnit = `-beds|${encodeURIComponent("ห้องนอน")}`;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import InvalidDomain from "./_components/exception/InvalidDomain";
-import { getDomain, decodeSearchParams } from "@/app/sites/utils/site.helpers";
+import InvalidDomain from "@components/exception/InvalidDomain";
+import { getDomain, decodeSearchParams } from "@/lib/utils";
 import { Params, SearchParams } from "@/lib/definitions";
 
 const loadDynamicPage = (domain: string, params: Params, searchParams: SearchParams) => {
@@ -25,20 +25,26 @@ const loadDynamicPage = (domain: string, params: Params, searchParams: SearchPar
         import("" + pagePath).then((module) => module.default),
         import("" + layoutPath).then((module) => module.default),
       ]);
-      return () => {
-        // { searchParams }: { searchParams: SearchParams }
 
-        console.log('params', params)
-        console.log('searchParams', searchParams)
-        return (
-          <Layout routes={params.routes}>
-            <Page searchParams={searchParams} params={params} />
-          </Layout>
-        );
-      };
+      Page.displayName = `${domain}Page`;
+      Layout.displayName = `${domain}Layout`;
+
+      const DynamicComponent = () => (
+        <Layout routes={params.routes}>
+          <Page searchParams={searchParams} params={params} />
+        </Layout>
+      );
+
+      // Set the display name
+      DynamicComponent.displayName = `${domain}DynamicComponent`;
+
+      return DynamicComponent;
+
     } catch (error) {
       console.error(error);
-      return () => <InvalidDomain />;
+      const InvalidDomain = () => (<InvalidDomain />);
+      InvalidDomain.displayName = `${domain}InvalidDomain`;
+      return InvalidDomain
     }
   });
 };

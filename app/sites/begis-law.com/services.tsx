@@ -84,8 +84,8 @@ export default function services() {
       </Section.Description>
 
       <div className=" flex-wrap -m-8  mx-auto grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 divide-x  divide-y divide-gray-100">
-        {items.map((item) => (
-          <div className="w-full  h-full p-2  group hover:bg-gray-50 ">
+        {items.map((item, index) => (
+          <div key={index} className="w-full  h-full p-2  group hover:bg-gray-50 ">
             <a className="group" href="#"></a>
             <div className="flex flex-wrap  h-full">
               <a className="group hidden md:block" href="#">

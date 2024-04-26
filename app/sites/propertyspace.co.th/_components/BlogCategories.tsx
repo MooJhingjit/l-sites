@@ -8,16 +8,16 @@ export default function BlogCategories() {
         <Button>All Categories</Button>
       </li>
       <li className="w-full md:w-auto px-2">
-        <Button variant="secondary">Technology</Button>
+        <Button variant="muted">Technology</Button>
       </li>
       <li className="w-full md:w-auto px-2">
-        <Button variant="secondary">Development</Button>
+        <Button variant="muted">Development</Button>
       </li>
       <li className="w-full md:w-auto px-2">
-        <Button variant="secondary">Marketing</Button>
+        <Button variant="muted">Marketing</Button>
       </li>
       <li className="w-full md:w-auto px-2">
-        <Button variant="secondary">Start-up</Button>
+        <Button variant="muted">Start-up</Button>
       </li>
     </ul>
   );

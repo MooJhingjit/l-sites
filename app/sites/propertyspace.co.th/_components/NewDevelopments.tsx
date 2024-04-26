@@ -11,7 +11,7 @@ export default function NewDevelopments() {
       </Section.Title>
       <DevelopmentCards />
       <div className="mt-8 flex items-center justify-center">
-        <Button variant={'secondary'}>View All</Button>
+        <Button variant={'default'}>View All</Button>
       </div>
     </Section>
   )

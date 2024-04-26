@@ -7,10 +7,10 @@ import Link from "next/link";
 import ArticleCard from "../_components/ArticleCard";
 import BlogCategories from "../_components/BlogCategories";
 
-export default function index() {
+export default function BlogPage() {
   return (
     <Section>
-      <Section.Title>
+      <Section.Title classNames="">
         Thailand Real Estate News, Property Guides, Project Reviews and more.
       </Section.Title>
       <Section.Description classNames="mb-10">

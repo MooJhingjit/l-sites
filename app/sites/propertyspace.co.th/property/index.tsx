@@ -72,7 +72,7 @@ const PropertyInfo = () => {
     <div className="lg:border-r lg:border-gray-200  lg:pr-8 ">
       <PropertyInfoSection label='Overview'>
         <div className="prose prose-sm mt-4 text-gray-500">
-          <p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee it's own look.</p>
+          <p>The Basic tee is an honest new take on a classic. The tee uses super soft, pre-shrunk cotton for true comfort and a dependable fit. They are hand cut and sewn locally, with a special dye technique that gives each tee  own look.</p>
           <p>Looking to stock your closet? The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.</p>
         </div>
       </PropertyInfoSection >

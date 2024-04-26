@@ -11,7 +11,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
-import Loading from '@/app/(web)/[locale]/(home)/loading'
 import { LoaderCircle } from 'lucide-react'
 
 

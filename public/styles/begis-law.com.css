@@ -1,0 +1,22 @@
+:root {
+  --background: rgb(255, 255, 255);
+  --foreground: rgb(8, 8, 10);
+  --card: rgb(255, 255, 255);
+  --card-foreground: rgb(8, 8, 10);
+  --popover: rgb(255, 255, 255);
+  --popover-foreground: rgb(8, 8, 10);
+  --primary: rgb(22, 163, 73);
+  --primary-foreground: rgb(254, 241, 242);
+  --secondary: rgb(244, 244, 245);
+  --secondary-foreground: rgb(23, 23, 27);
+  --muted: rgb(244, 244, 245);
+  --muted-foreground: rgb(113, 113, 122);
+  --accent: rgb(244, 244, 245);
+  --accent-foreground: rgb(23, 23, 27);
+  --destructive: rgb(238, 68, 68);
+  --destructive-foreground: rgb(249, 249, 249);
+  --border: rgb(227, 227, 231);
+  --input: rgb(227, 227, 231);
+  --ring: rgb(22, 163, 73);
+  --radius: 0.5rem;
+}

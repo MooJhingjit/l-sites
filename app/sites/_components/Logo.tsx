@@ -1,5 +1,5 @@
 import React from 'react'
-import { getDomain } from '../utils/site.helpers';
+import { getDomain } from '@/lib/utils';
 import Image from 'next/image';
 
 type Props = {

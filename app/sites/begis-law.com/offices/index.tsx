@@ -60,7 +60,7 @@ export default function Offices() {
               Nairobi, Kenya
             </h2>
             <p className="mb-9 text-gray-900 text-base">
-              Nestled in the heart of Kenya's bustling capital, our Nairobi
+              Nestled in the heart of  bustling capital, our Nairobi
               office serves as a beacon of legal excellence, offering
               comprehensive services in a diverse and dynamic environment.
             </p>

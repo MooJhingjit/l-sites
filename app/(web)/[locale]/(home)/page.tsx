@@ -17,7 +17,7 @@ export async function generateMetadata() {
   };
 }
 
-export default function Home({ params, searchParams }: Readonly<Props>) {
+export default function HomePage({ params, searchParams }: Readonly<Props>) {
 
   return <PageController
     params={{ ...params, routes: ['home'] }}

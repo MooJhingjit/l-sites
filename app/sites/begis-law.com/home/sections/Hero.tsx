@@ -1,6 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
-import { classNames } from "../../../utils/component.helpers";
+import { classNames } from "@/lib/client-utils";
 import Link from "next/link";
 export default function Hero() {
   return (
@@ -10,7 +10,7 @@ export default function Hero() {
           Grow fast, get things done with ease
         </p>
         <h1 className="mb-14 font-heading text-2xl md:text-3xl text-white font-bold">
-          Begi's Law Offices provide accessible, innovative legal services for
+          Begis Law Offices provide accessible, innovative legal services for
           all, spanning personal to corporate law with skilled staff.
         </h1>
         <div className="flex flex-wrap -m-3 mb-20 items-center">
@@ -39,13 +39,13 @@ export default function Hero() {
               />
             </div>
             <div className="flex-1 p-3">
-              <p className="mb-4 text-gray-300 text-base">
+              <p className="mb-4 text-base text-primary">
                 “Empowering Justice, One Case at a Time. Explore Our Commitment
                 to Excellence and Discover How We Make a Difference in Every
-                Client's Life. Your Fight for Justice Starts Here.”
+                Clients Life. Your Fight for Justice Starts Here.”
               </p>
               <p className="font-heading text-white text-base">
-                Denny Jones, founder of BEGI'S Law
+                Denny Jones, founder of BEGIS Law
               </p>
             </div>
           </div>
