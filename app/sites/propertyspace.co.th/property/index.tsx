@@ -8,7 +8,7 @@ export default function PropertyPage({ params, searchParams }: {
   params: Params
   searchParams: SearchParams
 }) {
-  console.log(params.slug)
+  // console.log(params.slug)
   return (
     <div className="">
 

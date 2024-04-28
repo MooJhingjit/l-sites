@@ -2,32 +2,38 @@ import React from "react";
 import NavigationClientWrapper from "./_components/NavigationClientWrapper";
 import FooterWrapper from "./_components/FooterWrapper";
 import NavigationA from "@components/navigation/NavigationA";
+import { SearchParams } from "@/lib/definitions";
 
 type Props = {
   routes: string[];
+  searchParams: SearchParams
   children: React.ReactNode;
 };
 const navigation = [
-  { name: "Buy", href: "/for-sale/properties" },
-  { name: "Rent", href: "/for-rent/properties" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact Us", href: "/contact-us" },
+  {key: 'for-sale', name: "Buy", href: "/for-sale/properties" },
+  {key: 'for-rent', name: "Rent", href: "/for-rent/properties" },
+  {key: 'blog', name: "Blog", href: "/blog" },
+  {key: 'contact-us', name: "Contact Us", href: "/contact-us" },
 ];
 
 
 export default function Layout(props: Readonly<Props>) {
   const routeName = props.routes[0]
-  const routeWithBackground = ['home']
-  const stickOnTop = routeWithBackground.includes(routeName ?? "home")
-  const hideFooter = ['for-sale', 'for-rent'].includes(routeName ?? "home")
+  const isNavSticky = ['home'].includes(routeName ?? "home")
+  const hideFooter = ["full-search"].includes(routeName ?? "home")
+
+  // If the route is full-search, we need to get the tenure from the search params
+  const currentRoute = routeName === "full-search" ? props.searchParams.tenure : routeName
+
   return (
     <>
       <main className="relative ">
-        <NavigationClientWrapper stickOnTop={stickOnTop}>
+        <NavigationClientWrapper isNavSticky={isNavSticky}>
           <NavigationA
+            currentRoute={currentRoute}
             phone="02-123-4567"
             navigation={navigation}
-            isBackgroundTransparent={stickOnTop} />
+            isTransparentBg={isNavSticky} />
         </NavigationClientWrapper>
         {props.children}
       </main>

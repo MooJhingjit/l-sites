@@ -1,7 +1,6 @@
-import React from 'react'
+import Loading from "@/components/Loading";
+import React from "react";
 
-export default function loading() {
-  return (
-    <div>contact us loading..</div>
-  )
+export default function LoadingPage() {
+  return <Loading />;
 }

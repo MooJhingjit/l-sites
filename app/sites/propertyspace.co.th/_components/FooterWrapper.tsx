@@ -2,37 +2,30 @@ import React from 'react'
 import FooterA from '../../_components/footers/FooterA'
 
 const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+  "Property for Sale": [
+    { name: 'Bangkok properties for sale', href: '#' },
+    { name: 'Pattaya properties for sale', href: '#' },
+    { name: 'Phuket properties for sale', href: '#' },
+    { name: 'Chiang Mai properties for sale', href: '#' },
   ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+  "Property for Rent": [
+    { name: 'Bangkok properties for rent', href: '#' },
+    { name: 'Pattaya properties for rent', href: '#' },
+    { name: 'Phuket properties for rent', href: '#' },
+    { name: 'Chiang Mai properties for rent', href: '#' },
   ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+  Explore: [
+    { name: 'Buy a Property in Thailand', href: '#' },
+    { name: 'Rent a Property in Thailand', href: '#' },
+    { name: 'Property Guides & News', href: '#' },
+    { name: 'Contact Us', href: '#' },
   ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
-
 }
 
 export default function FooterWrapper() {
 
   return (
-    <div className="mt-20">
+    <div className="mt-10">
       <FooterA
         links={navigation}
         socialLinks={[
@@ -100,6 +93,8 @@ export default function FooterWrapper() {
         ]}
         description="Making the world a better place through constructing elegant hierarchies."
         copyRight="&copy; 2020 Your Company, Inc. All rights reserved."
+        privacyPolicyLink="#"
+        termsOfServiceLink="#"
       />
     </div>
   )

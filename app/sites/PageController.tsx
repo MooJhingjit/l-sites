@@ -1,10 +1,14 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import InvalidDomain from "@components/exception/InvalidDomain";
-import { getDomain, decodeSearchParams } from "@/lib/utils";
+import { getSite, decodeSearchParams } from "@/lib/utils";
 import { Params, SearchParams } from "@/lib/definitions";
 
-const loadDynamicPage = (domain: string, params: Params, searchParams: SearchParams) => {
+const loadDynamicPage = (
+  domain: string,
+  params: Params,
+  searchParams: SearchParams
+) => {
   const layoutPath = `./${domain}/layout`;
 
   return dynamic(async () => {
@@ -30,7 +34,7 @@ const loadDynamicPage = (domain: string, params: Params, searchParams: SearchPar
       Layout.displayName = `${domain}Layout`;
 
       const DynamicComponent = () => (
-        <Layout routes={params.routes}>
+        <Layout routes={params.routes} searchParams={searchParams}>
           <Page searchParams={searchParams} params={params} />
         </Layout>
       );
@@ -39,31 +43,34 @@ const loadDynamicPage = (domain: string, params: Params, searchParams: SearchPar
       DynamicComponent.displayName = `${domain}DynamicComponent`;
 
       return DynamicComponent;
-
     } catch (error) {
       console.error(error);
-      const InvalidDomain = () => (<InvalidDomain />);
+      const InvalidDomain = () => <InvalidDomain />;
       InvalidDomain.displayName = `${domain}InvalidDomain`;
-      return InvalidDomain
+      return InvalidDomain;
     }
   });
 };
 
 type Props = {
   params: Params;
-  searchParams: SearchParams
-}
+  searchParams: SearchParams;
+};
 
 export default async function PageController(props: Readonly<Props>) {
   const { searchParams, params } = props;
   // console.log("original parameters", params, searchParams)
-  const domain = getDomain();
+  const { domain } = getSite();
 
   if (!domain) {
     return <InvalidDomain />;
   }
 
   // to support url localization the searchParams should be decoded (encoded in the url by default)
-  const DynamicPage = await loadDynamicPage(domain, params, decodeSearchParams(searchParams));
+  const DynamicPage = await loadDynamicPage(
+    domain,
+    params,
+    decodeSearchParams(searchParams)
+  );
   return <DynamicPage />;
 }

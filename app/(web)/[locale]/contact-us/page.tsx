@@ -8,7 +8,6 @@ type Props = {
 
 export default async function ContactUsPage({ params, searchParams }: Readonly<Props>) {
 
-  
   return (
     <PageController
       params={{ ...params, routes: ['contact-us'] }}
@@ -16,10 +15,3 @@ export default async function ContactUsPage({ params, searchParams }: Readonly<P
     />
   );
 }
-
-
-// import PageController from "@/app/sites/PageController";
-
-// export default async function page() {
-//   return <PageController routePattern={['contact']} />;
-// }
