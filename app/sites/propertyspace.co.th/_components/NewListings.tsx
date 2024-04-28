@@ -6,7 +6,7 @@ export default function NewListing() {
   return (
     <div className="-mt-[140px] container mx-auto px-4 sm:px-6  lg:px-8 relative z-10">
       <h2
-        className="capitalize font-heading font-semibold text-3xl  text-white  pb-5"
+        className="capitalize font-heading font-semibold text-3xl text-primary-foreground  pb-5"
       >
         Explore Our Latest New Listings Today
       </h2>

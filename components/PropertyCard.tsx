@@ -1,27 +1,25 @@
-"use client";
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
 import { Button } from './ui/button';
 
-export default function PropertyCard({ image }: { image: string }) {
+export default function PropertyCard({ image }: Readonly<{ image: string }>) {
   return (
     <div
       className={twMerge(
-        " rounded-lg shadow-lg p-1",
+        "rounded-lg shadow-lg p-1",
         "flex flex-col",
         "transition-transform duration-300 ease-in-out transform hover:-translate-y-1",
       )}
     >
-      <div className="absolute inset-0 bg-white  rounded-lg opacity-20 z-10 h-full"></div>
+      <div className="absolute inset-0 bg-primary-foreground  rounded-lg opacity-20 z-10 h-full"></div>
       <div className=" bg-gray-200 rounded-lg mb-4 relative z-20">
-
         <img src={`/${image}`} className='object-cover w-full rounded-lg overflow-hidden' alt='' />
       </div>
       <div className="px-4 relative z-20">
         <h3
           className={twMerge(
             "text-lg font-semibold",
-            "text-gray-800",
+            "text-primary",
           )}
         >
           3 Bedroom House in London
@@ -29,7 +27,7 @@ export default function PropertyCard({ image }: { image: string }) {
         <p
           className={twMerge(
             "text-sm",
-            "text-gray-600",
+            "text-primary",
             "mt-2",
           )}
         >
@@ -50,7 +48,7 @@ export default function PropertyCard({ image }: { image: string }) {
             <span
               className={twMerge(
                 "text-lg font-semibold",
-                "text-gray-800",
+                "text-primary",
               )}
             >
               $250,000

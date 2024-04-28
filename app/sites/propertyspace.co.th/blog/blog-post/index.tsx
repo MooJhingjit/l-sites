@@ -30,7 +30,7 @@ export default function index(props: any) {
               >
                 Denny Bailey
               </a>
-              <div className="w-px h-8 mx-4 sm:mx-8 bg-gray-200"></div>
+              <div className="w-px h-8 mx-4 sm:mx-8 bg-secondary"></div>
               <div className="flex items-center">
                 <svg
                   width="24"
@@ -152,16 +152,16 @@ export default function index(props: any) {
             </p>
 
             <div className="mt-10 flex space-x-2">
-              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+              <span className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-0">
                 Neighborhood
               </span>
-              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+              <span className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-0">
                 Bangkok
               </span>
-              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+              <span className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-0">
                 Lifestyle
               </span>
-              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+              <span className="inline-flex items-center rounded-md bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground ring-0">
                 Location Guide
               </span>
             </div>

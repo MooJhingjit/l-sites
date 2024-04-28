@@ -10,8 +10,8 @@ export default function Hero() {
       <div className="h-full mx-auto flex pt-32">
         <div className=" mx-auto  w-full">
 
-          <div className="text-white flex items-center justify-center flex-col  max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-heading font-bold text-center text-white">{t("title")}</h1>
+          <div className="text-primary-foreground flex items-center justify-center flex-col  max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl font-heading font-bold text-center text-primary-foreground">{t("title")}</h1>
 
           </div>
           <div className="relative sm:rounded-lg  mt-16 max-w-5xl mx-auto">

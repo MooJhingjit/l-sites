@@ -4,11 +4,11 @@ import React from "react";
 
 export default function ArticleCard({ image }: { image: string }) {
   return (
-    <div className="w-full  mb-12 w-full sm:max-w-sm bg-gray-50">
+    <div className="w-full  mb-12 sm:max-w-sm bg-secondary rounded-md overflow-hidden">
       <div className=" mx-auto">
         <img className="block w-full h-64  object-cover" src={image} alt="" />
         <div className="p-4">
-          <p className="text-sm font-semibold uppercase text-gray-400 mb-3">
+          <p className="text-sm font-semibold uppercase text-muted-foreground mb-3">
             10 JUN 2022
           </p>
           <Link
@@ -22,7 +22,7 @@ export default function ArticleCard({ image }: { image: string }) {
           </p>
           <Link
             href="/blog/this-is-a-blog-post "
-            className="flex  items-center text-gray-600"
+            className="flex  items-center text-muted-foreground hover:text-primary"
             passHref
           >
             <span className="mr-4 font-semibold ">Read more</span>

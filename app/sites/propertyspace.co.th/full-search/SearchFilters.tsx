@@ -21,7 +21,7 @@ export default function SearchFilters() {
       <div className="">
         <div className="flex justify-between items-center">
           <div className="flex space-x-1 items-center">
-            <span className="inline-flex items-center rounded bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+            <span className="inline-flex items-center rounded-full bg-secondary px-1.5 py-0.5 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-gray-500/10">
               2
             </span>
             <h4 className="text-sm font-semibold">Filters</h4>
@@ -34,7 +34,7 @@ export default function SearchFilters() {
             </CollapsibleTrigger>
           </div>
 
-          <Button variant={"secondary"} size="sm">
+          <Button variant={"overlay"} size="sm">
             Sort
           </Button>
         </div>
