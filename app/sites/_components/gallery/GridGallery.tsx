@@ -1,8 +1,18 @@
+import { ExpandIcon, HandIcon } from "lucide-react";
 import React from "react";
 
 export default function GridGallery() {
   return (
-    <div className="flex flex-wrap -mx-2">
+    // hidden group-hover:flex
+    <div className="flex flex-wrap -mx-2 cursor-pointer group relative">
+      <div className="hidden group-hover:flex absolute inset-0   justify-end bg-white/20 ">
+        <div className="top-7 right-5 relative ">
+          <div className="flex items-center space-x-2">
+            <ExpandIcon size={20} className="text-white/80 mx-auto" />
+            <p className="text-white/80">Click to view gallery</p>
+          </div>
+        </div>
+      </div>
       <div className="flex flex-wrap w-full md:w-1/2 lg:h-full">
         <div className="w-1/2 h-64 lg:h-1/3 p-2">
           <img
