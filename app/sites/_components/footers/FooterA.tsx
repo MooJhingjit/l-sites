@@ -25,7 +25,7 @@ export default function FooterA(props: Readonly<Props>) {
     privacyPolicyLink,
   } = props;
   return (
-    <footer className="bg-gray-900 " aria-labelledby="footer-heading">
+    <footer className="bg-primary" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

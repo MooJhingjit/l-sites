@@ -52,7 +52,7 @@ export default function NavigationA(props: Readonly<Props>) {
               ))}
               <li className="">
                 <Button
-                  variant={isTransparentBg ? "overlay" : "secondary"}
+                  variant={isTransparentBg ? "overlay" : "muted"}
                   className="space-x-2"
                 >
                   <Phone size={12} />

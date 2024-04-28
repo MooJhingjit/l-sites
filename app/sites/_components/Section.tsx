@@ -6,7 +6,6 @@ interface Props {
   classNames?: string;
 }
 export default function Section(props: Readonly<Props>) {
-
   const { children, classNames } = props;
   return (
     <div className=" bg-white pt-10">
@@ -25,19 +24,38 @@ export default function Section(props: Readonly<Props>) {
 const Title = ({
   children,
   classNames,
+  isHeader,
+}: {
+  children: React.ReactNode;
+  classNames?: string;
+  isHeader?: boolean;
+}) => {
+  const classes = twMerge(
+    "text-4xl font-heading font-semibold text-center text-gray-900",
+    classNames
+  );
+  if (isHeader) {
+    return <h1 className={classes}>{children}</h1>;
+  }
+  return <h2 className={classes}>{children}</h2>;
+};
+
+const Subtitle = ({
+  children,
+  classNames,
 }: {
   children: React.ReactNode;
   classNames?: string;
 }) => {
   return (
-    <h2
+    <p
       className={twMerge(
-        "capitalize mb-5 max-w-2xl mx-auto font-heading font-semibold text-center text-4xl  text-gray-900",
+        "text-base mx-auto text-center text-gray-600",
         classNames
       )}
     >
       {children}
-    </h2>
+    </p>
   );
 };
 
@@ -51,7 +69,7 @@ const Description = ({
   return (
     <p
       className={twMerge(
-        "mb-20 text-base max-w-md mx-auto text-center text-gray-600",
+        "mb-20 text-base mx-auto text-center text-gray-600",
         classNames
       )}
     >
@@ -61,4 +79,5 @@ const Description = ({
 };
 
 Section.Title = Title;
+Section.Subtitle = Subtitle;
 Section.Description = Description;
