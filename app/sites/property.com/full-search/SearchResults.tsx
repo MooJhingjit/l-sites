@@ -1,4 +1,4 @@
-import PropertyCard from "@/app/sites/_components/PropertyCard";
+import PropertyCard from "@/app/sites/_components/cards/PropertyCard";
 import React from "react";
 
 export default function SearchResults() {

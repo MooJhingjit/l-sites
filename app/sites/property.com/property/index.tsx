@@ -2,7 +2,7 @@ import { Params, SearchParams } from "@/lib/definitions";
 import React from "react";
 import Section from "../../_components/Section";
 
-import PropertyCard from "@/app/sites/_components/PropertyCard";
+import PropertyCard from "@/app/sites/_components/cards/PropertyCard";
 
 import Gallery from "./Gallery";
 import HeaderInfo from "./HeaderInfo";

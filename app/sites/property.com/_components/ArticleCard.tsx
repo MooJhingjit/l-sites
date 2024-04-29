@@ -4,20 +4,20 @@ import React from "react";
 
 export default function ArticleCard({ image }: { image: string }) {
   return (
-    <div className="w-full  mb-12 sm:max-w-sm bg-secondary rounded-md overflow-hidden">
+    <div className="w-full sm:max-w-sm bg-muted rounded-md overflow-hidden shadow-lg">
       <div className=" mx-auto">
         <img className="block w-full h-64  object-cover" src={image} alt="" />
         <div className="p-4">
-          <p className="text-sm font-semibold uppercase text-muted-foreground mb-3">
+          <p className="text-sm  uppercase text-muted-foreground mb-3">
             10 JUN 2022
           </p>
           <Link
             href="/blog/this-is-a-blog-post"
             passHref
           >
-            <h3 className="font-heading font-medium text-lg mt-2 mb-4">There are many variations of passages of Lorem Ipsum available</h3>
+            <h3 className=" text-lg font-semibold text-primary  mt-2 mb-4">There are many variations of passages of Lorem Ipsum available</h3>
           </Link>
-          <p className="leading-7 mb-4">
+          <p className=" mb-4">
             There are many variations of passages of Lorem Ipsum available.
           </p>
           <Link

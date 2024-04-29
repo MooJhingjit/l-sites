@@ -180,7 +180,7 @@ export default function index(props: any) {
           <ArticleCard image="https://shuffle.dev/acros-assets/images/blog/work-man-445x318.jpg" />
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-12">
           <BreadCrumbB />
         </div>
       </Section>

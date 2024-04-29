@@ -1,6 +1,6 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import { Button } from "../../../components/ui/button";
+import { Button } from "../../../../components/ui/button";
 import Link from "next/link";
 import { PinIcon, Building, ExternalLinkIcon } from "lucide-react";
 
@@ -11,7 +11,7 @@ export default function PropertyCard({ image }: Readonly<{ image: string }>) {
       className={twMerge(
         "rounded-lg shadow-lg p-1 group cursor-pointer",
         "flex flex-col",
-        "transition-transform duration-300 ease-in-out transform hover:-translate-y-1"
+        // "transition-transform duration-300 ease-in-out transform hover:-translate-y-1"
       )}
     >
       {/* <div className="absolute inset-0 bg-primary-foreground  rounded-lg opacity-20 z-10 h-full"></div> */}

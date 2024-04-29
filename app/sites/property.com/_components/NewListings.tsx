@@ -1,5 +1,5 @@
 import React from 'react'
-import PropertyCard from '@/app/sites/_components/PropertyCard'
+import PropertyCard from '@/app/sites/_components/cards/PropertyCard'
 import { Button } from '@/components/ui/button'
 
 export default function NewListing() {
@@ -13,7 +13,7 @@ export default function NewListing() {
 
       <PropertyCards />
       <div className="mt-8 flex items-center justify-center">
-        <Button variant={'secondary'}>View All</Button>
+        <Button variant={'muted'}>View All</Button>
       </div>
     </div>
   )

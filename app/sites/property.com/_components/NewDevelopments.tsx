@@ -1,6 +1,6 @@
 import React from 'react'
 import Section from '@/app/sites/_components/Section'
-import PropertyCard from '@/app/sites/_components/PropertyCard'
+import ProjectCard from '@/app/sites/_components/cards/ProjectCard'
 import { Button } from '@/components/ui/button'
 
 export default function NewDevelopments() {
@@ -11,7 +11,7 @@ export default function NewDevelopments() {
       </Section.Title>
       <DevelopmentCards />
       <div className="mt-8 flex items-center justify-center">
-        <Button variant={'default'}>View All</Button>
+        <Button variant={'muted'}>View All</Button>
       </div>
     </Section>
   )
@@ -21,9 +21,9 @@ export default function NewDevelopments() {
 const DevelopmentCards = () => {
   return (
     <div className="grid grid-cols-3 gap-6 mt-4">
-      <PropertyCard image="property-1.webp" />
-      <PropertyCard image="property-2.webp" />
-      <PropertyCard image="property-3.webp" />
+      <ProjectCard image="project-1.webp" />
+      <ProjectCard image="project-2.webp" />
+      <ProjectCard image="project-3.webp" />
     </div>
   )
 }

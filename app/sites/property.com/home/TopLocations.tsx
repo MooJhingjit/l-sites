@@ -33,7 +33,7 @@ export default function TopLocations() {
 
 const LocationComponent = (
   {
-    src = '/top-locations/patong.jpg',
+    src = '',
     alt = 'Patong'
   }: {
     src?: string,
@@ -55,7 +55,7 @@ const LocationComponent = (
         {alt}
       </p> */}
       <Image
-        src={src}
+        src={`/property.com${src}`}
         width={180}
         height={100}
         objectFit="cover"

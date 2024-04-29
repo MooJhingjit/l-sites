@@ -16,7 +16,7 @@ export default function LatestNews() {
         <ArticleCard image="https://shuffle.dev/acros-assets/images/blog/work-man-445x318.jpg" />
       </div>
       <div className="mt-8 flex items-center justify-center">
-        <Button variant={"default"}>View All</Button>
+        <Button variant={'muted'}>View All</Button>
       </div>
     </Section>
   );
