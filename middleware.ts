@@ -1,7 +1,7 @@
 // import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
-import { getSite } from "./lib/utils";
+import { getSite } from "./lib/server-utils";
 
 // Custom middleware to log or use the hostname
 export async function middleware(req: NextRequest) {

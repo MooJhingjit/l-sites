@@ -1,6 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
-import { classNames } from "@/lib/client-utils";
+import { classNames } from "@/lib/utils";
 import Link from "next/link";
 export default function Hero() {
   return (

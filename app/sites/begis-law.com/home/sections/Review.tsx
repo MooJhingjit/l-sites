@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { classNames } from "@/lib/client-utils";
+import { classNames } from "@/lib/utils";
 import Section from "../../_components/Section";
 
 const reviews = {

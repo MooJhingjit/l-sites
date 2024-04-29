@@ -8,7 +8,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { generatePagination } from "@/lib/client-utils";
+import { generatePagination } from "@/lib/utils";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export default function PaginationA({ totalPages }: { totalPages: number }) {

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
-import { getSite } from "@/lib/utils";
+import { getSite } from "@/lib/server-utils";
 import loadMessages from "./lib/data";
 
 // Can be imported from a shared config

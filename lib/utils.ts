@@ -1,61 +1,43 @@
-import { SearchParams } from "@/lib/definitions";
-import { headers } from "next/headers";
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-type SiteKeys =
-  | "sorasak.com"
-  | "gps.com"
-  | "begis-law.com"
-  | "invalid"
-  | "propertyspace.co.th";
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
-type SiteConfig = {
-  locales: string[];
-  defaultLocale: string;
-};
+export function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
+}
 
-const siteConfig: Record<SiteKeys, SiteConfig> = {
-  "sorasak.com": {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-  "gps.com": {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-  "begis-law.com": {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-  "propertyspace.co.th": {
-    locales: ["en", "th"],
-    defaultLocale: "th",
-  },
-  invalid: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-};
+export const generatePagination = (currentPage: number, totalPages: number) => {
+  // If the total number of pages is 7 or less,
+  // display all pages without any ellipsis.
+  if (totalPages <= 7) {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
 
-const getDomain = () => {
-  let host = headers().get("host") ?? "invalid";
-  const hostname = host.replace("test.", "").split(":")[0];
-  return hostname as SiteKeys;
-};
+  // If the current page is among the first 3 pages,
+  // show the first 3, an ellipsis, and the last 2 pages.
+  if (currentPage <= 3) {
+    return [1, 2, 3, '...', totalPages - 1, totalPages];
+  }
 
-export const getSite = () => {
-  const domain = getDomain();
-  return {
-    domain,
-    config: siteConfig[domain],
-  };
-};
+  // If the current page is among the last 3 pages,
+  // show the first 2, an ellipsis, and the last 3 pages.
+  if (currentPage >= totalPages - 2) {
+    return [1, 2, '...', totalPages - 2, totalPages - 1, totalPages];
+  }
 
-export const decodeSearchParams = (searchParams: SearchParams) => {
-  const decodedSearchParams: SearchParams = {};
-
-  Object.keys(searchParams).forEach((key) => {
-    decodedSearchParams[key] = decodeURIComponent(searchParams[key]);
-  });
-
-  return decodedSearchParams;
+  // If the current page is somewhere in the middle,
+  // show the first page, an ellipsis, the current page and its neighbors,
+  // another ellipsis, and the last page.
+  return [
+    1,
+    '...',
+    currentPage - 1,
+    currentPage,
+    currentPage + 1,
+    '...',
+    totalPages,
+  ];
 };

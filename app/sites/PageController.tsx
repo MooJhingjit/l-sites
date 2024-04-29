@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import InvalidDomain from "@components/exception/InvalidDomain";
-import { getSite, decodeSearchParams } from "@/lib/utils";
+import { getSite, decodeSearchParams } from "@/lib/server-utils";
 import { Params, SearchParams } from "@/lib/definitions";
 
 const loadDynamicPage = (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { classNames } from "@/lib/client-utils";
+import { classNames } from "@/lib/utils";
 import Logo from "../Logo";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
@@ -41,7 +41,7 @@ export default function NavigationA(props: Readonly<Props>) {
                   <Link
                     href={item.href}
                     className={classNames(
-                      !isTransparentBg ? "text-white hover:border-b" : "text-primary hover:text-primary-foreground hover:border-b ",
+                      !isTransparentBg ? "text-white hover:border-b" : "text-primary-foreground hover:border-b ",
                       (currentRoute === item.key) ? "border-b border-white" : "",
                       "pb-1"
                     )}

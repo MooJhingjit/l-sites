@@ -1,0 +1,18 @@
+{
+  "home": {
+    "meta": {
+      "title": "Pattaya Real Estate | Condos, Houses, Villas for Sale & Rent",
+      "description": "Pattaya Real Estate | Condos, Houses, Villas for Sale & Rent"
+    },
+    "hero": {
+      "title": "Find Your Perfect Space in Phuket",
+      "description": "Discover Your Perfect Space in Phuket Real Estate"
+    }
+  },
+  "for-sale": {
+    "meta": {
+      "title": "{bed} beds {propertyType} for sale in {country} | PropertySpace",
+      "description": "PropertySpace"
+    }
+  }
+}

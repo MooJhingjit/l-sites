@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { classNames } from "@/lib/client-utils";
+import { classNames } from "@/lib/utils";
 
 const navigation = [
   { name: "Business" },

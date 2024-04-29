@@ -1,0 +1,18 @@
+{
+  "home": {
+    "meta": {
+      "title": "ซื้อ ขาย เช่า บ้าน คอนโด ในเขตพื้นที่พัทยา",
+      "description": "ซื้อ ขาย เช่า บ้าน คอนโด ในเขตพื้นที่พัทยา"
+    },
+    "hero": {
+      "title": "ซื้อขาย เช่า บ้าน คอนโด ในเขตพื้นที่พัทยา",
+      "description": ""
+    }
+  },
+  "for-sale": {
+    "meta": {
+      "title": "{propertyType} for sale in Thailand | PropertySpace",
+      "description": "{propertyType} for sale in Thailand | PropertySpace"
+    }
+  }
+}
