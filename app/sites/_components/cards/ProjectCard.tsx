@@ -21,7 +21,7 @@ export default function ProjectCard({ data }: Readonly<{ data: any }>) {
     <Link
       href="/property/london/3-bedroom-house"
       className={twMerge(
-        "rounded-lg shadow-lg p-1 group cursor-pointer",
+        "rounded-lg shadow-lg group cursor-pointer",
         "flex flex-col min-w-[350px] md:min-w-[400px]",
         // "transition-transform duration-300 ease-in-out transform hover:-translate-y-1"
       )}

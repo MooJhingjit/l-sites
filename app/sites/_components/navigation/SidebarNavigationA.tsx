@@ -1,8 +1,6 @@
 "use client"
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon } from '@heroicons/react/24/outline'
-import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 
 export default function SidebarNavigationA() {
@@ -10,11 +8,11 @@ export default function SidebarNavigationA() {
 
   return (
     <>
-      <Button variant="ghost" className="p-0 ">
+      <button >
         <Menu size={20}
           onClick={() => setOpen(true)}
         />
-      </Button>
+      </button>
       <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-[999]" onClose={setOpen}>
         <Transition.Child
