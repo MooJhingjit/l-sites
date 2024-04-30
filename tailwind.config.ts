@@ -87,6 +87,7 @@ const config = {
     require("tailwindcss-animate"),
     require('@tailwindcss/container-queries'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
   ],
 } satisfies Config
 

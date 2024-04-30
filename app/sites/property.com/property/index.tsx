@@ -9,10 +9,8 @@ import HeaderInfo from "./HeaderInfo";
 import EnquiryForm from "./EnquiryForm";
 import PropertyOverview from "./PropertyOverview";
 import { propertyCardData } from "@/lib/data";
-import { Phone, Mail, ArrowUp } from "lucide-react";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import ActionFooter from "../_components/ActionFooter";
+import FooterAction from "./FooterAction";
+
 
 export default function PropertyPage({
   params,
@@ -56,24 +54,7 @@ export default function PropertyPage({
           </div>
         </Section>
       </div>
-
-      <ActionFooter>
-        <div className="flex items-center justify-evenly bg-primary h-14 space-x-4 rounded-none shadow-lg p-4">
-          <Button variant={'muted'} className="min-w-[100px]"  >
-            <Phone size={14} className="mr-2" />
-            <Label>Call</Label>
-          </Button>
-          <Button variant={'muted'} className="flex-1" >
-            <Mail size={14} className="mr-2" />
-            <Label>
-              I'm interested
-            </Label>
-          </Button>
-          <Button variant={'muted'} className="min-w-[50px]"  >
-            <ArrowUp size={14}  />
-          </Button>
-        </div>
-      </ActionFooter>
+      <FooterAction />
     </>
   );
 }

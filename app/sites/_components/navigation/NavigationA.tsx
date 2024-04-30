@@ -76,7 +76,7 @@ export default function NavigationA(props: Readonly<Props>) {
                   <Phone size={12} />
                   <span>{phone}</span>
                 </div>
-                <SidebarNavigationA  />
+                <SidebarNavigationA navigation={navigation} />
               </div>
             </Button>
           </div>

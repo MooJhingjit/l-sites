@@ -1,10 +1,10 @@
 import React from 'react'
-import GridGallery from '../../_components/gallery/GridGallery';
+import GridGalleryB from '../../_components/gallery/GridGalleryB';
 
 export default function Gallery() {
   return (
     <div className="">
-      <GridGallery />
+      <GridGalleryB />
     </div>
   );
 }

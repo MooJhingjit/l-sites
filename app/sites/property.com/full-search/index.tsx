@@ -14,18 +14,18 @@ export default async function PropertyForSale({
   return (
     <div className="relative z-10 overflow-hidden">
       <div className="flex">
-        <div className="hidden fixed md:block  z-10 overflow-hidden sm:relative  bg-gray-100 flex-1 ">
+        <div className="hidden fixed lg:block  z-10 overflow-hidden sm:relative  bg-gray-100 flex-0 ">
           <MapSearch />
         </div>
 
-        <div className="@container md:h-[calc(100vh-80px)] overflow-y-auto overflow-x-hidden w-full md:flex-1 ">
+        <div className="@container lg:h-[calc(100vh-80px)] overflow-y-auto overflow-x-hidden w-full   ">
           <div className="px-4">
             <div className="flex items-center justify-between mt-4">
               <h1 className="text-2xl font-bold">Properties for </h1>
             </div>
             <SearchFilters />
           </div>
-          <div className="grid grid-cols-1 @md:grid-cols-2 @4xl:grid-cols-3 @5xl:grid-cols-4 gap-4 p-4">
+          <div className="grid grid-cols-1 @xl:grid-cols-2 @4xl:grid-cols-3 gap-4 p-4">
             <SearchResults />
           </div>
           <SearchPagination totalPages={10} />

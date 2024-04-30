@@ -17,7 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const EnquiryForm = () => {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] relative">
       <CardHeader>
         <CardTitle>CONTACT AGENT</CardTitle>
         <CardDescription>

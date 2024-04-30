@@ -23,18 +23,18 @@ export default function PropertyCard({ data }: Readonly<{ data: any }>) {
       href="/property/london/3-bedroom-house"
       className={twMerge(
         "rounded-lg shadow-lg  group cursor-pointer",
-        "flex flex-col  min-w-[300px]",
+        "flex flex-col min-w-[320px]   w-full",
         // "transition-transform duration-300 ease-in-out transform hover:-translate-y-1"
       )}
     >
       {/* <div className="absolute inset-0 bg-primary-foreground  rounded-lg opacity-20 z-10 h-full"></div> */}
-      <div className="  rounded-lg mb-4 relative z-20">
+      <div className="  rounded-lg mb-4 relative z-20 w-full ">
         <div className="group-hover:block hidden absolute top-2 right-2">
           <ExternalLinkIcon size={18} className="text-white/60" />
         </div>
         <img
           src={`/${image}`}
-          className="object-cover  rounded-lg overflow-hidden w-[300px]"
+          className="object-cover  rounded-lg overflow-hidden w-full"
           alt=""
         />
       </div>
