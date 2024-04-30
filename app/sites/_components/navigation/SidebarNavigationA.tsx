@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 
 export default function SidebarNavigationA() {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
   return (
     <>
