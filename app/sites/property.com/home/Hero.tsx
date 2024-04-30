@@ -10,13 +10,13 @@ export default function Hero() {
   const t = useTranslations("home.hero");
   return (
     <HeroOverlay backgroundImage="https://img.nestopa.com/img/projects/5099/sQOYrI1iUYRRCi5yIEK9xeo5T3tRmVFknJO23k02.jpg?p=full">
-      <div className="h-full mx-auto flex pt-52">
-        <div className=" mx-auto  w-full">
+      <div className="h-full mx-auto flex pt-40">
+        <div className=" mx-auto  w-full px-8 lg:px-0">
 
-          <div className="text-primary-foreground flex items-center justify-center flex-col  max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl font-heading font-bold text-center text-primary-foreground">{t("title")}</h1>
+          <div className="text-primary-foreground flex items-start sm:items-center justify-center flex-col  max-w-4xl mx-auto">
+            <h1 className="text-xl sm:text-5xl font-heading font-bold text-center text-primary-foreground">{t("title")}</h1>
           </div>
-          <div className="relative sm:rounded-lg  mt-16 max-w-3xl mx-auto">
+          <div className="relative sm:rounded-lg mt-6 sm:mt-10 max-w-3xl mx-auto">
             <HeroSearchFilter />
             <TopLocations/>
           </div>

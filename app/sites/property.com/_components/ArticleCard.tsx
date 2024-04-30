@@ -4,19 +4,15 @@ import React from "react";
 
 export default function ArticleCard({ image }: { image: string }) {
   return (
-    <div className="w-full sm:max-w-sm bg-muted rounded-md overflow-hidden shadow-lg">
-      <div className=" mx-auto">
-        <img className="block w-full h-64  object-cover" src={image} alt="" />
+    <Link href="/blog/this-is-a-blog-post" className="bg-muted  shadow-lg ">
+      <div className=" mx-auto min-w-[300px] rounded-md  overflow-hidden">
+        <img className="block  h-64  object-cover w-full" src={image} alt="" />
         <div className="p-4">
           <p className="text-sm  uppercase text-muted-foreground mb-3">
             10 JUN 2022
           </p>
-          <Link
-            href="/blog/this-is-a-blog-post"
-            passHref
-          >
-            <h3 className=" text-lg font-semibold text-primary  mt-2 mb-4">There are many variations of passages of Lorem Ipsum available</h3>
-          </Link>
+
+          <h3 className=" text-lg font-semibold text-primary  mt-2 mb-4">There are many variations of passages of Lorem Ipsum available</h3>
           <p className=" mb-4">
             There are many variations of passages of Lorem Ipsum available.
           </p>
@@ -30,6 +26,6 @@ export default function ArticleCard({ image }: { image: string }) {
           </Link>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

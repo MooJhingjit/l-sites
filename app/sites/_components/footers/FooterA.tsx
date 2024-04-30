@@ -50,13 +50,13 @@ export default function FooterA(props: Readonly<Props>) {
             </div>
           </div>
 
-          <div className="mt-10 xl:mt-0 flex justify-between 2xl:justify-evenly w-full col-span-3 @2xl:col-span-2">
+          <div className="mt-10 xl:mt-0 flex flex-col sm:flex-row space-y-8 sm:space-y-0 justify-between 2xl:justify-evenly w-full col-span-3 @2xl:col-span-2">
             {Object.keys(links).map((navigationKey) => (
               <div key={navigationKey}>
                 <h3 className="text-sm font-semibold leading-6 text-white">
                   {navigationKey}
                 </h3>
-                <ul className="mt-6 space-y-4">
+                <ul className="mt-3 space-y-4">
                   {links[navigationKey].map((item) => (
                     <li key={item.name}>
                       <a

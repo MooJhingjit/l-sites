@@ -8,6 +8,11 @@ import Gallery from "./Gallery";
 import HeaderInfo from "./HeaderInfo";
 import EnquiryForm from "./EnquiryForm";
 import PropertyOverview from "./PropertyOverview";
+import { propertyCardData } from "@/lib/data";
+import { Phone, Mail, ArrowUp } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import ActionFooter from "../_components/ActionFooter";
 
 export default function PropertyPage({
   params,
@@ -18,37 +23,58 @@ export default function PropertyPage({
 }) {
   // console.log(params.slug)
   return (
-    <div className="">
-      <Section classNames="pt-0">
-        {/* <Breadcrumb /> */}
+    <>
 
-        <HeaderInfo />
+      <div className="">
+        <Section classNames="pt-0">
+          {/* <Breadcrumb /> */}
 
-        <Gallery />
+          <HeaderInfo />
 
-        <div className=" pt-8 grid  grid-cols-12 gap-x-8 ">
-          <div className="lg:col-span-8 col-span-12">
-            <PropertyOverview />
+          <Gallery />
+
+          <div className=" pt-8 grid  grid-cols-12 gap-x-8 ">
+            <div className="lg:col-span-8 col-span-12">
+              <PropertyOverview />
+            </div>
+
+            <div className="hidden lg:block lg:col-span-4 sticky top-0">
+              <EnquiryForm />
+            </div>
           </div>
+        </Section>
 
-          <div className="hidden lg:block lg:col-span-4 sticky top-0">
-            <EnquiryForm />
+        <Section>
+          <Section.Title classNames="text-left text-xl mb-2">
+            Similar Properties
+          </Section.Title>
+          <div className="flex items-center gap-3 overflow-auto pb-6">
+            <PropertyCard data={propertyCardData[0]} />
+            <PropertyCard data={propertyCardData[1]} />
+            <PropertyCard data={propertyCardData[2]} />
+            <PropertyCard data={propertyCardData[3]} />
           </div>
-        </div>
-      </Section>
+        </Section>
+      </div>
 
-      <Section>
-        <Section.Title classNames="text-left text-xl mb-2">
-          Similar Properties
-        </Section.Title>
-        <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          <PropertyCard image="property-1.webp" />
-          <PropertyCard image="property-2.webp" />
-          <PropertyCard image="property-3.webp" />
-          <PropertyCard image="property-4.webp" />
+      <ActionFooter>
+        <div className="flex items-center justify-evenly bg-primary h-14 space-x-4 rounded-none shadow-lg p-4">
+          <Button variant={'muted'} className="min-w-[100px]"  >
+            <Phone size={14} className="mr-2" />
+            <Label>Call</Label>
+          </Button>
+          <Button variant={'muted'} className="flex-1" >
+            <Mail size={14} className="mr-2" />
+            <Label>
+              I'm interested
+            </Label>
+          </Button>
+          <Button variant={'muted'} className="min-w-[50px]"  >
+            <ArrowUp size={14}  />
+          </Button>
         </div>
-      </Section>
-    </div>
+      </ActionFooter>
+    </>
   );
 }
 

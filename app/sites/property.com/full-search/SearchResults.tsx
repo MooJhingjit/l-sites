@@ -1,16 +1,18 @@
 import PropertyCard from "@/app/sites/_components/cards/PropertyCard";
+import { propertyCardData } from "@/lib/data";
 import React from "react";
 
 export default function SearchResults() {
   return (
     <>
-      <PropertyCard image="property-1.webp" />
-      <PropertyCard image="property-2.webp" />
-      <PropertyCard image="property-3.webp" />
-      <PropertyCard image="property-4.webp" />
-      <PropertyCard image="property-1.webp" />
-      <PropertyCard image="property-2.webp" />
-      <PropertyCard image="property-3.webp" />
+      <PropertyCard data={propertyCardData[0]} />
+      <PropertyCard data={propertyCardData[1]} />
+      <PropertyCard data={propertyCardData[2]} />
+      <PropertyCard data={propertyCardData[3]} />
+      <PropertyCard data={propertyCardData[0]} />
+      <PropertyCard data={propertyCardData[1]} />
+      <PropertyCard data={propertyCardData[2]} />
+      <PropertyCard data={propertyCardData[3]} />
     </>
   );
 }

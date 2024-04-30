@@ -20,7 +20,7 @@ export default function NavigationClientWrapper(props: Readonly<{ isNavSticky: b
 
   return (
     <div className={classNames(
-      'z-50',
+      'z-50 ',
       isNavSticky ? 'fixed top-0 left-0 right-0' : 'relative',
     )} style={{ opacity }}>
       {props.children}

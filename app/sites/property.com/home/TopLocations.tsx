@@ -4,24 +4,24 @@ import React from 'react'
 
 export default function TopLocations() {
   return (
-    <div className="mt-6">
+    <div className="mt-6 ">
       <h2 className='text-primary-foreground'>
-        Top Locations
+      Popular places
       </h2>
-      <div className="grid grid-cols-4 gap-4 mt-2">
-        <LocationComponent
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2">
+        <LocationCard
           src="/top-locations/patong.jpg"
           alt="Patong"
         />
-        <LocationComponent
+        <LocationCard
           src="/top-locations/rawai.jpg"
           alt="Rawai"
         />
-        <LocationComponent
+        <LocationCard
           src="/top-locations/phuket-town.jpg"
           alt="Phuket Town"
         />
-        <LocationComponent
+        <LocationCard
           src="/top-locations/big-buddha.jpg"
           alt="Big Buddha"
         />
@@ -31,7 +31,7 @@ export default function TopLocations() {
   )
 }
 
-const LocationComponent = (
+const LocationCard = (
   {
     src = '',
     alt = 'Patong'
@@ -42,24 +42,19 @@ const LocationComponent = (
   }
 ) => {
   return (
-    <Link href="/location/location" className="relative group">
-      {/* show overlay on hover */}
+    <Link href="/location/location" className="relative group max-w-[200px] ">
       <div className="flex items-center justify-center absolute  left-0 right-0 bottom-0 bg-black bg-opacity-40 rounded-sm">
         <p
-          className="text-white text-xl font-bold">
+          className="text-white  sm:text-xl font-bold">
           {alt}
         </p>
       </div>
-      {/* <p
-        className="group-hover:bottom-0 group-hover:right-0 absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center text-white text-xl font-bold rounded-sm">
-        {alt}
-      </p> */}
       <Image
         src={`/property.com${src}`}
-        width={180}
-        height={100}
-        objectFit="cover"
-        className="rounded-sm"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="rounded-sm w-full h-auto"
         alt={alt}
       />
     </Link>

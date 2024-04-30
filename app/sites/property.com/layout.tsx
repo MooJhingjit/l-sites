@@ -4,16 +4,18 @@ import FooterWrapper from "./_components/FooterWrapper";
 import NavigationA from "@components/navigation/NavigationA";
 import { SearchParams } from "@/lib/definitions";
 
+
+
 type Props = {
   routes: string[];
   searchParams: SearchParams
   children: React.ReactNode;
 };
 const navigation = [
-  {key: 'for-sale', name: "Buy", href: "/for-sale/properties" },
-  {key: 'for-rent', name: "Rent", href: "/for-rent/properties" },
-  {key: 'blog', name: "Blog", href: "/blog" },
-  {key: 'contact-us', name: "Contact Us", href: "/contact-us" },
+  { key: 'for-sale', name: "Buy", href: "/for-sale/properties" },
+  { key: 'for-rent', name: "Rent", href: "/for-rent/properties" },
+  { key: 'blog', name: "Blog", href: "/blog" },
+  { key: 'contact-us', name: "Contact Us", href: "/contact-us" },
 ];
 
 
@@ -40,6 +42,7 @@ export default function Layout(props: Readonly<Props>) {
       {
         hideFooter ? null : <FooterWrapper />
       }
+      
     </>
   );
 }
