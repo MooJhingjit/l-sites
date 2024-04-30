@@ -1,9 +1,11 @@
+
 import Link from "next/link";
 import React from "react";
 import { classNames } from "@/lib/utils";
 import Logo from "../Logo";
 import { Button } from "@/components/ui/button";
 import { Menu, Phone } from "lucide-react";
+import SidebarNavigationA from "./SidebarNavigationA";
 
 type Navigation = {
   name: string;
@@ -74,9 +76,7 @@ export default function NavigationA(props: Readonly<Props>) {
                   <Phone size={12} />
                   <span>{phone}</span>
                 </div>
-                <Button variant="ghost" className="p-0 ">
-                  <Menu size={20} />
-                </Button>
+                <SidebarNavigationA  />
               </div>
             </Button>
           </div>
