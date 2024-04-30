@@ -22,7 +22,7 @@ export default function ProjectCard({ data }: Readonly<{ data: any }>) {
       href="/property/london/3-bedroom-house"
       className={twMerge(
         "rounded-lg shadow-lg group cursor-pointer",
-        "flex flex-col min-w-[350px] md:min-w-[400px]",
+        "flex flex-col min-w-[350px] md:min-w-[400px] flex-1",
         // "transition-transform duration-300 ease-in-out transform hover:-translate-y-1"
       )}
     >
@@ -31,7 +31,7 @@ export default function ProjectCard({ data }: Readonly<{ data: any }>) {
         <div className="group-hover:block hidden absolute top-2 right-2 z-20">
           <ExternalLinkIcon size={18} className="text-white/60" />
         </div>
-        <div className="h-full w-[350px] md:w-[400px] relative z-10"  >
+        <div className="h-full w-[350px] md:w-full relative z-10"  >
 
           <Image
             src={`/${image}`}
