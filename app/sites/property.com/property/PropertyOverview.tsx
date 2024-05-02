@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   BookIcon,
@@ -162,6 +161,5 @@ const PropertyOverview = () => {
     </div>
   );
 };
-
 
 export default PropertyOverview;

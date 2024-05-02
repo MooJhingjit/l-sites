@@ -60,9 +60,9 @@ export default function Offices() {
               Nairobi, Kenya
             </h2>
             <p className="mb-9 text-gray-900 text-base">
-              Nestled in the heart of  bustling capital, our Nairobi
-              office serves as a beacon of legal excellence, offering
-              comprehensive services in a diverse and dynamic environment.
+              Nestled in the heart of bustling capital, our Nairobi office
+              serves as a beacon of legal excellence, offering comprehensive
+              services in a diverse and dynamic environment.
             </p>
             <p className="mb-9 text-gray-900 text-base">
               Languages spoken: English, Swahili, Kikuy
@@ -75,7 +75,6 @@ export default function Offices() {
               </div>
               <div className="w-full lg:w-auto p-2">
                 <Link
-
                   href="/offices/nairobi"
                   className="px-7 py-3.5  font-heading font-medium w-full lg:w-auto text-base text-gray-900 bg-white hover:bg-gray-50 border border-gray-300 rounded-md"
                 >

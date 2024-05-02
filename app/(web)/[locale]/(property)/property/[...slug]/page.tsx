@@ -2,14 +2,17 @@ import PageController from "@/app/sites/PageController";
 import { Params, SearchParams } from "@/lib/definitions";
 
 type Props = {
-  params: Params
-  searchParams: SearchParams
-}
+  params: Params;
+  searchParams: SearchParams;
+};
 
-export default async function PropertyPage({ params, searchParams }: Readonly<Props>) {
+export default async function PropertyPage({
+  params,
+  searchParams,
+}: Readonly<Props>) {
   return (
     <PageController
-      params={{ ...params, routes: ['property'] }}
+      params={{ ...params, routes: ["property"] }}
       searchParams={searchParams}
     />
   );

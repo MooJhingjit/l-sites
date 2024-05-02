@@ -12,7 +12,9 @@ export default function ArticleCard({ image }: { image: string }) {
             10 JUN 2022
           </p>
 
-          <h3 className=" text-lg font-semibold text-primary  mt-2 mb-4">There are many variations of passages of Lorem Ipsum available</h3>
+          <h3 className=" text-lg font-semibold text-primary  mt-2 mb-4">
+            There are many variations of passages of Lorem Ipsum available
+          </h3>
           <p className=" mb-4">
             There are many variations of passages of Lorem Ipsum available.
           </p>

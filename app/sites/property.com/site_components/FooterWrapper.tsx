@@ -1,37 +1,36 @@
-import React from 'react'
-import FooterA from '../../_components/footers/FooterA'
+import React from "react";
+import FooterA from "../../_components/footers/FooterA";
 
 const navigation = {
   "Property for Sale": [
-    { name: 'Bangkok properties for sale', href: '#' },
-    { name: 'Pattaya properties for sale', href: '#' },
-    { name: 'Phuket properties for sale', href: '#' },
-    { name: 'Chiang Mai properties for sale', href: '#' },
+    { name: "Bangkok properties for sale", href: "#" },
+    { name: "Pattaya properties for sale", href: "#" },
+    { name: "Phuket properties for sale", href: "#" },
+    { name: "Chiang Mai properties for sale", href: "#" },
   ],
   "Property for Rent": [
-    { name: 'Bangkok properties for rent', href: '#' },
-    { name: 'Pattaya properties for rent', href: '#' },
-    { name: 'Phuket properties for rent', href: '#' },
-    { name: 'Chiang Mai properties for rent', href: '#' },
+    { name: "Bangkok properties for rent", href: "#" },
+    { name: "Pattaya properties for rent", href: "#" },
+    { name: "Phuket properties for rent", href: "#" },
+    { name: "Chiang Mai properties for rent", href: "#" },
   ],
   Explore: [
-    { name: 'Buy a Property in Thailand', href: '#' },
-    { name: 'Rent a Property in Thailand', href: '#' },
-    { name: 'Property Guides & News', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: "Buy a Property in Thailand", href: "#" },
+    { name: "Rent a Property in Thailand", href: "#" },
+    { name: "Property Guides & News", href: "#" },
+    { name: "Contact Us", href: "#" },
   ],
-}
+};
 
 export default function FooterWrapper() {
-
   return (
     <div className="mt-10">
       <FooterA
         links={navigation}
         socialLinks={[
           {
-            name: 'Facebook',
-            href: '#',
+            name: "Facebook",
+            href: "#",
             icon: (props: any) => (
               <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                 <path
@@ -43,8 +42,8 @@ export default function FooterWrapper() {
             ),
           },
           {
-            name: 'Instagram',
-            href: '#',
+            name: "Instagram",
+            href: "#",
             icon: (props: any) => (
               <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                 <path
@@ -56,8 +55,8 @@ export default function FooterWrapper() {
             ),
           },
           {
-            name: 'X',
-            href: '#',
+            name: "X",
+            href: "#",
             icon: (props: any) => (
               <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                 <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
@@ -65,8 +64,8 @@ export default function FooterWrapper() {
             ),
           },
           {
-            name: 'GitHub',
-            href: '#',
+            name: "GitHub",
+            href: "#",
             icon: (props: any) => (
               <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                 <path
@@ -78,8 +77,8 @@ export default function FooterWrapper() {
             ),
           },
           {
-            name: 'YouTube',
-            href: '#',
+            name: "YouTube",
+            href: "#",
             icon: (props: any) => (
               <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                 <path
@@ -97,5 +96,5 @@ export default function FooterWrapper() {
         termsOfServiceLink="#"
       />
     </div>
-  )
+  );
 }

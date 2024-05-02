@@ -1,25 +1,23 @@
 import React from "react";
 import Section from "../../_components/Section";
-import Breadcrumb from "../property/_components/breadcrumb";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Button } from "@base_components/ui/button";
 import Link from "next/link";
-import ArticleCard from "../_components/ArticleCard";
-import BlogCategories from "../_components/BlogCategories";
+import ArticleCard from "../site_components/ArticleCard";
+import BlogCategories from "../site_components/BlogCategories";
 
 export default function BlogPage() {
   return (
     <Section>
-      <Section.Title classNames="">
+      <Section.Title classNames="max-w-xl mx-auto">
         Thailand Real Estate News, Property Guides, Project Reviews and more.
       </Section.Title>
-      <Section.Description classNames="mb-10">
+      <Section.Description classNames="mb-10 max-w-4xl">
         Stay up to date with the latest Thailand real estate news, property
         guides, project reviews and more. We cover everything from buying
         property in Thailand to investing in real estate in Thailand.
       </Section.Description>
 
-      <div className="sticky top-0 py-6 bg-white">
+      <div className="sticky top-0 py-6 bg-white -mx-4 sm:-mx-2">
         <BlogCategories />
       </div>
       <div className="grid sm:grid-cols-2  md:grid-cols-3  xl:grid-cols-4 gap-8">
@@ -35,9 +33,7 @@ export default function BlogPage() {
       </div>
       <div className="mt-12 text-center">
         <Button asChild>
-          <Link href="">
-            View All
-          </Link>
+          <Link href="">View All</Link>
         </Button>
       </div>
     </Section>

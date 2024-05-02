@@ -1,9 +1,6 @@
 import React from "react";
 import Section from "../../_components/Section";
-import {
-  Building,
-  PinIcon,
-} from "lucide-react";
+import { Building, PinIcon } from "lucide-react";
 
 const HeaderInfo = () => {
   return (

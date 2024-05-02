@@ -3,5 +3,4 @@ export default {
   defaultLocale: "th",
 };
 
-
 // color

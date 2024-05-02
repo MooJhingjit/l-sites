@@ -53,7 +53,7 @@ export default function Hero() {
       </div>
       <div className="w-full lg:w-7/12 xl:w-1/2 p-6 pr-0">
         <div className="max-w-max mx-auto">
-        <div className="flex flex-wrap justify-center max-w-max -m-3 mb-3 xl:-ml-20">
+          <div className="flex flex-wrap justify-center max-w-max -m-3 mb-3 xl:-ml-20">
             <div className="w-full sm:w-1/2 p-3">
               <ReviewBox
                 name="Albert Flores"
@@ -137,7 +137,7 @@ const ReviewBox = ({ name, content }: { name: string; content: string }) => {
               <Star
                 size={16}
                 className={classNames(
-                  Math.random() < 0.5 ? "text-yellow-700" : "text-gray-400"
+                  Math.random() < 0.5 ? "text-yellow-700" : "text-gray-400",
                 )}
               />
             </div>

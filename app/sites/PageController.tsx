@@ -7,7 +7,7 @@ import { Params, SearchParams } from "@/lib/definitions";
 const loadDynamicPage = (
   domain: string,
   params: Params,
-  searchParams: SearchParams
+  searchParams: SearchParams,
 ) => {
   const layoutPath = `./${domain}/layout`;
 
@@ -70,7 +70,7 @@ export default async function PageController(props: Readonly<Props>) {
   const DynamicPage = await loadDynamicPage(
     domain,
     params,
-    decodeSearchParams(searchParams)
+    decodeSearchParams(searchParams),
   );
   return <DynamicPage />;
 }

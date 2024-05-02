@@ -13,7 +13,7 @@ export default function Section({
       <div
         className={twMerge(
           "container mx-auto px-4 pt-16 sm:px-6 sm:pt-40 lg:px-8",
-          classNames
+          classNames,
         )}
       >
         {children}
@@ -33,7 +33,7 @@ const Title = ({
     <h2
       className={twMerge(
         "capitalize mb-5 max-w-2xl mx-auto font-heading font-semibold text-center text-4xl  text-gray-900",
-        classNames
+        classNames,
       )}
     >
       {children}
@@ -52,7 +52,7 @@ const Description = ({
     <p
       className={twMerge(
         "mb-20 text-base max-w-md mx-auto text-center text-gray-600",
-        classNames
+        classNames,
       )}
     >
       {children}

@@ -11,9 +11,7 @@ export default function AboutUs() {
     <Section classNames="sm:pt-20 ">
       <div className="px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <Section.Title >
-            ABOUT US
-          </Section.Title>
+          <Section.Title>ABOUT US</Section.Title>
           <Section.Description>
             innovative legal services for all, spanning personal to corporate
             law with skilled staff.

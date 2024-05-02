@@ -1,7 +1,7 @@
 {
   "global": {
     "hero": {
-      "actionButton" : "Get Started"
+      "actionButton": "Get Started"
     }
   }
 }

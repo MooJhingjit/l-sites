@@ -1,9 +1,11 @@
 "use client";
-import React, { useState } from 'react'
-import useScroll from '@/lib/hooks/useScroll';
+import React, { useState } from "react";
+import useScroll from "@/lib/hooks/useScroll";
 import { classNames } from "@/lib/utils";
 
-export default function NavigationClientWrapper(props: Readonly<{ isNavSticky: boolean, children: React.ReactNode }>) {
+export default function NavigationClientWrapper(
+  props: Readonly<{ isNavSticky: boolean; children: React.ReactNode }>,
+) {
   const [opacity, setOpacity] = useState(1);
 
   const { isNavSticky } = props;
@@ -19,13 +21,14 @@ export default function NavigationClientWrapper(props: Readonly<{ isNavSticky: b
   useScroll(100, updateOpacity);
 
   return (
-    <div className={classNames(
-      'z-50 ',
-      isNavSticky ? 'fixed top-0 left-0 right-0' : 'relative',
-    )} style={{ opacity }}>
+    <div
+      className={classNames(
+        "z-50 ",
+        isNavSticky ? "fixed top-0 left-0 right-0" : "relative",
+      )}
+      style={{ opacity }}
+    >
       {props.children}
     </div>
-  )
+  );
 }
-
-

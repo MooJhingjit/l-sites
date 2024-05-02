@@ -1,12 +1,12 @@
 import PageController from "@/app/sites/PageController";
 import { Meta, Params, SearchParams } from "@/lib/definitions";
 import { getMessages, getTranslations } from "next-intl/server";
-import type { ResolvingMetadata } from 'next'
+import type { ResolvingMetadata } from "next";
 
 type Props = {
-  params: Params
-  searchParams: SearchParams
-}
+  params: Params;
+  searchParams: SearchParams;
+};
 
 // export async function generateMetadata(
 //   { params, searchParams }: Props
@@ -27,13 +27,10 @@ type Props = {
 // }
 
 export default function BlogPage({ params, searchParams }: Readonly<Props>) {
-
   return (
     <PageController
-      params={{...params, routes: ["blog"]}}
+      params={{ ...params, routes: ["blog"] }}
       searchParams={searchParams}
     />
   );
 }
-
-

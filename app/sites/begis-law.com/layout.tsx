@@ -14,11 +14,10 @@ type Props = {
 };
 
 export default function BegisPageLayout(props: Props) {
-
   return (
     <>
       <main
-      className="site-b"
+        className="site-b"
         style={{
           background: "url(../gradia-assets/images/hero/bg.png) no-repeat",
           backgroundSize: "cover",

@@ -31,7 +31,6 @@ export default function FooterA(props: Readonly<Props>) {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-20">
         <div className="lg:grid lg:grid-cols-3 xl:gap-8 @container">
-
           <div className="space-y-8 col-span-3 @2xl:col-span-1">
             <Logo width={130} height={22} />
 
@@ -71,7 +70,6 @@ export default function FooterA(props: Readonly<Props>) {
               </div>
             ))}
           </div>
-          
         </div>
         <div className="@container mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 flex items-center justify-between ">
           <div className="@2xl:flex @2xl:items-center">

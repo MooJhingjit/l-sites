@@ -4,9 +4,9 @@ import { getSite } from "@/lib/server-utils";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-})
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -25,6 +25,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>{children}</body>
-    </html >
+    </html>
   );
 }

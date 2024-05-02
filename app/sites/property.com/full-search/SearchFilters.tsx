@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@base_components/ui/button";
+import { Input } from "@base_components/ui/input";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+} from "@base_components/ui/collapsible";
 
 export default function SearchFilters() {
-    const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <Collapsible

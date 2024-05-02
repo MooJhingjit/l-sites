@@ -12,7 +12,7 @@ export default function Section(props: Readonly<Props>) {
       <div
         className={twMerge(
           "container mx-auto px-4 pt-8 sm:px-6 lg:px-8",
-          classNames
+          classNames,
         )}
       >
         {children}
@@ -32,7 +32,7 @@ const Title = ({
 }) => {
   const classes = twMerge(
     "text-xl sm:text-3xl font-heading  text-center text-gray-900",
-    classNames
+    classNames,
   );
   if (isHeader) {
     return <h1 className={classes}>{children}</h1>;
@@ -51,7 +51,7 @@ const Subtitle = ({
     <p
       className={twMerge(
         "text-base mx-auto text-center text-gray-600",
-        classNames
+        classNames,
       )}
     >
       {children}
@@ -70,7 +70,7 @@ const Description = ({
     <p
       className={twMerge(
         "mb-20 text-base mx-auto text-center text-gray-600",
-        classNames
+        classNames,
       )}
     >
       {children}

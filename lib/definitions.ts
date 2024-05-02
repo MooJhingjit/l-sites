@@ -1,4 +1,3 @@
-
 export type SearchParams = { [key: string]: string };
 
 export type Params = {
@@ -10,4 +9,4 @@ export type Params = {
 export type Meta = {
   title: string;
   description: string;
-}
+};

@@ -3,13 +3,13 @@ import { Meta, Params, SearchParams } from "@/lib/definitions";
 import { getMessages } from "next-intl/server";
 
 type Props = {
-  params: Params
-  searchParams: SearchParams
-}
+  params: Params;
+  searchParams: SearchParams;
+};
 
 export async function generateMetadata() {
   const message = await getMessages();
-  const { meta } = message.home as { meta: Meta }
+  const { meta } = message.home as { meta: Meta };
 
   return {
     title: meta.title,
@@ -18,10 +18,10 @@ export async function generateMetadata() {
 }
 
 export default function HomePage({ params, searchParams }: Readonly<Props>) {
-
-  return <PageController
-    params={{ ...params, routes: ['home'] }}
-    searchParams={searchParams} />;
+  return (
+    <PageController
+      params={{ ...params, routes: ["home"] }}
+      searchParams={searchParams}
+    />
+  );
 }
-
-

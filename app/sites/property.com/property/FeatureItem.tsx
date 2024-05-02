@@ -1,4 +1,4 @@
-import { Label } from "@/components/ui/label";
+import { Label } from "@base_components/ui/label";
 
 const FeatureItem = ({
   icon,

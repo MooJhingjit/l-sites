@@ -1,4 +1,4 @@
-import PropertyCard from "@/app/sites/_components/cards/PropertyCard";
+import PropertyCard from "@components/cards/PropertyCard";
 import { propertyCardData } from "@/lib/data";
 import React from "react";
 

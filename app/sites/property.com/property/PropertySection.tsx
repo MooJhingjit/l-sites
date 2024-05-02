@@ -19,13 +19,13 @@ const PropertySection = ({
       className={twMerge(
         "rounded-lg",
         isDark ? "bg-primary" : "bg-white",
-        className
+        className,
       )}
     >
       <h2
         className={classNames(
           "text-lg font-medium text-primary",
-          isDark ? "text-primary-foreground" : "text-primary"
+          isDark ? "text-primary-foreground" : "text-primary",
         )}
       >
         {label}

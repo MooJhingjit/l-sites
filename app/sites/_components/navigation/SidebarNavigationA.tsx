@@ -1,9 +1,9 @@
-"use client"
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { Menu, X } from 'lucide-react'
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+"use client";
+import { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@base_components/ui/button";
 
 type Navigation = {
   name: string;
@@ -16,15 +16,13 @@ type Props = {
 };
 
 export default function SidebarNavigationA(props: Props) {
-  const { navigation } = props
-  const [open, setOpen] = useState(false)
+  const { navigation } = props;
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Button  variant="muted" >
-        <Menu size={20}
-          onClick={() => setOpen(true)}
-        />
+      <Button variant="muted">
+        <Menu size={20} onClick={() => setOpen(true)} />
       </Button>
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-[999]" onClose={setOpen}>
@@ -73,18 +71,15 @@ export default function SidebarNavigationA(props: Props) {
                         </div>
                       </div>
                       <div className="relative mt-6 flex-1 px-4 sm:px-6 flex flex-col space-y-8 items-center justify-center divide-y w-full">
-                        {
-                          navigation.map((item) => (
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              className="text-lg font-semibold text-primary-foreground w-full text-center pt-8"
-                            >
-                              {item.name}
-                            </Link>
-                          ))
-
-                        }
+                        {navigation.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="text-lg font-semibold text-primary-foreground w-full text-center pt-8"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </Dialog.Panel>
@@ -95,5 +90,5 @@ export default function SidebarNavigationA(props: Props) {
         </Dialog>
       </Transition.Root>
     </>
-  )
+  );
 }

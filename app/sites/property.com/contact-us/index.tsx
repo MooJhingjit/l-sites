@@ -1,4 +1,4 @@
-import { Input } from "@/components/ui/input";
+import { Input } from "@base_components/ui/input";
 import { EnvelopeClosedIcon } from "@radix-ui/react-icons";
 import { BuildingIcon, PhoneIcon } from "lucide-react";
 

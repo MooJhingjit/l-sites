@@ -1,4 +1,4 @@
-import Section from "@/app/sites/_components/Section";
+import Section from "@components/Section";
 
 export default function Teams() {
   return (
@@ -46,5 +46,5 @@ export default function Teams() {
         </div>
       </div>
     </Section>
-  )
+  );
 }

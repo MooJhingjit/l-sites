@@ -1,7 +1,10 @@
 "use client";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-const useScroll = (maxScroll: number, callbackTask: (scrollRatio: number) => void) => {
+const useScroll = (
+  maxScroll: number,
+  callbackTask: (scrollRatio: number) => void,
+) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -9,11 +12,11 @@ const useScroll = (maxScroll: number, callbackTask: (scrollRatio: number) => voi
       callbackTask(scrollRatio);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [maxScroll, callbackTask]);
-}
+};
 
 export default useScroll;

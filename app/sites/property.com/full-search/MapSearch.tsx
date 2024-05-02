@@ -17,7 +17,6 @@ export default function MapSearch() {
         allowFullScreen
         loading="lazy"
       ></iframe>
-
     </div>
   );
 }

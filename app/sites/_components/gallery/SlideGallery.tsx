@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function SlideGallery() {
   return (
@@ -21,17 +21,28 @@ export default function SlideGallery() {
         </div> */}
         <div className="relative">
           <div>
-            <img className="mb-6 w-auto h-[600px] object-cover rounded-lg" src="https://img.nestopa.com/img/properties/318839/N9p6GfkPPEeGdw4Mf3TGye97OYdJwEBq3RyhUolx.webp?p=gallery_1700" alt=""/>
-              
+            <img
+              className="mb-6 w-auto h-[600px] object-cover rounded-lg"
+              src="https://img.nestopa.com/img/properties/318839/N9p6GfkPPEeGdw4Mf3TGye97OYdJwEBq3RyhUolx.webp?p=gallery_1700"
+              alt=""
+            />
           </div>
           <div className="absolute top-0 -left-1/2 w-1/2 pr-8">
-            <img className="w-full h-112 object-cover rounded-lg" src="https://img.nestopa.com/img/properties/318839/N9p6GfkPPEeGdw4Mf3TGye97OYdJwEBq3RyhUolx.webp?p=gallery_1700" alt=""/>
+            <img
+              className="w-full h-112 object-cover rounded-lg"
+              src="https://img.nestopa.com/img/properties/318839/N9p6GfkPPEeGdw4Mf3TGye97OYdJwEBq3RyhUolx.webp?p=gallery_1700"
+              alt=""
+            />
           </div>
           <div className="absolute top-0 -right-1/2 w-1/2 pl-8">
-            <img className="w-full h-112 object-cover rounded-lg" src="https://img.nestopa.com/img/properties/318839/N9p6GfkPPEeGdw4Mf3TGye97OYdJwEBq3RyhUolx.webp?p=gallery_1700" alt=""/>
+            <img
+              className="w-full h-112 object-cover rounded-lg"
+              src="https://img.nestopa.com/img/properties/318839/N9p6GfkPPEeGdw4Mf3TGye97OYdJwEBq3RyhUolx.webp?p=gallery_1700"
+              alt=""
+            />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

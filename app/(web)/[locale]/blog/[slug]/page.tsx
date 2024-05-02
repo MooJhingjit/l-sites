@@ -8,7 +8,6 @@ type Props = {
   searchParams: SearchParams;
 };
 
-
 export default function Blog({ params, searchParams }: Readonly<Props>) {
   return (
     <PageController

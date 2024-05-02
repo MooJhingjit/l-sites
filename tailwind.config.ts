@@ -1,12 +1,12 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -72,8 +72,8 @@ const config = {
           to: { height: "0" },
         },
         shimmer: {
-          '100%': {
-            transform: 'translateX(100%)',
+          "100%": {
+            transform: "translateX(100%)",
           },
         },
       },
@@ -85,10 +85,10 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    require('@tailwindcss/container-queries'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
+    require("@tailwindcss/container-queries"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
   ],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

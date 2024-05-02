@@ -1,7 +1,7 @@
-import Section from "@/app/sites/_components/Section";
-import BreadCrumbB from "@/app/sites/_components/breadcrumbs/BreadCrumbB";
+import Section from "@components/Section";
+import BreadCrumbB from "@components/breadcrumbs/BreadCrumbB";
 import React from "react";
-import ArticleCard from "../../_components/ArticleCard";
+import ArticleCard from "../../site_components/ArticleCard";
 
 export default function index(props: any) {
   return (

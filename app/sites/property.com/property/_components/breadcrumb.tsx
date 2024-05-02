@@ -1,10 +1,9 @@
-import { SearchIcon } from "lucide-react"
-
+import { SearchIcon } from "lucide-react";
 
 const pages = [
-  { name: 'location-slug', href: '#', current: false },
-  { name: 'property-slug', href: '#', current: true },
-]
+  { name: "location-slug", href: "#", current: false },
+  { name: "property-slug", href: "#", current: true },
+];
 
 export default function Breadcrumb() {
   return (
@@ -13,7 +12,10 @@ export default function Breadcrumb() {
         <li>
           <div>
             <a href="#" className="text-gray-400 hover:text-gray-500">
-              <SearchIcon className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
+              <SearchIcon
+                className="h-5 w-5 flex-shrink-0"
+                aria-hidden="true"
+              />
               <span className="sr-only">Home</span>
             </a>
           </div>
@@ -32,7 +34,7 @@ export default function Breadcrumb() {
               <a
                 href={page.href}
                 className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                aria-current={page.current ? 'page' : undefined}
+                aria-current={page.current ? "page" : undefined}
               >
                 {page.name}
               </a>
@@ -41,5 +43,5 @@ export default function Breadcrumb() {
         ))}
       </ol>
     </nav>
-  )
+  );
 }

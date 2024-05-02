@@ -79,7 +79,7 @@ export default function Review() {
                     reviews.average > rating
                       ? "text-yellow-400"
                       : "text-gray-300",
-                    "h-5 w-5 flex-shrink-0"
+                    "h-5 w-5 flex-shrink-0",
                   )}
                   aria-hidden="true"
                 />
@@ -110,7 +110,7 @@ export default function Review() {
                     <Star
                       className={classNames(
                         count.count > 0 ? "text-yellow-400" : "text-gray-300",
-                        "h-5 w-5 flex-shrink-0"
+                        "h-5 w-5 flex-shrink-0",
                       )}
                       aria-hidden="true"
                     />
@@ -179,7 +179,7 @@ export default function Review() {
                             review.rating > rating
                               ? "text-yellow-400"
                               : "text-gray-300",
-                            "h-5 w-5 flex-shrink-0"
+                            "h-5 w-5 flex-shrink-0",
                           )}
                           aria-hidden="true"
                         />
@@ -202,7 +202,7 @@ export default function Review() {
                   <Star
                     key={index}
                     className={classNames(
-                      " text-yellow-400 h-5 w-5 flex-shrink-0"
+                      " text-yellow-400 h-5 w-5 flex-shrink-0",
                     )}
                     aria-hidden="true"
                   />

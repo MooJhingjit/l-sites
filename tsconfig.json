@@ -20,6 +20,7 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./app/sites/_components/*"],
+      "@base_components/*": ["./components/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

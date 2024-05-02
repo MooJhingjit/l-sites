@@ -1,9 +1,8 @@
-
 import Link from "next/link";
 import React from "react";
 import { classNames } from "@/lib/utils";
 import Logo from "../Logo";
-import { Button } from "@/components/ui/button";
+import { Button } from "@base_components/ui/button";
 import { Menu, Phone } from "lucide-react";
 import SidebarNavigationA from "./SidebarNavigationA";
 
@@ -22,12 +21,18 @@ type Props = {
 };
 
 export default function NavigationA(props: Readonly<Props>) {
-  const { phone, isWhiteLogo = true, isTransparentBg, navigation, currentRoute } = props;
+  const {
+    phone,
+    isWhiteLogo = true,
+    isTransparentBg,
+    navigation,
+    currentRoute,
+  } = props;
   return (
     <nav
       className={classNames(
         "py-4 px-4 sm:px-8  z-10 transition duration-200",
-        isTransparentBg ? "bg-transparent" : "bg-primary shadow-md"
+        isTransparentBg ? "bg-transparent" : "bg-primary shadow-md",
       )}
     >
       <div className=" ">
@@ -44,9 +49,11 @@ export default function NavigationA(props: Readonly<Props>) {
                   <Link
                     href={item.href}
                     className={classNames(
-                      !isTransparentBg ? "text-white hover:border-b" : "text-primary-foreground hover:border-b ",
-                      (currentRoute === item.key) ? "border-b border-white" : "",
-                      "pb-1"
+                      !isTransparentBg
+                        ? "text-white hover:border-b"
+                        : "text-primary-foreground hover:border-b ",
+                      currentRoute === item.key ? "border-b border-white" : "",
+                      "pb-1",
                     )}
                   >
                     {item.name}
@@ -77,10 +84,7 @@ export default function NavigationA(props: Readonly<Props>) {
                 <span>{phone}</span>
               </div>
             </Button> */}
-            <Button
-              variant={isTransparentBg ? "overlay" : "muted"}
-              asChild
-            >
+            <Button variant={isTransparentBg ? "overlay" : "muted"} asChild>
               <SidebarNavigationA navigation={navigation} />
             </Button>
           </div>

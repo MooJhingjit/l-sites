@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  MailIcon,
-  PhoneIcon,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MailIcon, PhoneIcon } from "lucide-react";
+import { Button } from "@base_components/ui/button";
 
 import {
   Card,
@@ -12,8 +9,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+} from "@base_components/ui/card";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@base_components/ui/avatar";
 
 const EnquiryForm = () => {
   return (
@@ -129,12 +130,14 @@ const EnquiryForm = () => {
       </CardContent>
       <CardFooter className="flex justify-between">
         <p className=" text-center text-xs text-gray-500">
-          By clicking "send message", you expressly agree that Property.com and its affiliates may collect, use and disclose your personal data to provide you with marketing materials which you have agreed to receive, in accordance with our data protection policy.
+          By clicking "send message", you expressly agree that Property.com and
+          its affiliates may collect, use and disclose your personal data to
+          provide you with marketing materials which you have agreed to receive,
+          in accordance with our data protection policy.
         </p>
       </CardFooter>
     </Card>
   );
 };
-
 
 export default EnquiryForm;

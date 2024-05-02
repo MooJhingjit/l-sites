@@ -1,8 +1,8 @@
 import { Params, SearchParams } from "@/lib/definitions";
 import React from "react";
-import Section from "../../_components/Section";
+import Section from "@components/Section";
 
-import PropertyCard from "@/app/sites/_components/cards/PropertyCard";
+import PropertyCard from "@components/cards/PropertyCard";
 
 import Gallery from "./Gallery";
 import HeaderInfo from "./HeaderInfo";
@@ -10,7 +10,6 @@ import EnquiryForm from "./EnquiryForm";
 import PropertyOverview from "./PropertyOverview";
 import { propertyCardData } from "@/lib/data";
 import FooterAction from "./FooterAction";
-
 
 export default function PropertyPage({
   params,
@@ -22,7 +21,6 @@ export default function PropertyPage({
   // console.log(params.slug)
   return (
     <>
-
       <div className="">
         <Section classNames="pt-0">
           <HeaderInfo />
@@ -54,9 +52,3 @@ export default function PropertyPage({
     </>
   );
 }
-
-
-
-
-
-
