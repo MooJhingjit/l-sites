@@ -3,6 +3,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 type Navigation = {
   name: string;
@@ -20,11 +21,11 @@ export default function SidebarNavigationA(props: Props) {
 
   return (
     <>
-      <button >
+      <Button  variant="muted" >
         <Menu size={20}
           onClick={() => setOpen(true)}
         />
-      </button>
+      </Button>
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-[999]" onClose={setOpen}>
           <Transition.Child

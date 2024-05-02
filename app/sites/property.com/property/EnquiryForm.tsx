@@ -17,7 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const EnquiryForm = () => {
   return (
-    <Card className="w-[350px] relative">
+    <Card className="w-[350px]  sticky top-[100px] ml-auto ">
       <CardHeader>
         <CardTitle>CONTACT AGENT</CardTitle>
         <CardDescription>
@@ -39,8 +39,8 @@ const EnquiryForm = () => {
                   <span>+66 948 837923</span>
                 </p>
                 <p className="truncate text-sm text-gray-500 flex space-x-2 items-center">
-                  <MailIcon size={13}  />
-                  <span>leslie@propertyspace.com</span>
+                  <MailIcon size={13} />
+                  <span>leslie@property.com</span>
                 </p>
               </a>
             </div>
@@ -104,6 +104,23 @@ const EnquiryForm = () => {
             </div>
           </div>
           <div>
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium leading-6 text-gray-900"
+            >
+              Message
+            </label>
+            <div className="mt-2">
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={4}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
             <Button variant="default" type="submit" className="w-full">
               Send Message
             </Button>
@@ -112,7 +129,7 @@ const EnquiryForm = () => {
       </CardContent>
       <CardFooter className="flex justify-between">
         <p className=" text-center text-xs text-gray-500">
-          By clicking "send message", you expressly agree that Propertyspace and its affiliates may collect, use and disclose your personal data to provide you with marketing materials which you have agreed to receive, in accordance with our data protection policy.
+          By clicking "send message", you expressly agree that Property.com and its affiliates may collect, use and disclose your personal data to provide you with marketing materials which you have agreed to receive, in accordance with our data protection policy.
         </p>
       </CardFooter>
     </Card>

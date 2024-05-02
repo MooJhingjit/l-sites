@@ -41,7 +41,7 @@ export default function FooterA(props: Readonly<Props>) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-500 hover:text-gray-400"
+                  className="text-primary-foreground"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -78,7 +78,7 @@ export default function FooterA(props: Readonly<Props>) {
             <p className="text-xs leading-5 text-gray-400">{copyRight}</p>
             <div className="hidden @2xl:block ml-3 mr-3  h-5 w-px bg-white/20 "></div>
             <div className="flex space-x-3 justify-start items-center">
-              <p className="text-xs leading-5 text-gray-400">Power by</p>
+              <p className="text-xs leading-5 text-gray-400">Powered by</p>
               <Image
                 src="https://nestopa.com/images/logo/nestopa-white.svg"
                 alt="Nestopa"
@@ -87,7 +87,7 @@ export default function FooterA(props: Readonly<Props>) {
               />
             </div>
           </div>
-          <div className="flex items-center">
+          <div className=" flex flex-col sm:flex-row items-end sm:items-center space-y-1 sm:space-y-0 ">
             <Link
               href={privacyPolicyLink}
               className="text-xs leading-5 text-gray-400 hover:text-white"

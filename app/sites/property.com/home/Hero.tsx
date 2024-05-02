@@ -14,7 +14,7 @@ export default function Hero() {
         <div className=" mx-auto  w-full px-8 lg:px-0">
 
           <div className="text-primary-foreground flex items-start sm:items-center justify-center flex-col  max-w-4xl mx-auto">
-            <h1 className="text-xl sm:text-5xl font-heading font-bold text-center text-primary-foreground">{t("title")}</h1>
+            <h1 className="text-xl sm:text-5xl font-heading font-thin text-center text-primary-foreground">{t("title")}</h1>
           </div>
           <div className="relative sm:rounded-lg mt-6 sm:mt-10 max-w-3xl mx-auto">
             <HeroSearchFilter />

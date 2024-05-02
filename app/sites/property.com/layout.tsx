@@ -35,6 +35,7 @@ export default function Layout(props: Readonly<Props>) {
             currentRoute={currentRoute}
             phone="02-123-4567"
             navigation={navigation}
+            isWhiteLogo={true}
             isTransparentBg={isNavSticky} />
         </NavigationClientWrapper>
         {props.children}

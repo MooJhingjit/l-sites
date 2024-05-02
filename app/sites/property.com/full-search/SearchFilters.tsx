@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/collapsible";
 
 export default function SearchFilters() {
-    const [isOpen, setIsOpen] = React.useState(true);
+    const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <Collapsible

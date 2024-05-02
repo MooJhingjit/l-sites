@@ -4,6 +4,7 @@ import NewListings from "../_components/NewListings";
 import NewDevelopments from "../_components/NewDevelopments";
 import Teams from "./Teams";
 import LatestNews from "../_components/LatestNews";
+import AboutUs from "./AboutUs";
 
 export default function HomePage() {
   return (
@@ -12,7 +13,8 @@ export default function HomePage() {
       <NewListings/>
       <NewDevelopments/>
       <LatestNews/>
-      <Teams/>
+      {/* <Teams/> */}
+      <AboutUs/>
     </>
   );
 }

@@ -13,7 +13,7 @@ export default function NewDevelopments() {
       </Section.Title>
       <DevelopmentCards />
       <div className="mt-2 flex items-center justify-center">
-        <Button variant="muted" asChild>
+        <Button  asChild>
           <Link href="/for-sale/properties">
             View All
           </Link>

@@ -25,18 +25,14 @@ export default function PropertyPage({
 
       <div className="">
         <Section classNames="pt-0">
-          {/* <Breadcrumb /> */}
-
           <HeaderInfo />
-
+          {/* <Breadcrumb /> */}
           <Gallery />
-
-          <div className=" pt-8 grid  grid-cols-12 gap-x-8 ">
-            <div className="lg:col-span-8 col-span-12">
+          <div className=" pt-8 grid  grid-cols-10 gap-x-8 ">
+            <div className="lg:col-span-7 col-span-12">
               <PropertyOverview />
             </div>
-
-            <div className="hidden lg:block lg:col-span-4 sticky top-0">
+            <div className="hidden lg:block lg:col-span-3 ">
               <EnquiryForm />
             </div>
           </div>

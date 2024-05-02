@@ -5,13 +5,13 @@ import Image from "next/image";
 type Props = {
   width: number;
   height: number;
-  isTransparent?: boolean;
+  isWhite?: boolean;
 };
 
-export default function Logo({ width, height, isTransparent = true }: Readonly<Props>) {
+export default function Logo({ width, height, isWhite = true }: Readonly<Props>) {
   const { domain, config: { name } } = getSite();
-  const logoType = isTransparent ? "logo-transparent" : "logo";
-  const path = `/${domain}/logos/${logoType}.png`;
+  const logoType = isWhite ? "white" : "primary";
+  const path = `/${domain}/logos/logo-${logoType}.svg`;
 
   return <Image width={width} height={height} src={path} alt={`${name} Logo`} />;
 }

@@ -34,12 +34,11 @@ export default function BlogPage() {
         <ArticleCard image="https://shuffle.dev/acros-assets/images/blog/robot-540x540.jpg" />
       </div>
       <div className="mt-12 text-center">
-        <a
-          className="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-gray-900 hover:text-green-500 border border-gray-900 hover:border-green-500 rounded-sm transition duration-150"
-          href="#"
-        >
-          View more
-        </a>
+        <Button asChild>
+          <Link href="">
+            View All
+          </Link>
+        </Button>
       </div>
     </Section>
   );

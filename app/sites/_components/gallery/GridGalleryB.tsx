@@ -11,13 +11,13 @@ import React from "react";
 export default function GridGallery() {
   return (
     // hidden group-hover:flex
-    <div className="flex flex-wrap -mx-2 cursor-pointer group relative">
+    <div className="flex flex-wrap  cursor-pointer group relative">
 
-      <div className="hidden group-hover:flex absolute inset-0   justify-end bg-white/20 ">
-        <div className="top-7 right-5 relative ">
-          <div className="flex items-center space-x-2">
-            <ExpandIcon size={20} className="text-white/80 mx-auto" />
-            <p className="text-white/80">Click to view gallery</p>
+      <div className=" text-white/50 group-hover:text-white/100 absolute inset-0   justify-end bg-white/20 ">
+        <div className="top-3 left-5 relative ">
+          <div className="flex items-center space-x-2 justify-start w-fit">
+            <ExpandIcon size={20} className="" />
+            <p className="">Click to view gallery</p>
           </div>
         </div>
       </div>

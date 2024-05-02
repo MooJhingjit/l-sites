@@ -31,7 +31,7 @@ const Title = ({
   isHeader?: boolean;
 }) => {
   const classes = twMerge(
-    "text-xl sm:text-3xl font-heading font-semibold text-center text-gray-900",
+    "text-xl sm:text-3xl font-heading  text-center text-gray-900",
     classNames
   );
   if (isHeader) {

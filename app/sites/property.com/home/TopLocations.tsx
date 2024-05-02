@@ -4,10 +4,7 @@ import React from 'react'
 
 export default function TopLocations() {
   return (
-    <div className="mt-6 ">
-      <h2 className='text-primary-foreground'>
-      Popular places
-      </h2>
+    <div className="mt-4 ">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2">
         <LocationCard
           src="/top-locations/patong.jpg"
@@ -45,7 +42,7 @@ const LocationCard = (
     <Link href="/location/location" className="relative group max-w-[200px] ">
       <div className="flex items-center justify-center absolute  left-0 right-0 bottom-0 bg-black bg-opacity-40 rounded-sm">
         <p
-          className="text-white  sm:text-xl font-bold">
+          className="text-white  sm:text font-semibold">
           {alt}
         </p>
       </div>

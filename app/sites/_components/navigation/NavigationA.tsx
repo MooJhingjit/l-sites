@@ -18,10 +18,11 @@ type Props = {
   navigation: Navigation[];
   phone: string;
   currentRoute: string;
+  isWhiteLogo: boolean;
 };
 
 export default function NavigationA(props: Readonly<Props>) {
-  const { phone, isTransparentBg, navigation, currentRoute } = props;
+  const { phone, isWhiteLogo = true, isTransparentBg, navigation, currentRoute } = props;
   return (
     <nav
       className={classNames(
@@ -33,7 +34,7 @@ export default function NavigationA(props: Readonly<Props>) {
         <div className="relative flex items-center justify-between">
           <div className="w-auto ">
             <Link className="" href={"/"}>
-              <Logo isTransparent={isTransparentBg} width={140} height={100} />
+              <Logo isWhite={isWhiteLogo} width={140} height={100} />
             </Link>
           </div>
           <div className="relative hidden md:block">
@@ -65,19 +66,22 @@ export default function NavigationA(props: Readonly<Props>) {
           </div>
 
           {/* mobile */}
-          <div className="block md:hidden">
-            <Button
+          <div className=" md:hidden flex space-x-4">
+            {/* <Button
               variant={isTransparentBg ? "overlay" : "muted"}
-              className="flex space-x-10"
+              className="flex space-x-10  md:hidden"
               asChild
             >
-              <div>
-                <div className="flex items-center space-x-2">
-                  <Phone size={12} />
-                  <span>{phone}</span>
-                </div>
-                <SidebarNavigationA navigation={navigation} />
+              <div className="flex items-center space-x-2 ">
+                <Phone size={12} />
+                <span>{phone}</span>
               </div>
+            </Button> */}
+            <Button
+              variant={isTransparentBg ? "overlay" : "muted"}
+              asChild
+            >
+              <SidebarNavigationA navigation={navigation} />
             </Button>
           </div>
         </div>
