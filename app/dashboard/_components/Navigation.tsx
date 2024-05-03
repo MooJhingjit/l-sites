@@ -1,43 +1,52 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import clsx from 'clsx'
-import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
+import { useRef } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 
 // import { Button } from '@/components/Button'
-import { useIsInsideMobileNavigation } from './MobileNavigation'
+import { useIsInsideMobileNavigation } from "./MobileNavigation";
 // import { useSectionStore } from '@/components/SectionProvider'
-import { Tag } from './Tag'
-import { Button } from '@/components/ui/button'
-import { remToPx } from '@/lib/utils'
-import { CircleDollarSign, HomeIcon, MailIcon, BuildingIcon, Users, CalendarIcon, LayoutTemplate, SquarePen } from 'lucide-react'
-import { Logo } from './Logo'
+import { Tag } from "./Tag";
+// import { Button } from '@/components/ui/button'
+// import { remToPx } from '@/lib/utils'
+import {
+  CircleDollarSign,
+  HomeIcon,
+  MailIcon,
+  BuildingIcon,
+  Users,
+  CalendarIcon,
+  LayoutTemplate,
+  SquarePen,
+} from "lucide-react";
+import { Logo } from "./Logo";
 
 type Link = {
-  title: string
-  icon?: React.ReactNode
-  href: string
-  subLinks?: Link[]
-  creatable?: boolean
-}
+  title: string;
+  icon?: React.ReactNode;
+  href: string;
+  subLinks?: Link[];
+  creatable?: boolean;
+};
 interface NavGroup {
-  title: string
-  links: Link[]
+  title: string;
+  links: Link[];
 }
 
 function useInitialValue<T>(value: T, condition = true) {
-  let initialValue = useRef(value).current
-  return condition ? initialValue : value
+  let initialValue = useRef(value).current;
+  return condition ? initialValue : value;
 }
 
 function TopLevelNavItem({
   href,
   children,
 }: {
-  href: string
-  children: React.ReactNode
+  href: string;
+  children: React.ReactNode;
 }) {
   return (
     <li className="md:hidden">
@@ -48,7 +57,7 @@ function TopLevelNavItem({
         {children}
       </Link>
     </li>
-  )
+  );
 }
 
 function NavLink({
@@ -58,22 +67,22 @@ function NavLink({
   active = false,
   isAnchorLink = false,
 }: {
-  href: string
-  children: React.ReactNode
-  tag?: string
-  active?: boolean
-  isAnchorLink?: boolean
+  href: string;
+  children: React.ReactNode;
+  tag?: string;
+  active?: boolean;
+  isAnchorLink?: boolean;
 }) {
   return (
     <Link
       href={href}
-      aria-current={active ? 'page' : undefined}
+      aria-current={active ? "page" : undefined}
       className={clsx(
-        'flex justify-between gap-2 py-1.5 pr-3 text-sm transition w-full',
-        isAnchorLink ? 'pl-7' : 'pl-4',
+        "flex justify-between gap-2 py-1.5 pr-3 text-sm transition w-full",
+        isAnchorLink ? "pl-7" : "pl-4",
         active
-          ? 'text-zinc-900 dark:text-white font-semibold '
-          : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white',
+          ? "text-zinc-900 dark:text-white font-semibold "
+          : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white",
       )}
     >
       <span className="truncate">{children}</span>
@@ -83,7 +92,7 @@ function NavLink({
         </Tag>
       )}
     </Link>
-  )
+  );
 }
 
 // function VisibleSectionHighlight({
@@ -128,45 +137,42 @@ function NavLink({
 //   )
 // }
 
-function ActivePageMarker({
-  group,
-  pathname,
-}: {
-  group: NavGroup
-  pathname: string
-}) {
-  let itemHeight = remToPx(2)
-  let offset = remToPx(0.25)
-  let activePageIndex = group.links.findIndex((link) => pathname.startsWith(link.href))
-  let top = offset + activePageIndex * itemHeight
+// function ActivePageMarker({
+//   group,
+//   pathname,
+// }: {
+//   group: NavGroup
+//   pathname: string
+// }) {
+//   let itemHeight = remToPx(2)
+//   let offset = remToPx(0.25)
+//   let activePageIndex = group.links.findIndex((link) => pathname.startsWith(link.href))
+//   let top = offset + activePageIndex * itemHeight
 
-  return (
-    <motion.div
-      layout
-      className="absolute left-2 h-6 w-px bg-emerald-500"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 0.2 } }}
-      exit={{ opacity: 0 }}
-      style={{ top }}
-    />
-  )
-}
+//   return (
+//     <motion.div
+//       layout
+//       className="absolute left-2 h-6 w-px bg-emerald-500"
+//       initial={{ opacity: 0 }}
+//       animate={{ opacity: 1, transition: { delay: 0.2 } }}
+//       exit={{ opacity: 0 }}
+//       style={{ top }}
+//     />
+//   )
+// }
 
 function NavigationGroup({
   group,
   className,
 }: {
-  group: NavGroup
-  className?: string
+  group: NavGroup;
+  className?: string;
 }) {
   // If this is the mobile navigation then we always render the initial
   // state, so that the state does not change during the close animation.
   // The state will still update when we re-open (re-render) the navigation.
-  let isInsideMobileNavigation = useIsInsideMobileNavigation()
-  let [pathname] = useInitialValue(
-    [usePathname()],
-    isInsideMobileNavigation,
-  )
+  let isInsideMobileNavigation = useIsInsideMobileNavigation();
+  let [pathname] = useInitialValue([usePathname()], isInsideMobileNavigation);
 
   // console.log('pathname', pathname)
   // console.log('  group.links', group.links)
@@ -180,12 +186,11 @@ function NavigationGroup({
       // }
 
       // console.log('href', link.href)
-      return link.href === pathname
-    }) !== -1
-
+      return link.href === pathname;
+    }) !== -1;
 
   return (
-    <li className={clsx('relative mt-6', className)}>
+    <li className={clsx("relative mt-6", className)}>
       <motion.h2
         layout="position"
         className="text-xs font-semibold text-zinc-900 dark:text-white"
@@ -211,13 +216,11 @@ function NavigationGroup({
           {group.links.map((link) => (
             <motion.li key={link.href} layout="position" className="relative">
               <div className="flex relative">
-                {
-                  link.icon && (
-                    <div className="bg-white -ml-4 -top-1 absolute px-2 py-3">
-                      <span className="">{link.icon}</span>
-                    </div>
-                  )
-                }
+                {link.icon && (
+                  <div className="bg-white -ml-4 -top-1 absolute px-2 py-3">
+                    <span className="">{link.icon}</span>
+                  </div>
+                )}
                 <NavLink href={link.href} active={pathname === link.href}>
                   {link.title}
                 </NavLink>
@@ -241,7 +244,7 @@ function NavigationGroup({
                         <NavLink
                           href={`${s.href}`}
                           active={pathname === s.href}
-                          tag={''}
+                          tag={""}
                           isAnchorLink
                         >
                           {s.title}
@@ -256,48 +259,82 @@ function NavigationGroup({
         </ul>
       </div>
     </li>
-  )
+  );
 }
 
 export const navigation: Array<NavGroup> = [
   {
-    title: 'CRM',
+    title: "CRM",
     links: [
       {
-        title: 'Leads', href: '/dashboard/leads',
+        title: "Leads",
+        href: "/dashboard/leads",
         icon: <MailIcon className="w-4 h-4" />,
         subLinks: [
-          { title: 'Kanban board', href: '/dashboard/leads/a' },
-          { title: 'Stats', href: '/dashboard/leads/b' },
-        ]
+          { title: "Kanban board", href: "/dashboard/leads/a" },
+          { title: "Stats", href: "/dashboard/leads/b" },
+        ],
       },
-      { title: 'Deals', href: '/dashboard/deals', icon: <CircleDollarSign className="w-4 h-4" />, creatable: true },
-      { title: 'Viewing', href: '/dashboard/viewing', icon: <CalendarIcon className="w-4 h-4" />, creatable: true },
+      {
+        title: "Deals",
+        href: "/dashboard/deals",
+        icon: <CircleDollarSign className="w-4 h-4" />,
+        creatable: true,
+      },
+      {
+        title: "Viewing",
+        href: "/dashboard/viewing",
+        icon: <CalendarIcon className="w-4 h-4" />,
+        creatable: true,
+      },
 
-      { title: 'Contacts', href: '/dashboard/contacts', icon: <Users className="w-4 h-4" />, creatable: true },
+      {
+        title: "Contacts",
+        href: "/dashboard/contacts",
+        icon: <Users className="w-4 h-4" />,
+        creatable: true,
+      },
     ],
   },
   {
-    title: 'Listing Management',
+    title: "Listing Management",
     links: [
-      { title: 'Properties', href: '/', icon: <HomeIcon className="w-4 h-4" />, creatable: true },
-      { title: 'Projects', href: '/', icon: <BuildingIcon className="w-4 h-4" />, creatable: true },
+      {
+        title: "Properties",
+        href: "/",
+        icon: <HomeIcon className="w-4 h-4" />,
+        creatable: true,
+      },
+      {
+        title: "Projects",
+        href: "/",
+        icon: <BuildingIcon className="w-4 h-4" />,
+        creatable: true,
+      },
     ],
   },
   {
-    title: 'Website',
+    title: "Website",
     links: [
-      { title: 'Page & Contents', href: '/', icon: <SquarePen className="w-4 h-4" /> },
-      { title: 'Templates', href: '/', icon: <LayoutTemplate className="w-4 h-4" /> },
+      {
+        title: "Page & Contents",
+        href: "/",
+        icon: <SquarePen className="w-4 h-4" />,
+      },
+      {
+        title: "Templates",
+        href: "/",
+        icon: <LayoutTemplate className="w-4 h-4" />,
+      },
     ],
   },
-]
+];
 
-export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+export function Navigation(props: React.ComponentPropsWithoutRef<"nav">) {
   return (
-    <div className='relative'>
+    <div className="relative">
       <div className="max-w-[200px] flex justify-start">
-        <Link href="/" aria-label="Home" className=''>
+        <Link href="/" aria-label="Home" className="">
           <Logo />
         </Link>
       </div>
@@ -309,7 +346,7 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
             <NavigationGroup
               key={group.title}
               group={group}
-              className={groupIndex === 0 ? 'md:mt-0' : ''}
+              className={groupIndex === 0 ? "md:mt-0" : ""}
             />
           ))}
           {/* <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
@@ -323,5 +360,5 @@ export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         </ul>
       </nav>
     </div>
-  )
+  );
 }
