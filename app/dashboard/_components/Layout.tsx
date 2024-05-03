@@ -34,8 +34,8 @@ export function Layout({
           <Navigation className="hidden lg:mt-6 lg:block" />
         </div>
       </div>
-      <div className="relative flex h-full flex-col px-4 pt-10 sm:px-8  ">
-        {/* <main className="flex-auto">{children}</main> */}
+      <div className="relative px-4 sm:px-6  ">
+        {children}
       </div>
     </div>
     // </SectionProvider>

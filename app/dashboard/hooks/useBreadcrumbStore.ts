@@ -1,0 +1,23 @@
+// store/useBreadcrumbStore.ts
+import { create } from 'zustand';
+
+export type BreadcrumbItem = {
+  label: string;
+  href: string;
+};
+
+interface BreadcrumbState {
+  breadcrumbs: BreadcrumbItem[];
+  setBreadcrumbs: (breadcrumbs: BreadcrumbItem[]) => void;
+  clearBreadcrumbs: () => void;
+}
+
+const useBreadcrumbStore = create<BreadcrumbState>((set) => ({
+  breadcrumbs: [], // Initial empty array
+
+  setBreadcrumbs: (breadcrumbs: BreadcrumbItem[]) => set({ breadcrumbs }),
+
+  clearBreadcrumbs: () => set({ breadcrumbs: [] })
+}));
+
+export default useBreadcrumbStore;

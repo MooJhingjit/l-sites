@@ -1,9 +1,15 @@
-import React from "react";
+import React from 'react';
+import ClientWrapper from '../_components/ClientWrapper';
 
 export default function LeadPage() {
   return (
-    <div className="w-full h-full bg-gray-50 flex items-center justify-center">
+    <ClientWrapper
+      breadcrumbs={[
+        { label: 'Home', href: '/' },
+        { label: 'Leads', href: '/dashboard/leads' }
+      ]}
+      className="w-full h-full bg-gray-50 flex items-center justify-center">
       <p>Loading..</p>
-    </div>
+    </ClientWrapper>
   );
 }

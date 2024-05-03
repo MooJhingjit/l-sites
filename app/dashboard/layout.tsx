@@ -1,7 +1,4 @@
-import glob from "fast-glob";
-
 import { Layout } from "@dashboard_components/Layout";
-
 import "../globals.css";
 import { type Metadata } from "next";
 
