@@ -12,7 +12,8 @@ import { useIsInsideMobileNavigation } from './MobileNavigation'
 import { Tag } from './Tag'
 import { Button } from '@/components/ui/button'
 import { remToPx } from '@/lib/utils'
-import { CircleDollarSign, HomeIcon, MailIcon, BuildingIcon, Users } from 'lucide-react'
+import { CircleDollarSign, HomeIcon, MailIcon, BuildingIcon, Users, CalendarIcon, LayoutTemplate, SquarePen } from 'lucide-react'
+import { Logo } from './Logo'
 
 type Link = {
   title: string
@@ -206,13 +207,13 @@ function NavigationGroup({
             <ActivePageMarker group={group} pathname={pathname} />
           )}
         </AnimatePresence> */}
-        <ul role="list" className="border-l border-transparent">
+        <ul role="list" className="border-l border-transparent space-y-2">
           {group.links.map((link) => (
             <motion.li key={link.href} layout="position" className="relative">
               <div className="flex relative">
                 {
                   link.icon && (
-                    <div className="bg-white -ml-4 top-0 absolute p-2">
+                    <div className="bg-white -ml-4 -top-1 absolute px-2 py-3">
                       <span className="">{link.icon}</span>
                     </div>
                   )
@@ -271,40 +272,56 @@ export const navigation: Array<NavGroup> = [
         ]
       },
       { title: 'Deals', href: '/dashboard/deals', icon: <CircleDollarSign className="w-4 h-4" />, creatable: true },
+      { title: 'Viewing', href: '/dashboard/viewing', icon: <CalendarIcon className="w-4 h-4" />, creatable: true },
 
       { title: 'Contacts', href: '/dashboard/contacts', icon: <Users className="w-4 h-4" />, creatable: true },
     ],
   },
   {
-    title: 'Management',
+    title: 'Listing Management',
     links: [
       { title: 'Properties', href: '/', icon: <HomeIcon className="w-4 h-4" />, creatable: true },
       { title: 'Projects', href: '/', icon: <BuildingIcon className="w-4 h-4" />, creatable: true },
+    ],
+  },
+  {
+    title: 'Website',
+    links: [
+      { title: 'Page & Contents', href: '/', icon: <SquarePen className="w-4 h-4" /> },
+      { title: 'Templates', href: '/', icon: <LayoutTemplate className="w-4 h-4" /> },
     ],
   },
 ]
 
 export function Navigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
-    <nav {...props}>
-      <ul role="list">
-        {/* <TopLevelNavItem href="/">Dashboard</TopLevelNavItem> */}
+    <div className='relative'>
+      <div className="max-w-[200px] flex justify-start">
+        <Link href="/" aria-label="Home" className=''>
+          <Logo />
+        </Link>
+      </div>
+      <nav {...props}>
+        <ul role="list relative">
+          {/* <TopLevelNavItem href="/">Dashboard</TopLevelNavItem> */}
 
-        {navigation.map((group, groupIndex) => (
-          <NavigationGroup
-            key={group.title}
-            group={group}
-            className={groupIndex === 0 ? 'md:mt-0' : ''}
-          />
-        ))}
-        <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
+          {navigation.map((group, groupIndex) => (
+            <NavigationGroup
+              key={group.title}
+              group={group}
+              className={groupIndex === 0 ? 'md:mt-0' : ''}
+            />
+          ))}
+          {/* <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
           <Button variant="default" className="w-full">
             Sign in
           </Button>
-        </li>
-        {/* <TopLevelNavItem href="#">Website</TopLevelNavItem>
+        </li> */}
+          {/* <TopLevelNavItem href="#">Website</TopLevelNavItem>
         <TopLevelNavItem href="#">Support</TopLevelNavItem> */}
-      </ul>
-    </nav>
+          {/* <BottomLevelNavItem href="#">Support</BottomLevelNavItem> */}
+        </ul>
+      </nav>
+    </div>
   )
 }

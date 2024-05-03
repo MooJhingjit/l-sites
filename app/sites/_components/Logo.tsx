@@ -20,7 +20,17 @@ export default function Logo({
   const logoType = isWhite ? "white" : "primary";
   const path = `/${domain}/logos/logo-${logoType}.svg`;
 
+
   return (
-    <Image width={width} height={height} src={path} alt={`${name} Logo`} />
+    <div className="h-full  relative ">
+      <Image
+        src={path}
+        width={0}
+        alt={`${name} Logo`}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: '70px' }} // optional
+      />
+    </div>
   );
 }

@@ -2,11 +2,6 @@ import { forwardRef } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@base_components/ui/avatar";
 // import { Button } from '@/components/Button'
 // import { Logo } from '@/components/Logo'
 import {
@@ -16,8 +11,7 @@ import {
 import { useMobileNavigationStore } from './MobileNavigation'
 // import { MobileSearch, Search } from '@/components/Search'
 // import { ThemeToggle } from '@/components/ThemeToggle'
-import { Button } from '@/components/ui/button'
-import { SquarePlusIcon } from 'lucide-react';
+import { QuickCreateMenu } from './QuickCreateMenu';
 
 function TopLevelNavItem({
   href,
@@ -91,18 +85,20 @@ export const Header = forwardRef<
           </ul>
         </nav>
         <div className="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15" /> */}
-        {/* <div className="flex gap-4">
-          <MobileSearch />
-          <ThemeToggle />
-        </div> */}
+        <div className="flex gap-4">
+          {/* <MobileSearch /> */}
+          {/* <input type="text" /> */}
+          {/* <ThemeToggle /> */}
+        </div>
         <div className="">
           {/* <Avatar className='w-8 h-8'>
             <AvatarImage src="/gradia-assets/images/teams/avatar-md3.png" />
             <AvatarFallback>CP</AvatarFallback>
           </Avatar> */}
-          <Button variant={'ghost'}>
+          <QuickCreateMenu />
+          {/* <Button variant={'ghost'}>
             <SquarePlusIcon className="w-4 h-4 text-gray-400" />
-          </Button>
+          </Button> */}
         </div>
       </div>
     </motion.div>
