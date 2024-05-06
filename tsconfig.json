@@ -20,7 +20,7 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./app/sites/_components/*"],
-      "@dashboard_components/*": ["./app/dashboard/_components/*"],
+      "@dashboard_components/*": ["./app/dashboard/components/*"],
       "@base_components/*": ["./components/*"]
     }
   },

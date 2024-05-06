@@ -1,5 +1,5 @@
 import React from 'react';
-import ClientWrapper from '../../../_components/ClientWrapper';
+import ClientWrapper from '../../../components/ClientWrapper';
 
 export default function LeadDetailPage({
   slug,

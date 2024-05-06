@@ -30,6 +30,7 @@ type Link = {
   href: string;
   subLinks?: Link[];
   creatable?: boolean;
+  tag?: string;
 };
 interface NavGroup {
   title: string;
@@ -87,8 +88,8 @@ function NavLink({
     >
       <span className="truncate">{children}</span>
       {tag && (
-        <Tag variant="small" color="zinc">
-          {tag}
+        <Tag variant="small" color="rose">
+          NEW
         </Tag>
       )}
     </Link>
@@ -221,7 +222,7 @@ function NavigationGroup({
                     <span className="">{link.icon}</span>
                   </div>
                 )}
-                <NavLink href={link.href} active={pathname === link.href}>
+                <NavLink href={link.href} active={pathname === link.href} tag={link.tag}>
                   {link.title}
                 </NavLink>
               </div>
@@ -286,6 +287,7 @@ export const navigation: Array<NavGroup> = [
         href: "/dashboard/viewing",
         icon: <CalendarIcon className="w-4 h-4" />,
         creatable: true,
+        tag: "new"
       },
 
       {

@@ -40,7 +40,7 @@ export function QuickCreateMenu() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant={"secondary"} className="flex space-x-2 ">
+        <Button variant={"ghost"} className="flex space-x-2 ">
           <SquarePlusIcon className="w-4 h-4 " />
           <span>Create New</span>
         </Button>
