@@ -1,4 +1,4 @@
-import Breadcrumb from "../_components/Breadcrumb"
+import Breadcrumb from "../../_components/Breadcrumb"
 
 
 export default function Layout({ children }: {
@@ -7,9 +7,9 @@ export default function Layout({ children }: {
 }) {
   return (
     <div className="relative">
-      {/* <div className="fixed top-0 z-[50] h-14 flex items-center">
+      <div className="fixed top-0 z-[50] h-14 flex items-center">
         <Breadcrumb />
-      </div> */}
+      </div>
 
       <div className=" pt-14">{children}</div>
     </div>

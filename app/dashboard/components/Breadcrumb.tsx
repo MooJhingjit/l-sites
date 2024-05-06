@@ -8,7 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import useBreadcrumbStore from '../hooks/useBreadcrumbStore';
+import useBreadcrumbStore from '../lib/hooks/useBreadcrumbStore';
 
 export default function DashboardBreadcrumb() {
   const breadcrumbs = useBreadcrumbStore(state => state.breadcrumbs);

@@ -22,7 +22,7 @@ import {
   LayoutTemplate,
   SquarePen,
 } from "lucide-react";
-import { Logo } from "./Logo";
+import Logo from "./Logo";
 
 type Link = {
   title: string;
@@ -217,7 +217,7 @@ function NavigationGroup({
             <motion.li key={link.href} layout="position" className="relative">
               <div className="flex relative">
                 {link.icon && (
-                  <div className="bg-white -ml-4 -top-1 absolute px-2 py-3">
+                  <div className="bg-white dark:bg-zinc-900 -ml-4 -top-1 absolute px-2 py-3">
                     <span className="">{link.icon}</span>
                   </div>
                 )}
@@ -330,7 +330,7 @@ export const navigation: Array<NavGroup> = [
   },
 ];
 
-export function Navigation(props: React.ComponentPropsWithoutRef<"nav">) {
+const Navigation = (props: React.ComponentPropsWithoutRef<"nav">) => {
   return (
     <div className="relative">
       <div className="max-w-[200px] flex justify-start">
@@ -362,3 +362,6 @@ export function Navigation(props: React.ComponentPropsWithoutRef<"nav">) {
     </div>
   );
 }
+
+
+export default Navigation;

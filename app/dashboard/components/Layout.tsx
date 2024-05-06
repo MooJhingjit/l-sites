@@ -1,13 +1,13 @@
 // 'use client'
 
-import Link from "next/link";
+// import Link from "next/link";
 // import { usePathname } from 'next/navigation'
 // import { motion } from 'framer-motion'
 
-import { Header } from "./Header";
+import Header from "./Header";
 // import { Logo } from './Logo'
-import { Navigation } from "./Navigation";
-import { Logo } from "./Logo";
+import Navigation from "./Navigation";
+// import Logo from "./Logo";
 // import Logo from '@/app/sites/_components/Logo'
 // import { type Section, SectionProvider } from './SectionProvider'
 
@@ -34,7 +34,7 @@ export function Layout({
           <Navigation className="hidden lg:mt-6 lg:block" />
         </div>
       </div>
-      <div className="relative px-4 sm:px-6  ">
+      <div className="relative px-4 sm:px-6 pt-16">
         {children}
       </div>
     </div>

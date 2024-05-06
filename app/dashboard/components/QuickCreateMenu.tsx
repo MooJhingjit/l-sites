@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@base_components/ui/button";
 import { CircleDollarSign, HomeIcon, BuildingIcon, Users } from "lucide-react";
 
 import {
@@ -36,10 +36,11 @@ const solutions = [
 ];
 
 export function QuickCreateMenu() {
+
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant={"ghost"} className="flex space-x-2 text-gray-700">
+        <Button variant={"secondary"} className="flex space-x-2 ">
           <SquarePlusIcon className="w-4 h-4 " />
           <span>Create New</span>
         </Button>

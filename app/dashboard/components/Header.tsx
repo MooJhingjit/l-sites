@@ -8,8 +8,9 @@ import {
 } from "./MobileNavigation";
 import { useMobileNavigationStore } from "./MobileNavigation";
 import { QuickCreateMenu } from "./QuickCreateMenu";
+import { ThemeToggle } from "./ThemeToggle";
 
-export const Header = forwardRef<
+const Header = forwardRef<
   React.ElementRef<"div">,
   { className?: string }
 >(function Header({ className }, ref) {
@@ -61,7 +62,7 @@ export const Header = forwardRef<
         <div className="flex gap-4">
           {/* <MobileSearch /> */}
           {/* <input type="text" /> */}
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
         </div>
         <div className="">
           <QuickCreateMenu />
@@ -70,3 +71,6 @@ export const Header = forwardRef<
     </motion.div>
   );
 });
+
+
+export default Header;

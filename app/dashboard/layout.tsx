@@ -1,14 +1,15 @@
 import { Layout } from "@dashboard_components/Layout";
 import "../globals.css";
 import { type Metadata } from "next";
+import { Providers } from "@dashboard_components/Providers";
 
 export const metadata: Metadata = {
   title: {
     template: "%s - Dashboard",
     default: "",
+
   },
 };
-
 export default async function RootLayout({
   children,
 }: {
@@ -17,9 +18,11 @@ export default async function RootLayout({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className="flex min-h-full bg-white antialiased dark:bg-zinc-900">
-        <div className="w-full">
-          <Layout>{children}</Layout>
-        </div>
+        <Providers>
+          <div className="w-full">
+            <Layout>{children}</Layout>
+          </div>
+        </Providers>
       </body>
     </html>
   );
