@@ -2,6 +2,7 @@ import { Layout } from "@dashboard_components/Layout";
 import "../globals.css";
 import { type Metadata } from "next";
 import { Providers } from "@dashboard_components/Providers";
+import { ModalProvider } from "./components/providers/modal-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -22,6 +23,7 @@ export default async function RootLayout({
           <div className="w-full">
             <Layout>{children}</Layout>
           </div>
+          <ModalProvider />
         </Providers>
       </body>
     </html>
