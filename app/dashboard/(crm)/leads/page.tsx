@@ -13,6 +13,7 @@ import {
 import TableView from './TableView';
 import BoardView from './BoardView';
 import Tools from './Tools';
+import ActiveFilters from './ActiveFilters';
 
 
 export default function LeadPage() {
@@ -23,21 +24,25 @@ export default function LeadPage() {
       ]}
       className="w-full h-full  flex items-center justify-center">
       <div className="grid flex-1 items-start gap-4  sm:py-0 md:gap-8">
-        <Tabs defaultValue="table">
-          <div className="flex items-center">
-            <TabsList >
-              <TabsTrigger value="table" className='text-xs space-x-1.5'>
-                <LayoutListIcon className="h-4 w-4" />
-                <span>Lists</span>
-              </TabsTrigger>
-              <TabsTrigger value="board" className='text-xs space-x-1.5'>
+        <Tabs defaultValue="board" className=''>
+          <div className="flex items-center ">
+            <TabsList className='rounded-sm' >
+              <TabsTrigger value="board" className='text-xs space-x-1.5 rounded-sm px-1.5 mx-1'>
                 <Columns3Icon className="h-4 w-4" />
                 <span>Columns</span>
               </TabsTrigger>
+              <TabsTrigger value="table" className='text-xs space-x-1.5 rounded-sm px-1.5 mx-1'>
+                <LayoutListIcon className="h-4 w-4" />
+                <span>Lists</span>
+              </TabsTrigger>
+
             </TabsList>
             <div className="ml-auto flex items-center gap-2">
               <Tools />
             </div>
+          </div>
+          <div className="mt-2">
+            <ActiveFilters />
           </div>
           <TabsContent value="board">
             <BoardView />
