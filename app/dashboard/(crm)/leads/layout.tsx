@@ -11,7 +11,7 @@ export default function Layout({ children }: {
         <Breadcrumb />
       </div>
 
-      <div className=" pt-14">{children}</div>
+      {children}
     </div>
   )
 }

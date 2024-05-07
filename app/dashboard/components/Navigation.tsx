@@ -21,7 +21,6 @@ import {
   CalendarIcon,
   LayoutTemplate,
   SquarePen,
-  ChevronDown,
 } from "lucide-react";
 import Logo from "./Logo";
 
@@ -83,11 +82,11 @@ function NavLink({
         "flex justify-between gap-2 py-1.5 pr-3 text-sm transition w-full",
         isAnchorLink ? "pl-7" : "pl-4",
         active
-          ? "text-zinc-900 dark:text-white font-semibold "
-          : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white",
+          ? "text-primary dark:text-white font-semibold "
+          : " dark:text-muted-foreground dark:hover:text-white",
       )}
     >
-      <div >{children}</div>
+      <span className="truncate">{children}</span>
       {tag && (
         <Tag variant="small" color="rose">
           {tag}
@@ -207,7 +206,7 @@ function NavigationGroup({
         </AnimatePresence> */}
         <motion.div
           layout
-          className="absolute inset-y-0 left-6 w-px bg-zinc-900/10 dark:bg-white/5"
+          className="absolute inset-y-0 left-6 w-px  bg-primary/10 dark:bg-white/30"
         />
         {/* <AnimatePresence initial={false}>
           {isActiveGroup && (
@@ -224,16 +223,8 @@ function NavigationGroup({
                   </div>
                 )}
                 <NavLink href={link.href} active={pathname === link.href} tag={link.tag}>
-                  <div className="flex space-x-1 items-center">
-                    <span className="truncate">{link.title}</span>
-                    {/* {
-                      link.subLinks && (
-                        <ChevronDown className="w-4 h-4 font-semibold text-zinc-600 dark:text-zinc-400" />
-                      )
-                    } */}
-                  </div>
+                  {link.title}
                 </NavLink>
-
               </div>
               <AnimatePresence mode="popLayout" initial={false}>
                 {pathname.startsWith(link.href) && (
@@ -292,8 +283,8 @@ export const navigation: Array<NavGroup> = [
         creatable: true,
       },
       {
-        title: "Viewing",
-        href: "/dashboard/viewing",
+        title: "Viewings",
+        href: "/dashboard/viewings",
         icon: <CalendarIcon className="w-4 h-4" />,
         creatable: true,
         tag: "new"
@@ -328,7 +319,7 @@ export const navigation: Array<NavGroup> = [
     title: "Website",
     links: [
       {
-        title: "Page & Contents",
+        title: "Pages & Contents",
         href: "/",
         icon: <SquarePen className="w-4 h-4" />,
       },

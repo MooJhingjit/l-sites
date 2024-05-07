@@ -1,14 +1,52 @@
 import React from 'react';
-import ClientWrapper from '../../components/ClientWrapper';
+import PageLayout from '../../components/PageLayout';
+import {
+  Columns3Icon,
+  LayoutListIcon,
+} from "lucide-react"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import TableView from './TableView';
+import BoardView from './BoardView';
+import Tools from './Tools';
+
 
 export default function LeadPage() {
   return (
-    <ClientWrapper
+    <PageLayout
       breadcrumbs={[
-        { label: 'Leads', href: '/dashboard/leads' }
+        { label: 'All Leads' }
       ]}
       className="w-full h-full  flex items-center justify-center">
-      <p>Loading..</p>
-    </ClientWrapper>
+      <div className="grid flex-1 items-start gap-4  sm:py-0 md:gap-8">
+        <Tabs defaultValue="table">
+          <div className="flex items-center">
+            <TabsList >
+              <TabsTrigger value="table" className='text-xs space-x-1.5'>
+                <LayoutListIcon className="h-4 w-4" />
+                <span>Lists</span>
+              </TabsTrigger>
+              <TabsTrigger value="board" className='text-xs space-x-1.5'>
+                <Columns3Icon className="h-4 w-4" />
+                <span>Columns</span>
+              </TabsTrigger>
+            </TabsList>
+            <div className="ml-auto flex items-center gap-2">
+              <Tools />
+            </div>
+          </div>
+          <TabsContent value="board">
+            <BoardView />
+          </TabsContent>
+          <TabsContent value="table">
+            <TableView />
+          </TabsContent>
+        </Tabs>
+      </div>
+    </PageLayout>
   );
 }

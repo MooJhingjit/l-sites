@@ -1,5 +1,5 @@
 import React from 'react';
-import ClientWrapper from '../../../components/ClientWrapper';
+import PageLayout from '../../../components/PageLayout';
 
 export default function LeadDetailPage({
   slug,
@@ -7,7 +7,7 @@ export default function LeadDetailPage({
   slug: string;
 }) {
   return (
-    <ClientWrapper
+    <PageLayout
       breadcrumbs={[
         { label: 'Home', href: '/dashboard' },
         { label: 'Leads', href: '/dashboard/leads' },
@@ -15,6 +15,6 @@ export default function LeadDetailPage({
       ]}
       className="w-full h-full  flex items-center justify-center">
       <p>{slug} Detail page Loading..</p>
-    </ClientWrapper>
+    </PageLayout>
   );
 }

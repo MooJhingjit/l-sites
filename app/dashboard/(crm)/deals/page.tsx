@@ -1,14 +1,14 @@
 import React from 'react';
-import ClientWrapper from '../../components/ClientWrapper';
+import PageLayout from '../../components/PageLayout';
 
 export default function LeadPage() {
   return (
-    <ClientWrapper
+    <PageLayout
       breadcrumbs={[
         { label: 'Deals', href: '/deals' }
       ]}
       className="w-full h-full flex items-center justify-center">
       <p>Loading..</p>
-    </ClientWrapper>
+    </PageLayout>
   );
 }
