@@ -322,7 +322,7 @@ const BoardCard = ({
               <p className="text-xs text-secondary-foreground capitalize">
                 {item.type}
               </p>
-              <div className="text-lg font-semibold">
+              <div className="text text-secondary-foreground font-semibold">
                 ฿{item.value.toLocaleString()}
               </div>
 
