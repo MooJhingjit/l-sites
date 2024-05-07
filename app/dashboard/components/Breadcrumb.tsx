@@ -17,6 +17,18 @@ export default function DashboardBreadcrumb() {
     <Breadcrumb>
       <BreadcrumbList>
         {
+          breadcrumbs.length > 0 &&
+          (
+            <>
+              <BreadcrumbItem key={'home'}>
+                <BreadcrumbLink href={'/dashboard'}>Home</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+            </>
+          )
+        }
+
+        {
           breadcrumbs.map((breadcrumb, index) => (
             <>
               <BreadcrumbItem key={index}>

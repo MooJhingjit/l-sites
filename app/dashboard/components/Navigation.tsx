@@ -21,6 +21,7 @@ import {
   CalendarIcon,
   LayoutTemplate,
   SquarePen,
+  ChevronDown,
 } from "lucide-react";
 import Logo from "./Logo";
 
@@ -86,10 +87,10 @@ function NavLink({
           : "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white",
       )}
     >
-      <span className="truncate">{children}</span>
+      <div >{children}</div>
       {tag && (
         <Tag variant="small" color="rose">
-          NEW
+          {tag}
         </Tag>
       )}
     </Link>
@@ -223,8 +224,16 @@ function NavigationGroup({
                   </div>
                 )}
                 <NavLink href={link.href} active={pathname === link.href} tag={link.tag}>
-                  {link.title}
+                  <div className="flex space-x-1 items-center">
+                    <span className="truncate">{link.title}</span>
+                    {/* {
+                      link.subLinks && (
+                        <ChevronDown className="w-4 h-4 font-semibold text-zinc-600 dark:text-zinc-400" />
+                      )
+                    } */}
+                  </div>
                 </NavLink>
+
               </div>
               <AnimatePresence mode="popLayout" initial={false}>
                 {pathname.startsWith(link.href) && (
