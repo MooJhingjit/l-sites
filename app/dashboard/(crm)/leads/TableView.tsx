@@ -45,8 +45,8 @@ const ActionsMenu = () => (
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">
       {/* <DropdownMenuLabel>Actions</DropdownMenuLabel> */}
-      <DropdownMenuItem>Edit</DropdownMenuItem>
-      <DropdownMenuItem>Delete</DropdownMenuItem>
+      <DropdownMenuItem className='text-xs'>Edit</DropdownMenuItem>
+      <DropdownMenuItem className='text-xs'>Delete</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 );

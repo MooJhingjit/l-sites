@@ -32,7 +32,9 @@ export default function FooterA(props: Readonly<Props>) {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-20">
         <div className="lg:grid lg:grid-cols-3 xl:gap-8 @container">
           <div className="space-y-8 col-span-3 @2xl:col-span-1">
-            <Logo width={130} height={22} />
+            <div className="h-12">
+              <Logo width={130} height={22} />
+            </div>
 
             <p className="text-sm leading-6 text-gray-300">{description}</p>
             <div className="flex space-x-6">

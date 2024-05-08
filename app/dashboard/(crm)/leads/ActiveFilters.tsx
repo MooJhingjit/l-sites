@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button"
 export default function ActiveFilters() {
   return (
     <div className="bg-secondary/50 rounded-sm">
-      <div className="mx-auto max-w-7xl px-4 py-2 sm:flex sm:items-center">
+      <div className=" max-w-7xl px-4 py-2 sm:flex sm:items-center">
         <h3 className="text-xs font-medium text-primary">
           Filters
           <span className="sr-only">, active</span>

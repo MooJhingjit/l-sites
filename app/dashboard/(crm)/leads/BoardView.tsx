@@ -10,7 +10,25 @@ import {
 } from "@/components/ui/card"
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { EllipsisVertical, EyeIcon, EyeOffIcon, PencilLineIcon, PlusCircleIcon, Trash2Icon } from 'lucide-react';
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import useLeadModal from '../../lib/hooks/useLeadModal';
+import usePipelineStateModal from '../../lib/hooks/usePipelineStateModal';
 
 export const defaultLeads = [
   {
@@ -176,7 +194,7 @@ const BoardView = () => {
                 ref={provided.innerRef}
                 className="flex space-x-4 h-full justify-between"
               >
-                <BoardColumn
+                <BoardStage
                   variant="default"
                   items={
                     leads.filter((i) => i.status === "inbound")
@@ -184,7 +202,7 @@ const BoardView = () => {
                   columnKey="inbound"
                   label="Inbound"
                 />
-                <BoardColumn
+                <BoardStage
                   variant="default"
                   items={
                     leads.filter((i) => i.status === "qualify")
@@ -192,7 +210,7 @@ const BoardView = () => {
                   columnKey="qualify"
                   label="Qualify"
                 />
-                <BoardColumn
+                <BoardStage
                   variant="success"
                   items={
                     leads.filter((i) => i.status === "qualify-won")
@@ -200,7 +218,7 @@ const BoardView = () => {
                   columnKey="qualify-won"
                   label="Won[Moved to new Pipeline]"
                 />
-                <BoardColumn
+                <BoardStage
                   variant="destructive"
                   items={
                     leads.filter((i) => i.status === "lost")
@@ -210,7 +228,7 @@ const BoardView = () => {
                 />
 
                 {provided.placeholder}
-                {/* <div className="flex-shrink-0 w-1" /> */}
+                <StageTools />
               </div>
             )}
           </Droppable>
@@ -224,7 +242,60 @@ const BoardView = () => {
   );
 };
 
-const BoardColumn = ({
+const StageTools = () => {
+
+  const { data, refs, onOpen } = usePipelineStateModal()
+  
+  return (
+    <div className="space-y-2 min-w-[45px]" >
+      <Button
+        onClick={
+          () => {
+            onOpen()
+          }
+        }
+      variant="muted" size="icon" className='w-full' title="Add a new column">
+        <PlusCircleIcon className="h-4 w-4" />
+      </Button>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant="muted" size="icon" className='w-full' title='2 Hidden Columns'>
+            <EyeOffIcon className="h-3.5 w-3.5" />
+            <p className='text-xs ml-1'>(2)</p>
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-60" side='left'>
+          <div className=" divide-y  space-y-2">
+
+            <div className="flex justify-between items-center">
+              <Label htmlFor="Stage A" className="text-xs">Stage A</Label>
+              <div className="flex justify-between items-center space-x-1.5">
+                <p className='text-xs'>(6)</p>
+                <Button variant="muted" size="icon" className='h-5 w-5 rounded-sm'>
+                  <EyeIcon className="h-3.5 w-3.5" />
+                </Button>
+              </div>
+            </div>
+            <div className="flex justify-between items-center pt-2">
+              <Label htmlFor="Stage A" className="text-xs">Stage B</Label>
+              <div className="flex justify-between items-center space-x-1.5">
+                <p className='text-xs'>(1)</p>
+                <Button variant="muted" size="icon" className='h-5 w-5 rounded-sm'>
+                  <EyeIcon className="h-3.5 w-3.5" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </PopoverContent>
+      </Popover>
+
+
+
+    </div>
+  )
+}
+
+const BoardStage = ({
   variant,
   items,
   columnKey,
@@ -235,6 +306,14 @@ const BoardColumn = ({
   columnKey: string;
   items: any[];
 }) => {
+
+  const { data, refs, onOpen } = useLeadModal()
+
+  const openNewLead = () => {
+    // open filter modal
+    onOpen()
+  }
+
   return (
     <div className="h-auto min-w-[220px] w-full select-none ">
       <div
@@ -251,19 +330,32 @@ const BoardColumn = ({
           // )
         }
       >
-        <div
-          className={
-            cn(
-              "flex justify-between items-center px-3 pt-2 pb-4 text-sm font-semibold  whitespace-nowrap",
-              // variant === "default" && "text-secondary-foreground",
-              // variant === "success" && "border-l-2 border-l-green-600",
-              // variant === "destructive" && "border-l-red-500",
-            )
-          }>
-          <p >
-            {label}
-          </p>
-          ({items.length})
+        <div className=" flex justify-between items-center px-3 pt-2 pb-4 text-sm font-semibold whitespace-nowrap">
+          <div className='flex space-x-2 items-center'>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="muted" size="icon" className='h-5 w-5 rounded-sm'>
+                  <EllipsisVertical className="h-4 w-4 text-muted-foreground" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem className=' cursor-pointer space-x-2 text-xs  flex items-center'>
+                  <PencilLineIcon className="h-3 w-3" /><span>Edit Title</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className=' cursor-pointer space-x-2 text-xs  flex items-center'>
+                  <EyeOffIcon className="h-3 w-3" /><span>Hide Column</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className='text-destructive text-xs cursor-pointer space-x-2 flex items-center'>
+                  <Trash2Icon className="h-3 w-3 " />
+                  <span >Remove</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <p>{label}</p>
+          </div>
+          <p>({items.length})</p>
         </div>
         <div className="h-full px-3">
           <Droppable droppableId={columnKey} type="card">
@@ -280,7 +372,9 @@ const BoardColumn = ({
                 {provided.placeholder}
 
                 <li>
-                  <Button variant="muted" className="w-full hidden group-hover:block">
+                  <Button
+                    onClick={openNewLead}
+                    variant="muted" className="w-full hidden group-hover:block">
                     Add Item
                   </Button>
                 </li>
@@ -289,7 +383,7 @@ const BoardColumn = ({
           </Droppable>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
