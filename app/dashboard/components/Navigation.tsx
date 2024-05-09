@@ -23,6 +23,7 @@ import {
   SquarePen,
 } from "lucide-react";
 import Logo from "./Logo";
+import ProfileSettings from "./ProfileSettings";
 
 type Link = {
   title: string;
@@ -271,10 +272,10 @@ export const navigation: Array<NavGroup> = [
         title: "Leads",
         href: "/dashboard/leads",
         icon: <MailIcon className="w-4 h-4" />,
-        subLinks: [
-          { title: "Kanban board", href: "/dashboard/leads/a" },
-          { title: "Stats", href: "/dashboard/leads/b" },
-        ],
+        // subLinks: [
+        //   { title: "Kanban board", href: "/dashboard/leads/a" },
+        //   { title: "Stats", href: "/dashboard/leads/b" },
+        // ],
       },
       {
         title: "Deals",
@@ -336,9 +337,10 @@ const Navigation = (props: React.ComponentPropsWithoutRef<"nav">) => {
   return (
     <div className="relative">
       <div className="max-w-[200px] flex justify-start">
-        <Link href="/" aria-label="Home" className="">
+        <ProfileSettings />
+        {/* <Link href="/" aria-label="Home" className="">
           <Logo />
-        </Link>
+        </Link> */}
       </div>
       <nav {...props}>
         <ul role="list relative">

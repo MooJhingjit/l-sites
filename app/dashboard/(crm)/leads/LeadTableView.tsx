@@ -1,7 +1,6 @@
 'use client'
 import React from 'react';
 
-import Image from "next/image"
 import {
   MoreHorizontal,
 } from "lucide-react"
@@ -30,7 +29,8 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card"
-import { defaultLeads } from './BoardView';
+import { defaultLeads } from './LeadBoardView';
+import TablePagination from '../../components/TablePagination';
 
 
 
@@ -51,7 +51,7 @@ const ActionsMenu = () => (
   </DropdownMenu>
 );
 
-const TableView = () => {
+const LeadTableView = () => {
   return (
     <Card>
       <CardContent>
@@ -93,10 +93,11 @@ const TableView = () => {
           Showing <strong>1-10</strong> of <strong>32</strong>{" "}
           products
         </div>
+        <TablePagination totalPages={10} />
       </CardFooter>
     </Card>
 
   );
 };
 
-export default TableView;
+export default LeadTableView;

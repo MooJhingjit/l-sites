@@ -60,7 +60,7 @@ const Header = forwardRef<
           </ul>
         </nav>
         */}
-        <div className="flex">
+        <div className="flex space-x-1">
           {/* <MobileSearch /> */}
           <GlobalSearch />
           <QuickCreateMenu />
