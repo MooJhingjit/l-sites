@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import useLeadModal from '../../lib/hooks/useLeadModal';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 
 export default function BoardStage({
@@ -22,7 +23,7 @@ export default function BoardStage({
   label,
   renderCardItem
 }: {
-  variant: "default" | "success" | "destructive";
+  variant: string; //"default" | "success" | "destructive";
   label: string;
   columnKey: string;
   items: any[];
@@ -36,11 +37,11 @@ export default function BoardStage({
   }
 
   return (
-    <div className="h-auto min-w-[240px] w-full select-none ">
+    <div className="min-w-[240px] w-full select-none h-full ">
       <div
         className={
           cn(
-            "w-full   shadow-md pb-2 h-full bg-secondary/50",
+            "w-full   shadow-md pb-2 h-full bg-secondary/50 ",
             // variant === "default" && "bg-secondary/50 ",
             variant === "success" && "border-t-2 border-t-green-500",
             variant === "destructive" && "border-t-2 border-t-red-500",
@@ -78,7 +79,7 @@ export default function BoardStage({
           </div>
           <p>({items.length})</p>
         </div>
-        <div className="h-full px-3">
+        <ScrollArea className=" h-[calc(100vh-250px)] px-3">
           <Droppable droppableId={columnKey} type="card">
             {(provided) => (
               <ul
@@ -100,7 +101,7 @@ export default function BoardStage({
               </ul>
             )}
           </Droppable>
-        </div>
+        </ScrollArea>
       </div>
     </div >
   );

@@ -1,20 +1,35 @@
-'use client'
-import React from 'react';
+"use client"
+
+import * as React from "react"
+
 
 import {
-  MoreHorizontal,
-} from "lucide-react"
+  Card,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
 
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+
+
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+  getPaginationRowModel,
+  SortingState,
+  getSortedRowModel,
+  VisibilityState
+} from "@tanstack/react-table"
+
 import {
   DropdownMenu,
+  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
+
 import {
   Table,
   TableBody,
@@ -23,81 +38,117 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { DataTablePagination } from "../../components/data-table/DataTablePagination"
+import { DataTableViewOptions } from "../../components/data-table/DataTableViewOptions"
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card"
-import { defaultLeads } from './LeadBoardView';
-import TablePagination from '../../components/TablePagination';
-
+interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[]
+  data: TData[]
+}
 
 
-// Reusable function to render the dropdown menu
-const ActionsMenu = () => (
-  <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-      <Button aria-haspopup="true" size="icon" variant="ghost">
-        <MoreHorizontal className="h-4 w-4" />
-        <span className="sr-only">Toggle menu</span>
-      </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end">
-      {/* <DropdownMenuLabel>Actions</DropdownMenuLabel> */}
-      <DropdownMenuItem className='text-xs'>Edit</DropdownMenuItem>
-      <DropdownMenuItem className='text-xs'>Delete</DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
-);
+export default function LeadTableView<TData, TValue>({
+  data,
+  columns
+}: DataTableProps<TData, TValue>) {
 
-const LeadTableView = () => {
+  const [sorting, setSorting] = React.useState<SortingState>([])
+  const [columnVisibility, setColumnVisibility] =
+    React.useState<VisibilityState>({})
+
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    onSortingChange: setSorting,
+    getSortedRowModel: getSortedRowModel(),
+    onColumnVisibilityChange: setColumnVisibility,
+
+    state: {
+      sorting,
+      columnVisibility
+    },
+
+  })
+  // update url when pagination changes
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    params.set("page", (table.getState().pagination.pageIndex + 1).toString())
+    params.set("pageSize", table.getState().pagination.pageSize.toString())
+    window.history.replaceState({}, "", `${window.location.pathname}?${params}`)
+  }, [table.getState().pagination.pageIndex, table.getState().pagination.pageSize])
+
+  // udpate url when sorting changes
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    table.getState().sorting.forEach((sort) => {
+      params.set(`sort[${sort.id}]`, sort.desc ? "desc" : "asc")
+    })
+    window.history.replaceState({}, "", `${window.location.pathname}?${params}`)
+  }, [table.getState().sorting])
+
+
   return (
-    <Card>
-      <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>
-                <span className="sr-only">Actions</span>
-              </TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Value</TableHead>
-              <TableHead>Type</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Last Updated</TableHead>
+    <>
+      <DataTableViewOptions table={table} />
 
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {defaultLeads.map((lead) => (
-              <TableRow key={lead.id}>
-                <TableCell>
-                  <ActionsMenu />
-                </TableCell>
-                <TableCell className="font-medium">{lead.title}</TableCell>
-                <TableCell>${lead.value.toLocaleString()}</TableCell>
-                <TableCell>{lead.type}</TableCell>
-                <TableCell>
-                  <Badge variant={lead.status === "qualify-won" ? "outline" : "secondary"}>{lead.status}</Badge>
-                </TableCell>
-                <TableCell>{lead.lastUpdated.toLocaleString()}</TableCell>
+      <Card>
+        <CardContent>
 
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </CardContent>
-      <CardFooter>
-        <div className="text-xs text-muted-foreground">
-          Showing <strong>1-10</strong> of <strong>32</strong>{" "}
-          products
-        </div>
-        <TablePagination totalPages={10} />
-      </CardFooter>
-    </Card>
+
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <TableHead key={header.id}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                      </TableHead>
+                    )
+                  })}
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={columns.length} className="h-24 text-center">
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </CardContent>
+
+        {/* footer */}
+        <CardFooter>
+          <DataTablePagination table={table} />
+
+        </CardFooter>
+      </Card >
+    </>
 
   );
 };
 
-export default LeadTableView;

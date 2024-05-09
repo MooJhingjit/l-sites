@@ -130,22 +130,26 @@ const LeadBoardView = () => {
     {
       id: "inbound",
       label: "Inbound",
-      isVisible: true
+      isVisible: true,
+      variant: "default"
     },
     {
       id: "qualify",
       label: "Qualify",
-      isVisible: true
+      isVisible: true,
+      variant: "default"
     },
     {
       id: "qualify-won",
       label: "Won[Moved to new Pipeline]",
-      isVisible: true
+      isVisible: true,
+      variant: "success"
     },
     {
       id: "lost",
       label: "Lost",
-      isVisible: true
+      isVisible: true,
+      variant: "destructive"
     },
   ]);
 
@@ -190,7 +194,7 @@ const LeadBoardView = () => {
             stages.filter((i) => i.isVisible).map((stage) => (
               <BoardStage
                 key={`lead-stage-${stage.id}`}
-                variant="default"
+                variant={stage.variant}
                 columnKey={stage.id}
                 label={stage.label}
                 items={
