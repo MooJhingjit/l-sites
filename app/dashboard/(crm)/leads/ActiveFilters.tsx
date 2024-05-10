@@ -11,12 +11,13 @@ import { Button } from "@/components/ui/button"
 
 export default function ActiveFilters() {
   return (
-    <div className="bg-secondary/50 rounded-sm">
-      <div className=" max-w-7xl px-4 py-2 sm:flex sm:items-center">
-        <h3 className="text-xs font-medium text-primary">
-          Filters
+    <div className="bg-secondary/50  rounded-sm my-2 ">
+      <div className=" text-xs max-w-7xl px-4 py-2 sm:flex sm:items-center">
+        <h3 className=" font-medium text-primary">
+          Active filters
           <span className="sr-only">, active</span>
         </h3>
+        <p className='ml-2 text-orange-500 underline cursor-pointer'>clear all</p>
 
         <div aria-hidden="true" className="hidden h-5 w-px bg-primary/20 sm:ml-4 sm:block" />
 

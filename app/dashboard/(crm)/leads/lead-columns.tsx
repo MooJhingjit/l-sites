@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { DataTableColumnHeader } from "../../components/data-table/DataTableColumnHeader"
+import { Badge } from "@/components/ui/badge"
 
 
 export type Lead = {
@@ -59,6 +60,16 @@ export const columns: ColumnDef<Lead>[] = [
   {
     accessorKey: "status",
     header: "Status",
+    cell: ({ row }) => {
+      const status = row.getValue("status") as string
+
+      return <div className="w-[100px] flex justify-center">
+        <Badge
+          className="capitalize text-xs "
+          variant={status === "lost" ? "destructive" : "secondary"}
+        >{status}</Badge>
+      </div>
+    },
   },
   {
     accessorKey: "title",
@@ -82,8 +93,18 @@ export const columns: ColumnDef<Lead>[] = [
         style: "currency",
         currency: "USD",
       }).format(amount)
- 
-      return <div className="text-right font-medium">{formatted}</div>
+
+      return <div className="text-left">{formatted}</div>
     },
+  },
+  {
+    accessorKey: "value",
+    header: "Contact",
+    cell: ({ row }) => {
+    
+      return <div className="text-left">-</div>
+    },
+    // header: () => <div className="text-right">Amount</div>,
+   
   },
 ]
