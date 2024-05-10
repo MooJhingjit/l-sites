@@ -21,6 +21,7 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar"
 import { Settings, SlidersHorizontalIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function ProfileSettings() {
   return (
@@ -39,17 +40,21 @@ export default function ProfileSettings() {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard/settings/profile">
+              Profile
+              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            </Link>
           </DropdownMenuItem>
           {/* <DropdownMenuItem>
             Billing
             <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem> */}
-          <DropdownMenuItem>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard/settings/preferences">
+            Preferences
+              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+            </Link>
           </DropdownMenuItem>
           {/* <DropdownMenuItem>
             Keyboard shortcuts

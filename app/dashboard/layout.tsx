@@ -1,4 +1,4 @@
-import { Layout } from "@dashboard_components/Layout";
+// import { Layout } from "@dashboard_components/Layout";
 import "../globals.css";
 import { type Metadata } from "next";
 import { Providers } from "@dashboard_components/Providers";
@@ -21,7 +21,8 @@ export default async function RootLayout({
       <body className="flex min-h-full bg-white antialiased dark:bg-zinc-900">
         <Providers>
           <div className="w-full">
-            <Layout>{children}</Layout>
+            {/* <Layout>{children}</Layout> */}
+            {children}
           </div>
           <ModalProvider />
         </Providers>

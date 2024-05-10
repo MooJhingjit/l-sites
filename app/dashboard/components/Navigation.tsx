@@ -12,16 +12,7 @@ import { useIsInsideMobileNavigation } from "./MobileNavigation";
 import { Tag } from "./Tag";
 // import { Button } from '@/components/ui/button'
 // import { remToPx } from '@/lib/utils'
-import {
-  CircleDollarSign,
-  HomeIcon,
-  MailIcon,
-  BuildingIcon,
-  Users,
-  CalendarIcon,
-  LayoutTemplate,
-  SquarePen,
-} from "lucide-react";
+
 import Logo from "./Logo";
 import ProfileSettings from "./ProfileSettings";
 
@@ -33,7 +24,7 @@ type Link = {
   creatable?: boolean;
   tag?: string;
 };
-interface NavGroup {
+export interface NavGroup {
   title: string;
   links: Link[];
 }
@@ -264,89 +255,31 @@ function NavigationGroup({
   );
 }
 
-export const navigation: Array<NavGroup> = [
-  {
-    title: "CRM",
-    links: [
-      {
-        title: "Leads",
-        href: "/dashboard/leads",
-        icon: <MailIcon className="w-4 h-4" />,
-        // subLinks: [
-        //   { title: "Kanban board", href: "/dashboard/leads/a" },
-        //   { title: "Stats", href: "/dashboard/leads/b" },
-        // ],
-      },
-      {
-        title: "Deals",
-        href: "/dashboard/deals",
-        icon: <CircleDollarSign className="w-4 h-4" />,
-        creatable: true,
-      },
-      {
-        title: "Viewings",
-        href: "/dashboard/viewings",
-        icon: <CalendarIcon className="w-4 h-4" />,
-        creatable: true,
-        tag: "new"
-      },
 
-      {
-        title: "Contacts",
-        href: "/dashboard/contacts",
-        icon: <Users className="w-4 h-4" />,
-        creatable: true,
-      },
-    ],
-  },
-  {
-    title: "Listing Management",
-    links: [
-      {
-        title: "Properties",
-        href: "/",
-        icon: <HomeIcon className="w-4 h-4" />,
-        creatable: true,
-      },
-      {
-        title: "Projects",
-        href: "/",
-        icon: <BuildingIcon className="w-4 h-4" />,
-        creatable: true,
-      },
-    ],
-  },
-  {
-    title: "Website",
-    links: [
-      {
-        title: "Pages & Contents",
-        href: "/",
-        icon: <SquarePen className="w-4 h-4" />,
-      },
-      {
-        title: "Templates",
-        href: "/",
-        icon: <LayoutTemplate className="w-4 h-4" />,
-      },
-    ],
-  },
-];
 
-const Navigation = (props: React.ComponentPropsWithoutRef<"nav">) => {
+interface NavProps extends React.ComponentPropsWithoutRef<'nav'> {
+  className?: string;
+  withBrand?: boolean;
+  navigation: NavGroup[]
+}
+
+
+const Navigation = (props: NavProps) => {
+  const { navigation, withBrand = true, ...rest } = props;
   return (
     <div className="relative">
-      <div className="max-w-[200px] flex justify-start">
-        <ProfileSettings />
-        {/* <Link href="/" aria-label="Home" className="">
-          <Logo />
-        </Link> */}
-      </div>
-      <nav {...props}>
+      {
+        withBrand && (
+          <div className="max-w-[200px] flex justify-start">
+            <ProfileSettings />
+          </div>
+        )
+      }
+      <nav {...rest}>
         <ul role="list relative">
           {/* <TopLevelNavItem href="/">Dashboard</TopLevelNavItem> */}
 
-          {navigation.map((group, groupIndex) => (
+          {props.navigation.map((group, groupIndex) => (
             <NavigationGroup
               key={group.title}
               group={group}
