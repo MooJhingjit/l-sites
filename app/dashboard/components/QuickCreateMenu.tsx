@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Button } from "@base_components/ui/button";
 import { CircleDollarSign, HomeIcon, BuildingIcon, Users } from "lucide-react";
 
@@ -11,8 +11,6 @@ import { SquarePlusIcon } from "lucide-react";
 import useContactModal from "../lib/hooks/useContactModal";
 import useDealModal from "../lib/hooks/useDealModal";
 
-
-
 export function QuickCreateMenu() {
   const modal = useContactModal();
   const menus = [
@@ -21,14 +19,14 @@ export function QuickCreateMenu() {
       description: "lLorem ipsum, dolor sit amet ",
       href: "#",
       icon: CircleDollarSign,
-      cb: useDealModal()
+      cb: useDealModal(),
     },
     {
       name: "Contact",
       description: "accusantium iure ipsum placeat",
       href: "#",
       icon: Users,
-      cb: useContactModal()
+      cb: useContactModal(),
     },
     {
       name: "Property",
@@ -46,7 +44,10 @@ export function QuickCreateMenu() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant={"ghost"} className="flex space-x-2 text-muted-foreground">
+        <Button
+          variant={"ghost"}
+          className="flex space-x-2 text-muted-foreground"
+        >
           <SquarePlusIcon className="w-4 h-4 " />
           <span>Create New</span>
         </Button>

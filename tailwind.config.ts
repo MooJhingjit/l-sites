@@ -82,7 +82,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundColor: (theme: any) => ({
-        ...theme('colors'),
+        ...theme("colors"),
         primary: `rgb(var(--primary) / <alpha-value>)`,
         secondary: `rgb(var(--secondary) / <alpha-value>)`,
         destructive: `rgb(var(--destructive) / <alpha-value>)`,

@@ -1,5 +1,5 @@
 // store/useBreadcrumbStore.ts
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export type BreadcrumbItem = {
   label: string;
@@ -17,7 +17,7 @@ const useBreadcrumbStore = create<BreadcrumbState>((set) => ({
 
   setBreadcrumbs: (breadcrumbs: BreadcrumbItem[]) => set({ breadcrumbs }),
 
-  clearBreadcrumbs: () => set({ breadcrumbs: [] })
+  clearBreadcrumbs: () => set({ breadcrumbs: [] }),
 }));
 
 export default useBreadcrumbStore;

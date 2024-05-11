@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import useLeadModal from "../../lib/hooks/useLeadModal";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,7 +17,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import {
   Card,
   CardContent,
@@ -25,16 +25,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { ListFilterIcon } from "lucide-react";
 
 export const LeadModal = () => {
@@ -45,26 +45,33 @@ export const LeadModal = () => {
       <DialogContent className="sm:max-w-[425px] p-0 border-none">
         <Card className="w-full">
           <CardHeader className="flex space-x-3 items-center flex-row space-y-0">
-            <CardTitle className="">
-              Create a new lead
-            </CardTitle>
+            <CardTitle className="">Create a new lead</CardTitle>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="secondary" size={'sm'} className="text-xs h-6">Inbound</Button>
+                <Button variant="secondary" size={"sm"} className="text-xs h-6">
+                  Inbound
+                </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 ">
                 <DropdownMenuLabel>Change status</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup value={"Inbound"} >
-                  <DropdownMenuRadioItem value="Inbound">Inbound</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="qualify">Qualify</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="qualify">Won</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="lost">Lost</DropdownMenuRadioItem>
+                <DropdownMenuRadioGroup value={"Inbound"}>
+                  <DropdownMenuRadioItem value="Inbound">
+                    Inbound
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="qualify">
+                    Qualify
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="qualify">
+                    Won
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="lost">
+                    Lost
+                  </DropdownMenuRadioItem>
                 </DropdownMenuRadioGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-
           </CardHeader>
           <CardContent>
             <form>
@@ -102,7 +109,6 @@ export const LeadModal = () => {
             <Button>Create</Button>
           </CardFooter>
         </Card>
-
       </DialogContent>
     </Dialog>
   );

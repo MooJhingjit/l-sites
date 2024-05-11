@@ -1,21 +1,20 @@
 import Image from "next/image";
-import { useTheme } from 'next-themes'
+import { useTheme } from "next-themes";
 
 export default function Logo() {
-
-  const { resolvedTheme } = useTheme()
-  let src
+  const { resolvedTheme } = useTheme();
+  let src;
 
   switch (resolvedTheme) {
-    case 'light':
+    case "light":
       src = "/property.com/logos/logo-primary.svg";
-      break
-    case 'dark':
+      break;
+    case "dark":
       src = "/property.com/logos/logo-white.svg";
-      break
+      break;
     default:
       src = "/property.com/logos/logo-primary.svg";
-      break
+      break;
   }
 
   return (

@@ -1,27 +1,31 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 import { Droppable } from "@hello-pangea/dnd";
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { EllipsisVertical, EyeOffIcon, PencilLineIcon, Trash2Icon } from 'lucide-react';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  EllipsisVertical,
+  EyeOffIcon,
+  PencilLineIcon,
+  Trash2Icon,
+} from "lucide-react";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import useLeadModal from '../../lib/hooks/useLeadModal';
-import { ScrollArea } from '@/components/ui/scroll-area';
-
+} from "@/components/ui/dropdown-menu";
+import useLeadModal from "../../lib/hooks/useLeadModal";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function BoardStage({
   variant,
   items,
   columnKey,
   label,
-  renderCardItem
+  renderCardItem,
 }: {
   variant: string; //"default" | "success" | "destructive";
   label: string;
@@ -29,12 +33,12 @@ export default function BoardStage({
   items: any[];
   renderCardItem: (item: any, index: number) => React.ReactNode;
 }) {
-  const { data, refs, onOpen } = useLeadModal()
+  const { data, refs, onOpen } = useLeadModal();
 
   const openNewLead = () => {
     // open filter modal
-    onOpen()
-  }
+    onOpen();
+  };
 
   return (
     <div className="min-w-[240px] w-full select-none h-full ">
@@ -53,29 +57,36 @@ export default function BoardStage({
         }
       >
         <div className=" flex justify-between items-center px-3 pt-2 pb-4 text-sm font-semibold whitespace-nowrap">
-          <div className='flex space-x-2 items-center w-4/5'>
-
+          <div className="flex space-x-2 items-center w-4/5">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="muted" size="icon" className='h-5 w-5 rounded-sm'>
+                <Button
+                  variant="muted"
+                  size="icon"
+                  className="h-5 w-5 rounded-sm"
+                >
                   <EllipsisVertical className="h-4 w-4 text-muted-foreground" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem className=' cursor-pointer space-x-2 text-xs  flex items-center'>
-                  <PencilLineIcon className="h-3 w-3" /><span>Edit Title</span>
+                <DropdownMenuItem className=" cursor-pointer space-x-2 text-xs  flex items-center">
+                  <PencilLineIcon className="h-3 w-3" />
+                  <span>Edit Title</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem className=' cursor-pointer space-x-2 text-xs  flex items-center'>
-                  <EyeOffIcon className="h-3 w-3" /><span>Hide Column</span>
+                <DropdownMenuItem className=" cursor-pointer space-x-2 text-xs  flex items-center">
+                  <EyeOffIcon className="h-3 w-3" />
+                  <span>Hide Column</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem className='text-destructive text-xs cursor-pointer space-x-2 flex items-center'>
+                <DropdownMenuItem className="text-destructive text-xs cursor-pointer space-x-2 flex items-center">
                   <Trash2Icon className="h-3 w-3 " />
-                  <span >Remove</span>
+                  <span>Remove</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <p className='truncate' title={label}>{label}</p>
+            <p className="truncate" title={label}>
+              {label}
+            </p>
           </div>
           <p>({items.length})</p>
         </div>
@@ -94,7 +105,9 @@ export default function BoardStage({
                 <li>
                   <Button
                     onClick={openNewLead}
-                    variant="muted" className="w-full hidden group-hover:block">
+                    variant="muted"
+                    className="w-full hidden group-hover:block"
+                  >
                     Add Item
                   </Button>
                 </li>
@@ -103,6 +116,6 @@ export default function BoardStage({
           </Droppable>
         </ScrollArea>
       </div>
-    </div >
+    </div>
   );
 }

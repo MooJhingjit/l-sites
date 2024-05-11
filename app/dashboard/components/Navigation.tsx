@@ -214,7 +214,11 @@ function NavigationGroup({
                     <span className="">{link.icon}</span>
                   </div>
                 )}
-                <NavLink href={link.href} active={pathname === link.href} tag={link.tag}>
+                <NavLink
+                  href={link.href}
+                  active={pathname === link.href}
+                  tag={link.tag}
+                >
                   {link.title}
                 </NavLink>
               </div>
@@ -255,26 +259,21 @@ function NavigationGroup({
   );
 }
 
-
-
-interface NavProps extends React.ComponentPropsWithoutRef<'nav'> {
+interface NavProps extends React.ComponentPropsWithoutRef<"nav"> {
   className?: string;
   withBrand?: boolean;
-  navigation: NavGroup[]
+  navigation: NavGroup[];
 }
-
 
 const Navigation = (props: NavProps) => {
   const { navigation, withBrand = true, ...rest } = props;
   return (
     <div className="relative">
-      {
-        withBrand && (
-          <div className="max-w-[200px] flex justify-start">
-            <ProfileSettings />
-          </div>
-        )
-      }
+      {withBrand && (
+        <div className="max-w-[200px] flex justify-start">
+          <ProfileSettings />
+        </div>
+      )}
       <nav {...rest}>
         <ul role="list relative">
           {/* <TopLevelNavItem href="/">Dashboard</TopLevelNavItem> */}
@@ -298,7 +297,6 @@ const Navigation = (props: NavProps) => {
       </nav>
     </div>
   );
-}
-
+};
 
 export default Navigation;

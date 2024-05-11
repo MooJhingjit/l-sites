@@ -28,7 +28,7 @@ export default function Logo({
         alt={`${name} Logo`}
         height={0}
         sizes="100vw"
-        style={{ width: 'auto', height: "50px" }} // optional
+        style={{ width: "auto", height: "50px" }} // optional
       />
     </div>
   );

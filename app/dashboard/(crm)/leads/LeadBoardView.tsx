@@ -1,13 +1,8 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
-import { BoardStage, BoardTools, BoardContext } from '../../components/kanban';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card"
+import { BoardStage, BoardTools, BoardContext } from "../../components/kanban";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const defaultLeads = [
   {
@@ -131,25 +126,25 @@ const LeadBoardView = () => {
       id: "inbound",
       label: "Inbound",
       isVisible: true,
-      variant: "default"
+      variant: "default",
     },
     {
       id: "qualify",
       label: "Qualify",
       isVisible: true,
-      variant: "default"
+      variant: "default",
     },
     {
       id: "qualify-won",
       label: "Won[Moved to new Pipeline]",
       isVisible: true,
-      variant: "success"
+      variant: "success",
     },
     {
       id: "lost",
       label: "Lost",
       isVisible: true,
-      variant: "destructive"
+      variant: "destructive",
     },
   ]);
 
@@ -185,50 +180,33 @@ const LeadBoardView = () => {
   };
 
   return (
-    <Card className='border-none shadow-none ' >
-      <CardContent className='px-0 pt-0'>
-        <BoardContext
-          onDragEnd={onDragEnd}
-        >
-          {
-            stages.filter((i) => i.isVisible).map((stage) => (
+    <Card className="border-none shadow-none ">
+      <CardContent className="px-0 pt-0">
+        <BoardContext onDragEnd={onDragEnd}>
+          {stages
+            .filter((i) => i.isVisible)
+            .map((stage) => (
               <BoardStage
                 key={`lead-stage-${stage.id}`}
                 variant={stage.variant}
                 columnKey={stage.id}
                 label={stage.label}
-                items={
-                  leads.filter((i) => i.status === stage.id)
-                }
+                items={leads.filter((i) => i.status === stage.id)}
                 renderCardItem={(item, idx) => (
-                  <LeadCard
-                    key={item.id}
-                    idx={`lead-${item.id}`}
-                    item={item}
-                  />
+                  <LeadCard key={item.id} idx={`lead-${item.id}`} item={item} />
                 )}
-
               />
-            ))
-          }
+            ))}
           <BoardTools />
         </BoardContext>
       </CardContent>
     </Card>
-
   );
 };
 
 export default LeadBoardView;
 
-
-const LeadCard = ({
-  idx,
-  item,
-}: {
-  idx: string;
-  item: any;
-}) => {
+const LeadCard = ({ idx, item }: { idx: string; item: any }) => {
   return (
     <Draggable draggableId={idx.toString()} index={item.id}>
       {(provided) => (
@@ -238,15 +216,14 @@ const LeadCard = ({
           ref={provided.innerRef}
           className="w-full mb-3 cursor-move"
         >
-
-          <Card className='rounded-md'>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 pt-3 px-3 " >
+          <Card className="rounded-md">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 pt-3 px-3 ">
               <CardTitle className="text-sm font-medium">
                 {item.title}
               </CardTitle>
               {/* <DollarSign className="h-4 w-4 text-muted-foreground" /> */}
             </CardHeader>
-            <CardContent className='px-3 pb-3 '>
+            <CardContent className="px-3 pb-3 ">
               <p className="text-xs text-secondary-foreground capitalize">
                 {item.type}
               </p>
@@ -263,4 +240,4 @@ const LeadCard = ({
       )}
     </Draggable>
   );
-}
+};

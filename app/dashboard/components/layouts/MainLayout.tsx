@@ -1,4 +1,3 @@
-
 import Header from "../Header";
 import Navigation, { NavGroup } from "../Navigation";
 import {
@@ -36,7 +35,7 @@ export const navigation: NavGroup[] = [
         href: "/dashboard/viewings",
         icon: <CalendarIcon className="w-4 h-4" />,
         creatable: true,
-        tag: "new"
+        tag: "new",
       },
 
       {
@@ -81,12 +80,7 @@ export const navigation: NavGroup[] = [
   },
 ];
 
-export function MainLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-
+export function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="h-full lg:ml-60">
       <div className="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex">
@@ -94,12 +88,11 @@ export function MainLayout({
           <Header />
           <Navigation
             navigation={navigation}
-            className="hidden lg:mt-6 lg:block" />
+            className="hidden lg:mt-6 lg:block"
+          />
         </div>
       </div>
-      <div className="relative px-4 sm:px-6 pt-16">
-        {children}
-      </div>
+      <div className="relative px-4 sm:px-6 pt-16">{children}</div>
     </div>
   );
 }

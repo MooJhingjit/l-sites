@@ -11,7 +11,11 @@ import {
 import { generatePagination } from "@/lib/utils";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export default function TablePagination({ totalPages }: { totalPages: number }) {
+export default function TablePagination({
+  totalPages,
+}: {
+  totalPages: number;
+}) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;

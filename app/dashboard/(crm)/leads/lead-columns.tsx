@@ -1,10 +1,8 @@
-"use client"
-import {
-  ColumnDef
-} from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+"use client";
+import { ColumnDef } from "@tanstack/react-table";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,10 +10,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { DataTableColumnHeader } from "../../components/data-table/DataTableColumnHeader"
-import { Badge } from "@/components/ui/badge"
-
+} from "@/components/ui/dropdown-menu";
+import { DataTableColumnHeader } from "../../components/data-table/DataTableColumnHeader";
+import { Badge } from "@/components/ui/badge";
 
 export type Lead = {
   id: number;
@@ -24,15 +21,13 @@ export type Lead = {
   type: string;
   status: string;
   lastUpdated: Date;
-}
-
-
+};
 
 export const columns: ColumnDef<Lead>[] = [
   {
     id: "actions",
     cell: ({ row }) => {
-      const data = row.original
+      const data = row.original;
 
       return (
         <DropdownMenu>
@@ -54,21 +49,25 @@ export const columns: ColumnDef<Lead>[] = [
             <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      )
+      );
     },
   },
   {
     accessorKey: "status",
     header: "Status",
     cell: ({ row }) => {
-      const status = row.getValue("status") as string
+      const status = row.getValue("status") as string;
 
-      return <div className="w-[100px] flex justify-center">
-        <Badge
-          className="capitalize text-xs "
-          variant={status === "lost" ? "destructive" : "secondary"}
-        >{status}</Badge>
-      </div>
+      return (
+        <div className="w-[100px] flex justify-center">
+          <Badge
+            className="capitalize text-xs "
+            variant={status === "lost" ? "destructive" : "secondary"}
+          >
+            {status}
+          </Badge>
+        </div>
+      );
     },
   },
   {
@@ -88,23 +87,21 @@ export const columns: ColumnDef<Lead>[] = [
     header: "Value",
     // header: () => <div className="text-right">Amount</div>,
     cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("value"))
+      const amount = parseFloat(row.getValue("value"));
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",
-      }).format(amount)
+      }).format(amount);
 
-      return <div className="text-left">{formatted}</div>
+      return <div className="text-left">{formatted}</div>;
     },
   },
   {
     accessorKey: "value",
     header: "Contact",
     cell: ({ row }) => {
-    
-      return <div className="text-left">-</div>
+      return <div className="text-left">-</div>;
     },
     // header: () => <div className="text-right">Amount</div>,
-   
   },
-]
+];

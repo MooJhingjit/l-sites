@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   CalendarIcon,
   EnvelopeClosedIcon,
@@ -8,7 +8,7 @@ import {
   GearIcon,
   PersonIcon,
   RocketIcon,
-} from "@radix-ui/react-icons"
+} from "@radix-ui/react-icons";
 
 import {
   CommandDialog,
@@ -19,9 +19,9 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -30,27 +30,25 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { ScanSearchIcon } from "lucide-react"
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { ScanSearchIcon } from "lucide-react";
 
 export function GlobalSearch() {
-
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
+        e.preventDefault();
+        setOpen((open) => !open);
       }
-    }
+    };
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
-
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, []);
 
   return (
     // <Dialog>
@@ -74,7 +72,9 @@ export function GlobalSearch() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        variant="outline" className="flex items-center space-x-2 shadow-none">
+        variant="outline"
+        className="flex items-center space-x-2 shadow-none"
+      >
         <ScanSearchIcon className="h-5 w-5 text-primary/50" />
         {/* <span>Search</span> */}
         <p className="text-sm text-muted-foreground space-x-10">
@@ -85,7 +85,10 @@ export function GlobalSearch() {
         </p>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." className="outline-none focus:ring-0 focus:border-none"/>
+        <CommandInput
+          placeholder="Type a command or search..."
+          className="outline-none focus:ring-0 focus:border-none"
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
@@ -123,5 +126,5 @@ export function GlobalSearch() {
         </CommandList>
       </CommandDialog>
     </>
-  )
+  );
 }

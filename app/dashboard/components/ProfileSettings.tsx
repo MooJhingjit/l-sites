@@ -1,5 +1,5 @@
-"use client"
-import { Button } from "@/components/ui/button"
+"use client";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,13 +13,9 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import Logo from "./Logo";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Settings, SlidersHorizontalIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -27,7 +23,10 @@ export default function ProfileSettings() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="muted" className="-mx-2 px-2 flex items-center space-x-2 focus:ring-0 focus:border-none outline-none">
+        <Button
+          variant="muted"
+          className="-mx-2 px-2 flex items-center space-x-2 focus:ring-0 focus:border-none outline-none"
+        >
           <Logo />
           {/* <Avatar className="h-6 w-6">
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" sizes="10" />
@@ -52,7 +51,7 @@ export default function ProfileSettings() {
           </DropdownMenuItem> */}
           <DropdownMenuItem asChild>
             <Link href="/dashboard/settings/preferences">
-            Preferences
+              Preferences
               <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
             </Link>
           </DropdownMenuItem>
@@ -91,5 +90,5 @@ export default function ProfileSettings() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

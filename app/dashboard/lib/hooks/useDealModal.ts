@@ -8,7 +8,7 @@ export type Data = {
   price: number;
 };
 
-export type DataRefs = any
+export type DataRefs = any;
 
 type Store = {
   isOpen: boolean;

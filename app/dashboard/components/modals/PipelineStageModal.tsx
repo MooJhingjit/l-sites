@@ -7,16 +7,16 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import usePipelineStateModal from "../../lib/hooks/usePipelineStateModal";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const PipelineStateModal = () => {
   const modal = usePipelineStateModal();
@@ -25,11 +25,8 @@ export const PipelineStateModal = () => {
     <Dialog open={modal.isOpen} onOpenChange={modal.onClose}>
       <DialogContent className="sm:max-w-[425px] p-0 border-none">
         <Card className="w-full">
-          <CardHeader >
-            <CardTitle className="">
-              Create a new stage
-            </CardTitle>
-
+          <CardHeader>
+            <CardTitle className="">Create a new stage</CardTitle>
           </CardHeader>
           <CardContent>
             <form>
@@ -46,7 +43,6 @@ export const PipelineStateModal = () => {
             <Button>Create</Button>
           </CardFooter>
         </Card>
-
       </DialogContent>
     </Dialog>
   );

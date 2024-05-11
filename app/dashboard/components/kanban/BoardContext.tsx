@@ -1,8 +1,8 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
-import BoardStage from './BoardStage';
-import BoardTools from './BoardTools';
+import BoardStage from "./BoardStage";
+import BoardTools from "./BoardTools";
 
 export const defaultLeads = [
   {
@@ -141,5 +141,5 @@ export default function BoardContext(props: Props) {
         )}
       </Droppable>
     </DragDropContext>
-  )
+  );
 }

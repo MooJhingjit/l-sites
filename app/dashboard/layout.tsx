@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: {
     template: "%s - Dashboard",
     default: "",
-
   },
 };
 export default async function RootLayout({

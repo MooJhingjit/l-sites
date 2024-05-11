@@ -1,12 +1,7 @@
-import { Activity } from "lucide-react"
+import { Activity } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function DashboardPage() {
   return (
@@ -43,5 +38,5 @@ export default function DashboardPage() {
     //     <p className="text-xs text-muted-foreground">+201 since last hour</p>
     //   </CardContent>
     // </Card>
-  )
+  );
 }

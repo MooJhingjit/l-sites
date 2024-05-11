@@ -1,9 +1,6 @@
-import Breadcrumb from "../../components/Breadcrumb"
+import Breadcrumb from "../../components/Breadcrumb";
 
-export default function Layout({ children }: {
-  children: React.ReactNode
-
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative">
       <div className="fixed top-0 z-[50] h-14 flex items-center">
@@ -12,5 +9,5 @@ export default function Layout({ children }: {
 
       <div className=" pt-14">{children}</div>
     </div>
-  )
+  );
 }

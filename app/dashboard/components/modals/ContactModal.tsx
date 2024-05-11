@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import useContactModal from "../../lib/hooks/useContactModal";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -16,16 +16,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const ContactModal = () => {
   const modal = useContactModal();
@@ -48,7 +48,11 @@ export const ContactModal = () => {
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Name of your project" autoFocus={false} />
+                  <Input
+                    id="name"
+                    placeholder="Name of your project"
+                    autoFocus={false}
+                  />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="framework">Type</Label>
@@ -72,7 +76,6 @@ export const ContactModal = () => {
             <Button>Create</Button>
           </CardFooter>
         </Card>
-
       </DialogContent>
     </Dialog>
   );
