@@ -11,14 +11,12 @@ type Props = {
 export default function EnquiryFormA(props: Props) {
   const { buttonLabel } = props;
   return (
-    <>
-      <Button variant={"muted"} className="flex-1">
-        <Mail size={14} className="mr-2" />
-        <Label>
-          {buttonLabel}
-          I'm interested
-        </Label>
-      </Button>
-    </>
+    <Button variant={"muted"} className="flex-1">
+      <Mail size={14} className="mr-2" />
+      <Label>
+        {buttonLabel}
+        I am interested
+      </Label>
+    </Button>
   );
 }

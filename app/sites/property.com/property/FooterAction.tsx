@@ -33,7 +33,7 @@ const EnquiryButton = () => {
       <AlertDialogTrigger asChild>
         <Button variant={"muted"} className="flex-1">
           <Mail size={14} className="mr-2" />
-          <Label>I'm interested</Label>
+          <Label>I am interested</Label>
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent className="bg-transparent border-none  ">

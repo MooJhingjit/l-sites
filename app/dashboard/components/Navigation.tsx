@@ -237,7 +237,9 @@ function NavigationGroup({
                     }}
                   >
                     {link.subLinks?.map((s) => (
-                      <li>
+                      <li
+                        key={s.href}
+                      >
                         <NavLink
                           href={`${s.href}`}
                           active={pathname === s.href}
