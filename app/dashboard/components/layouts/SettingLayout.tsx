@@ -39,7 +39,7 @@ export function SettingLayout({ children }: { children: React.ReactNode }) {
     <div className="h-full lg:ml-60">
       <div className="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex">
         <div className="contents lg:pointer-events-auto lg:block lg:w-60 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-6 lg:pb-8 lg:pt-4 lg:dark:border-white/10">
-          <div className="max-w-[200px] flex justify-start">
+          <div className="max-w-[200px] flex justify-start px-4 md:px-0">
             <Button
               variant="outline"
               className="px-3 -mx-4 shadow-none hover:bg-transparent"

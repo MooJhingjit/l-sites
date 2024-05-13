@@ -15,6 +15,7 @@ import { create } from "zustand";
 
 import Header from "./Header";
 import Navigation from "./Navigation";
+import { dashboardNavigation } from "./layouts/MainLayout";
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -73,7 +74,7 @@ function MobileNavigationDialog({
     if (
       link &&
       link.pathname + link.search + link.hash ===
-        window.location.pathname + window.location.search + window.location.hash
+      window.location.pathname + window.location.search + window.location.hash
     ) {
       close();
     }
@@ -122,9 +123,11 @@ function MobileNavigationDialog({
           >
             <motion.div
               layoutScroll
-              className="fixed bottom-0 left-0 top-8 w-full overflow-y-auto bg-white px-4 pb-4 pt-6 shadow-lg shadow-zinc-900/10  min-[416px]:max-w-[220px] sm:px-6 sm:pb-10 dark:bg-zinc-900 dark:ring-zinc-800"
+              className="fixed bottom-0 left-0 top-8 w-2/3 overflow-y-auto bg-white px-4 pb-4 pt-6 shadow-lg shadow-zinc-900/10  min-[416px]:max-w-[220px] sm:px-6 sm:pb-10 dark:bg-zinc-900 dark:ring-zinc-800"
             >
-              <Navigation />
+              <Navigation
+                // className="mt-6"
+                navigation={dashboardNavigation} />
             </motion.div>
           </Transition.Child>
         </Dialog.Panel>

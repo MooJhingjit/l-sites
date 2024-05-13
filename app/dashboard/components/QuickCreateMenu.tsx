@@ -49,7 +49,7 @@ export function QuickCreateMenu() {
           className="flex space-x-2 text-muted-foreground text-xs" 
         >
           <SquarePlusIcon className="w-4 h-4 " />
-          <span>Create New</span>
+          <span className="hidden sm:block">Create New</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-screen max-w-md border-none flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5 mr-10">

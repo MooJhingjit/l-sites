@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
-export default function Logo() {
+export default function Logo({
+  height = 20,
+}) {
   const { resolvedTheme } = useTheme();
   let src;
 
@@ -25,7 +27,10 @@ export default function Logo() {
         alt={`Logo`}
         height={0}
         sizes="100vw"
-        style={{ width: "100%", height: "20px" }} // optional
+        style={{
+          width: "100%", height: height+"px",
+
+        }} // optional
       />
     </div>
   );

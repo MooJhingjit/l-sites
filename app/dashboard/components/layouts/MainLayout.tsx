@@ -11,7 +11,7 @@ import {
   SquarePen,
 } from "lucide-react";
 
-export const navigation: NavGroup[] = [
+export const dashboardNavigation: NavGroup[] = [
   {
     title: "CRM",
     links: [
@@ -87,8 +87,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         <div className="contents lg:pointer-events-auto lg:block lg:w-60 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-6 lg:pb-8 lg:pt-4 lg:dark:border-white/10">
           <Header />
           <Navigation
-            navigation={navigation}
-            className="hidden lg:mt-6 lg:block"
+            navigation={dashboardNavigation}
+            className="hidden lg:block"
           />
         </div>
       </div>

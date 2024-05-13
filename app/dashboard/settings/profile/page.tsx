@@ -20,7 +20,7 @@ export default function DashboardSettings() {
             </dt>
             <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto items-center">
               <div className="text-primary">Tom Cook</div>
-              <Button variant="outline">Update</Button>
+              <Button variant="outline" className="text-xs">Update</Button>
             </dd>
           </div>
           <div className="pt-6 sm:flex items-center">
@@ -29,7 +29,7 @@ export default function DashboardSettings() {
             </dt>
             <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto  items-center">
               <div className="text-primary">tom.cook@example.com</div>
-              <Button variant="outline">Update</Button>
+              <Button variant="outline" className="text-xs">Update</Button>
             </dd>
           </div>
           <div className="pt-6 sm:flex items-center">
@@ -38,7 +38,7 @@ export default function DashboardSettings() {
             </dt>
             <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto  items-center">
               <div className="text-primary">Human Resources Manager</div>
-              <Button variant="outline">Update</Button>
+              <Button variant="outline" className="text-xs">Update</Button>
             </dd>
           </div>
           <div className="pt-6 sm:flex items-center">
@@ -47,7 +47,7 @@ export default function DashboardSettings() {
             </dt>
             <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto  items-center">
               <div className="text-primary">English</div>
-              <Button variant="outline">Update</Button>
+              <Button variant="outline" className="text-xs">Update</Button>
             </dd>
           </div>
         </dl>
@@ -64,7 +64,7 @@ export default function DashboardSettings() {
             <dt className="font-medium text-primary sm:w-64 sm:flex-none sm:pr-6">Language</dt>
             <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto  items-center">
               <div className="text-primary">English</div>
-                            <Button variant="outline" >
+                            <Button variant="outline" className="text-xs" >
                 Update
               </Button>
             </dd>

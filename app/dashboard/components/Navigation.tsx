@@ -268,13 +268,13 @@ interface NavProps extends React.ComponentPropsWithoutRef<"nav"> {
 const Navigation = (props: NavProps) => {
   const { navigation, withBrand = true, ...rest } = props;
   return (
-    <div className="relative">
+    <div {...rest}>
       {withBrand && (
         <div className="max-w-[200px] flex justify-start">
           <ProfileSettings />
         </div>
       )}
-      <nav {...rest}>
+      <nav className="lg:mt-6" >
         <ul role="list relative">
           {/* <TopLevelNavItem href="/">Dashboard</TopLevelNavItem> */}
 

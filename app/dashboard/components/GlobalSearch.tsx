@@ -58,11 +58,11 @@ export function GlobalSearch() {
       <Button
         onClick={() => setOpen(true)}
         variant="outline"
-        className="flex items-center space-x-2 shadow-none"
+        className="flex items-center md:space-x-2 shadow-none flex-1 md:max-w-48"
       >
-        <ScanSearchIcon className="h-4 w-4 text-primary/50" />
+        <ScanSearchIcon className="h-4 w-4 text-primary/50 hidden md:block" />
         {/* <span>Search</span> */}
-        <p className="text-xs text-muted-foreground space-x-14">
+        <p className="text-xs text-muted-foreground space-x-4 md:space-x-14">
           <span>Search</span>
           <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
             <span className="text-xs">⌘</span>K
