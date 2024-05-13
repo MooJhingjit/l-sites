@@ -22,7 +22,7 @@ const PropertyOverview = () => {
             located on the hillside of Kamala, Kathu, at the prestigious Andara
             Resort & Villas. Spanning 270 sqm on the first floor, this fully
             furnished unit embodies the essence of luxury and tranquility in one
-            of Phuket\'s most sought-after locations.
+            of Phuket&apos;'s most sought-after locations.
           </p>
           <p>
             Looking to stock your closet? The Basic tee also comes in a 3-pack

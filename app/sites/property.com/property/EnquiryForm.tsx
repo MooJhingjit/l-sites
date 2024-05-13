@@ -130,7 +130,7 @@ const EnquiryForm = () => {
       </CardContent>
       <CardFooter className="flex justify-between">
         <p className=" text-center text-xs text-gray-500">
-          By clicking \"send message\", you expressly agree that Property.com and
+          By clicking &apos;"send message&apos;", you expressly agree that Property.com and
           its affiliates may collect, use and disclose your personal data to
           provide you with marketing materials which you have agreed to receive,
           in accordance with our data protection policy.
