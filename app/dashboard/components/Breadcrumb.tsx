@@ -26,9 +26,11 @@ export default function DashboardBreadcrumb() {
         )}
 
         {breadcrumbs.map((breadcrumb, index) => (
-          <>
-            <BreadcrumbItem key={index}>
-              {breadcrumb.href ? (
+          <React.Fragment key={index}>
+            <BreadcrumbItem>
+              {breadcrumb.render ? (
+                breadcrumb.render
+              ) : breadcrumb.href ? (
                 <BreadcrumbLink href={breadcrumb.href}>
                   {breadcrumb.label}
                 </BreadcrumbLink>
@@ -40,7 +42,7 @@ export default function DashboardBreadcrumb() {
             </BreadcrumbItem>
 
             {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
-          </>
+          </React.Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>

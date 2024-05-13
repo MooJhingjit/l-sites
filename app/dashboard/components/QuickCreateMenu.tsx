@@ -46,7 +46,7 @@ export function QuickCreateMenu() {
       <PopoverTrigger asChild>
         <Button
           variant={"ghost"}
-          className="flex space-x-2 text-muted-foreground"
+          className="flex space-x-2 text-muted-foreground text-xs" 
         >
           <SquarePlusIcon className="w-4 h-4 " />
           <span>Create New</span>

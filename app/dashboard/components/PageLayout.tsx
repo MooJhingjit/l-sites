@@ -7,11 +7,11 @@ export default function PageLayout({
   children,
   className,
   breadcrumbs,
-}: {
+}: Readonly<{
   children: React.ReactNode;
   className: string;
   breadcrumbs: BreadcrumbItem[];
-}) {
+}>) {
   const setBreadcrumbs = useBreadcrumbStore((state) => state.setBreadcrumbs);
 
   useEffect(() => {
