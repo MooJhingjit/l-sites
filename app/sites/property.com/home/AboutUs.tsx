@@ -10,10 +10,10 @@ export default function AboutUs() {
       <div className="max-w-3xl mx-auto text-center">
         {/* <span className="text-sm text-secondary uppercase">Who we are?</span> */}
         <h2 className="mt-2 mb-4 text-4xl lg:text-5xl font-bold font-heading">
-          Thailand&apos;'s Leading Tech Enabled Real Estate Consultancy
+          Thailand Leading Tech Enabled Real Estate Consultancy
         </h2>
         <p className="mb-6 text-lg text-gray-500 leading-loose">
-          Whether you&apos;'re searching for your dream home or looking to sell a
+          Whether you are searching for your dream home or looking to sell a
           property, our team is dedicated to helping you every step of the way.
           property.com is your trusted partner to help you sell, rent or find
           your home in Thailand.
